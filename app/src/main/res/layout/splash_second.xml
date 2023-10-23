@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="336dp"
+        app:srcCompat="@drawable/img2" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:fontFamily="sans-serif"
+        android:paddingLeft="20dp"
+        android:text="Bảo tàng truyền cảm hứng"
+        android:textColor="@color/black"
+        android:textSize="28dp"
+        android:textStyle="bold"  />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:paddingHorizontal="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Những hiện vật ẩn sau các hậu cảnh của bảo tàng đều đang chờ bạn khám phá. Hãy bắt đầu cuộc hành trình của bạn."
+        android:textColor="@color/black"  />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="359dp"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginVertical="220dp"
+        android:backgroundTint="#FAD96E"
+        android:text="Bắt đầu"
+        android:textColor="@color/black" />
+</LinearLayout>
