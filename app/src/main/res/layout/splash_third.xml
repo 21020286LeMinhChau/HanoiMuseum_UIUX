@@ -34,6 +34,8 @@
         android:text="ĐĂNG KÝ"
         android:backgroundTint="@color/yellow"
         android:textColor="@color/black"
+        android:fontFamily="@font/robotoslabregular"
+
         />
 
     <Button
@@ -41,6 +43,7 @@
         android:layout_width="359dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
+        android:fontFamily="@font/robotoslabregular"
 
         android:backgroundTint="@color/yellow"
         android:text="ĐĂNG NHẬP"
@@ -52,6 +55,10 @@
         android:layout_height="wrap_content"
         android:paddingVertical="20dp"
         android:text="Đăng nhập bằng"
+        android:fontFamily="@font/robotoslabregular"
+
+        android:textColor="@color/grayText"
+
         android:gravity="center_horizontal"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -88,6 +95,8 @@
         android:gravity="center_horizontal"
         android:paddingTop="160dp"
         android:textSize="12sp"
+        android:textColor="@color/grayText"
+        android:fontFamily="@font/robotoslabregular"
 
         android:text="Bạn không muốn sử dụng toàn bộ quyền lợi của tài khoản ?" />
 
@@ -99,6 +108,7 @@
         android:gravity="center_horizontal"
         android:textSize="12sp"
         android:textColor="@color/black"
+        android:fontFamily="@font/robotoslabregular"
 
         />
 
