@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/robotoslabbold"
             android:paddingStart="20dp"
-            android:text="Login in to IMuseum"
+            android:text="Đăng nhập vào IMuseum"
             android:textColor="@color/black"
             android:textSize="64px"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -147,7 +147,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:background="@color/white"
-                            android:hint="Password"
+                            android:hint="Mật khẩu"
                             android:inputType="textPassword" />
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -161,7 +161,7 @@
             android:layout_marginLeft="20dp"
 
             android:padding="0dp"
-            android:text="Forget password?"
+            android:text="Quên mật khẩu?"
             android:textColor="@color/black"
             android:textSize="32px"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -178,7 +178,7 @@
 
             android:backgroundTint="@color/yellow"
             android:fontFamily="@font/robotoslabregular"
-            android:text="Login"
+            android:text="Đăng nhập"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
