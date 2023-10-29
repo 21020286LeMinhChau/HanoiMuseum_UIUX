@@ -12,7 +12,7 @@
         android:theme="@style/Theme.Museum.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".ThongTinChung"
             android:exported="true"
             android:theme="@style/Theme.Museum.NoActionBar">
             <intent-filter>

@@ -1,0 +1,980 @@
+{
+  "name": "group_44",
+  "version": 32,
+  "source-key": {
+    "type": "figma",
+    "file": "IYKULj9fHNyYUNOIEdLKCQ",
+    "node": "4:354",
+    "version": "4427807117",
+    "component-id": "f2e44140e4cb3ef7e50aa078fedc3a80f525fe4f"
+  },
+  "default": "Group 44",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      }
+    ],
+    "modes": {
+      "Group 44": {
+        "rules": [
+          {
+            "id": "top_level",
+            "is-structured": "false",
+            "children": "$Group 44 children",
+            "clip-content": "false"
+          }
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "Group 44 children": {
+      "data-type": "list-item",
+      "required": false,
+      "description": ""
+    }
+  },
+  "previews": [
+    {
+      "design": "Group 44",
+      "size": {
+        "width": 1083.0,
+        "height": 2592.0
+      },
+      "parameters": {
+        "Group 44 children": [
+          {
+            "type": "group",
+            "is-structured": false,
+            "background-color": {
+              "alpha": "1.0",
+              "hue": "0.0",
+              "saturation": "0.0",
+              "value": "1.0"
+            }
+          },
+          {
+            "type": "group",
+            "is-structured": false,
+            "children": [
+              {
+                "type": "image",
+                "margin": {
+                  "top": "2379.0"
+                },
+                "size-constraints": {
+                  "width-constraints": {
+                    "sizing-mode": "proportional",
+                    "value": 1.0
+                  },
+                  "height-constraints": {
+                    "sizing-mode": "proportional",
+                    "value": 1.0
+                  }
+                },
+                "stroke-width": 1.0,
+                "stroke-color": {
+                  "alpha": "1.0",
+                  "hue": "0.0",
+                  "saturation": "0.0",
+                  "value": "0.0"
+                },
+                "image-content": "bar.png",
+                "scale": "cover"
+              },
+              {
+                "type": "group",
+                "margin": {
+                  "bottom": "2114.814208984375"
+                },
+                "is-structured": false,
+                "children": [
+                  {
+                    "type": "image",
+                    "margin": {
+                      "bottom": "80.185791015625"
+                    },
+                    "size-constraints": {
+                      "width-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      },
+                      "height-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      }
+                    },
+                    "image-content": "rectangle_2.png",
+                    "scale": "cover"
+                  },
+                  {
+                    "type": "text",
+                    "margin": {
+                      "left": "51.0",
+                      "top": "417.362548828125",
+                      "right": "66.0"
+                    },
+                    "size-constraints": {
+                      "width-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      },
+                      "height-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      }
+                    },
+                    "font-weight": 600.0,
+                    "color": {
+                      "alpha": "1.0",
+                      "hue": "0.0",
+                      "saturation": "0.0",
+                      "value": "0.0"
+                    },
+                    "text-content": "Bảo tàng Hà Nội ",
+                    "overflow": "visible",
+                    "max-lines": -1,
+                    "text-align": "left",
+                    "text-size": 70.0,
+                    "line-height": 1.2102272033691406,
+                    "typeface": "Inter"
+                  }
+                ],
+                "clip-content": false
+              },
+              {
+                "type": "group",
+                "margin": {
+                  "top": "656.0",
+                  "bottom": "1833.0"
+                },
+                "is-structured": false,
+                "children": [
+                  {
+                    "type": "vector",
+                    "margin": {
+                      "top": "74.99999999724227",
+                      "bottom": "28.00000000275773"
+                    },
+                    "alignment": {
+                      "horizontal": {
+                        "attachment": "start",
+                        "offset": -0.001953125
+                      },
+                      "vertical": {
+                        "attachment": "start",
+                        "offset": -1.0
+                      }
+                    },
+                    "size-constraints": {
+                      "width-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      },
+                      "height-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      }
+                    },
+                    "vector-content": "line_5.svg"
+                  },
+                  {
+                    "type": "text",
+                    "margin": {
+                      "left": "34.0",
+                      "top": "2.0",
+                      "right": "727.0"
+                    },
+                    "size-constraints": {
+                      "width-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      },
+                      "height-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      }
+                    },
+                    "font-weight": 700.0,
+                    "color": {
+                      "alpha": "1.0",
+                      "hue": "0.0",
+                      "saturation": "0.0",
+                      "value": "0.0"
+                    },
+                    "text-content": "Thông tin chung",
+                    "overflow": "visible",
+                    "max-lines": -1,
+                    "text-align": "left",
+                    "text-size": 40.0,
+                    "line-height": 1.2102272033691406,
+                    "typeface": "Inter"
+                  },
+                  {
+                    "type": "text",
+                    "margin": {
+                      "left": "796.0",
+                      "right": "93.0",
+                      "bottom": "2.0"
+                    },
+                    "size-constraints": {
+                      "width-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      },
+                      "height-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      }
+                    },
+                    "font-weight": 500.0,
+                    "color": {
+                      "alpha": "1.0",
+                      "hue": "0.0",
+                      "saturation": "0.0",
+                      "value": "0.7215686274509804"
+                    },
+                    "text-content": "Đánh giá",
+                    "overflow": "visible",
+                    "max-lines": -1,
+                    "text-align": "left",
+                    "text-size": 40.0,
+                    "line-height": 1.2102272033691406,
+                    "typeface": "Inter"
+                  },
+                  {
+                    "type": "vector",
+                    "margin": {
+                      "left": "16.999314484499337",
+                      "top": "78.49729000053786",
+                      "right": "694.9993427420632",
+                      "bottom": "24.50270999946214"
+                    },
+                    "alignment": {
+                      "horizontal": {
+                        "attachment": "start",
+                        "offset": -0.0166015625
+                      },
+                      "vertical": {
+                        "attachment": "start",
+                        "offset": -6.0
+                      }
+                    },
+                    "size-constraints": {
+                      "width-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      },
+                      "height-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      }
+                    },
+                    "vector-content": "line_6.svg"
+                  },
+                  {
+                    "type": "text",
+                    "margin": {
+                      "left": "451.0",
+                      "top": "2.0",
+                      "right": "381.0",
+                      "bottom": "27.0"
+                    },
+                    "size-constraints": {
+                      "width-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      },
+                      "height-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      }
+                    },
+                    "font-weight": 500.0,
+                    "color": {
+                      "alpha": "1.0",
+                      "hue": "0.0",
+                      "saturation": "0.0",
+                      "value": "0.7215686274509804"
+                    },
+                    "text-content": "Tham quan",
+                    "overflow": "visible",
+                    "max-lines": -1,
+                    "text-align": "left",
+                    "text-size": 40.0,
+                    "line-height": 1.2102272033691406,
+                    "typeface": "Inter"
+                  }
+                ],
+                "clip-content": false
+              },
+              {
+                "type": "group",
+                "margin": {
+                  "left": "51.0",
+                  "top": "508.0",
+                  "right": "429.0",
+                  "bottom": "1998.0"
+                },
+                "is-structured": false,
+                "children": [
+                  {
+                    "type": "text",
+                    "margin": {
+                      "left": "448.0",
+                      "top": "24.0",
+                      "bottom": "24.0"
+                    },
+                    "size-constraints": {
+                      "width-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      },
+                      "height-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      }
+                    },
+                    "font-weight": 500.0,
+                    "color": {
+                      "alpha": "1.0",
+                      "hue": "0.0",
+                      "saturation": "0.0",
+                      "value": "0.7215686274509804"
+                    },
+                    "text-content": "(200)",
+                    "overflow": "visible",
+                    "max-lines": -1,
+                    "text-align": "left",
+                    "text-size": 40.0,
+                    "line-height": 1.2102272033691406,
+                    "typeface": "Inter"
+                  },
+                  {
+                    "type": "image",
+                    "margin": {
+                      "left": "66.0",
+                      "right": "153.0"
+                    },
+                    "size-constraints": {
+                      "width-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      },
+                      "height-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      }
+                    },
+                    "image-content": "image_14.png",
+                    "scale": "cover"
+                  },
+                  {
+                    "type": "text",
+                    "margin": {
+                      "top": "24.0",
+                      "right": "512.0",
+                      "bottom": "24.0"
+                    },
+                    "size-constraints": {
+                      "width-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      },
+                      "height-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      }
+                    },
+                    "font-weight": 500.0,
+                    "color": {
+                      "alpha": "1.0",
+                      "hue": "0.0",
+                      "saturation": "0.0",
+                      "value": "0.7215686274509804"
+                    },
+                    "text-content": "5.0",
+                    "overflow": "visible",
+                    "max-lines": -1,
+                    "text-align": "left",
+                    "text-size": 40.0,
+                    "line-height": 1.2102272033691406,
+                    "typeface": "Inter"
+                  }
+                ],
+                "clip-content": false
+              },
+              {
+                "type": "group",
+                "margin": {
+                  "top": "759.0",
+                  "bottom": "1501.0"
+                },
+                "is-structured": false,
+                "children": [
+                  {
+                    "type": "vector",
+                    "margin": {
+                      "top": "330.99999999724224",
+                      "bottom": "1.0000000027577585"
+                    },
+                    "alignment": {
+                      "horizontal": {
+                        "attachment": "start",
+                        "offset": -0.001953125
+                      },
+                      "vertical": {
+                        "attachment": "start",
+                        "offset": -1.0
+                      }
+                    },
+                    "size-constraints": {
+                      "width-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      },
+                      "height-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      }
+                    },
+                    "vector-content": "line_7.svg"
+                  },
+                  {
+                    "type": "text",
+                    "margin": {
+                      "left": "51.0",
+                      "right": "673.0",
+                      "bottom": "253.0"
+                    },
+                    "size-constraints": {
+                      "width-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      },
+                      "height-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      }
+                    },
+                    "font-weight": 600.0,
+                    "color": {
+                      "alpha": "1.0",
+                      "hue": "0.0",
+                      "saturation": "0.0",
+                      "value": "0.0"
+                    },
+                    "text-content": "Giờ mở cửa",
+                    "overflow": "visible",
+                    "text-align": "left",
+                    "text-size": 65.0,
+                    "line-height": 1.2102272620567909,
+                    "typeface": "Inter"
+                  },
+                  {
+                    "type": "text",
+                    "margin": {
+                      "left": "58.0",
+                      "top": "106.0",
+                      "right": "856.0",
+                      "bottom": "172.0"
+                    },
+                    "size-constraints": {
+                      "width-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      },
+                      "height-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      }
+                    },
+                    "color": {
+                      "alpha": "1.0",
+                      "hue": "120.0",
+                      "saturation": "0.5248868778280543",
+                      "value": "0.8666666666666667"
+                    },
+                    "text-content": "Opened",
+                    "overflow": "visible",
+                    "text-align": "left",
+                    "text-size": 45.0,
+                    "line-height": 1.210227288140191,
+                    "typeface": "Inter"
+                  },
+                  {
+                    "type": "group",
+                    "margin": {
+                      "left": "58.0",
+                      "top": "211.0",
+                      "right": "774.0",
+                      "bottom": "67.0"
+                    },
+                    "is-structured": false,
+                    "children": [
+                      {
+                        "type": "text",
+                        "margin": {
+                          "right": "30.0"
+                        },
+                        "size-constraints": {
+                          "width-constraints": {
+                            "sizing-mode": "proportional",
+                            "value": 1.0
+                          },
+                          "height-constraints": {
+                            "sizing-mode": "proportional",
+                            "value": 1.0
+                          }
+                        },
+                        "font-weight": 600.0,
+                        "color": {
+                          "alpha": "1.0",
+                          "hue": "0.0",
+                          "saturation": "0.0",
+                          "value": "0.0"
+                        },
+                        "text-content": "Xem thêm",
+                        "overflow": "visible",
+                        "text-align": "left",
+                        "text-size": 45.0,
+                        "line-height": 1.210227288140191,
+                        "typeface": "Inter",
+                        "underline": true
+                      },
+                      {
+                        "type": "image",
+                        "margin": {
+                          "left": "227.0",
+                          "top": "4.0"
+                        },
+                        "size-constraints": {
+                          "width-constraints": {
+                            "sizing-mode": "proportional",
+                            "value": 1.0
+                          },
+                          "height-constraints": {
+                            "sizing-mode": "proportional",
+                            "value": 1.0
+                          }
+                        },
+                        "image-content": "image_15.png",
+                        "scale": "cover"
+                      }
+                    ],
+                    "clip-content": false
+                  }
+                ],
+                "clip-content": false
+              },
+              {
+                "type": "group",
+                "margin": {
+                  "top": "1125.0",
+                  "bottom": "1093.0"
+                },
+                "is-structured": false,
+                "children": [
+                  {
+                    "type": "group",
+                    "margin": {
+                      "left": "51.0",
+                      "top": "258.0",
+                      "right": "781.0",
+                      "bottom": "62.0"
+                    },
+                    "is-structured": false,
+                    "children": [
+                      {
+                        "type": "text",
+                        "margin": {
+                          "right": "30.0"
+                        },
+                        "size-constraints": {
+                          "width-constraints": {
+                            "sizing-mode": "proportional",
+                            "value": 1.0
+                          },
+                          "height-constraints": {
+                            "sizing-mode": "proportional",
+                            "value": 1.0
+                          }
+                        },
+                        "font-weight": 600.0,
+                        "color": {
+                          "alpha": "1.0",
+                          "hue": "0.0",
+                          "saturation": "0.0",
+                          "value": "0.0"
+                        },
+                        "text-content": "Xem thêm",
+                        "overflow": "visible",
+                        "text-align": "left",
+                        "text-size": 45.0,
+                        "line-height": 1.210227288140191,
+                        "typeface": "Inter",
+                        "underline": true
+                      },
+                      {
+                        "type": "image",
+                        "margin": {
+                          "left": "227.0",
+                          "top": "4.0"
+                        },
+                        "size-constraints": {
+                          "width-constraints": {
+                            "sizing-mode": "proportional",
+                            "value": 1.0
+                          },
+                          "height-constraints": {
+                            "sizing-mode": "proportional",
+                            "value": 1.0
+                          }
+                        },
+                        "image-content": "image_15.png",
+                        "scale": "cover"
+                      }
+                    ],
+                    "clip-content": false
+                  },
+                  {
+                    "type": "text",
+                    "margin": {
+                      "left": "58.0",
+                      "right": "93.0",
+                      "bottom": "158.0"
+                    },
+                    "size-constraints": {
+                      "width-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      },
+                      "height-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      }
+                    },
+                    "color": {
+                      "alpha": "1.0",
+                      "hue": "0.0",
+                      "saturation": "0.0",
+                      "value": "0.0"
+                    },
+                    "text-content": "Đây là giới thiệu chung. Đây là giới thiệu chung.Đây là giới thiệu chung. Đây là giới thiệu chung. Đây là giới thiệu chung. Đây là giới thiệu chung... ",
+                    "overflow": "visible",
+                    "max-lines": -1,
+                    "text-align": "left",
+                    "text-size": 45.0,
+                    "line-height": 1.210227288140191,
+                    "typeface": "Inter"
+                  },
+                  {
+                    "type": "vector",
+                    "margin": {
+                      "top": "372.99999999724224",
+                      "bottom": "1.0000000027577585"
+                    },
+                    "alignment": {
+                      "horizontal": {
+                        "attachment": "start",
+                        "offset": -0.001953125
+                      },
+                      "vertical": {
+                        "attachment": "start",
+                        "offset": -1.0
+                      }
+                    },
+                    "size-constraints": {
+                      "width-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      },
+                      "height-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      }
+                    },
+                    "vector-content": "line_8.svg"
+                  }
+                ],
+                "clip-content": false
+              },
+              {
+                "type": "group",
+                "margin": {
+                  "left": "51.0",
+                  "top": "1807.0",
+                  "right": "93.0",
+                  "bottom": "247.0"
+                },
+                "is-structured": false,
+                "children": [
+                  {
+                    "type": "image",
+                    "margin": {
+                      "left": "23.0",
+                      "top": "105.0",
+                      "bottom": "125.0"
+                    },
+                    "size-constraints": {
+                      "width-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      },
+                      "height-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      }
+                    },
+                    "image-content": "image_11.png",
+                    "scale": "cover"
+                  },
+                  {
+                    "type": "text",
+                    "margin": {
+                      "right": "791.0",
+                      "bottom": "459.0"
+                    },
+                    "size-constraints": {
+                      "width-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      },
+                      "height-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      }
+                    },
+                    "font-weight": 600.0,
+                    "color": {
+                      "alpha": "1.0",
+                      "hue": "0.0",
+                      "saturation": "0.0",
+                      "value": "0.0"
+                    },
+                    "text-content": "Vị trí",
+                    "overflow": "visible",
+                    "text-align": "left",
+                    "text-size": 65.0,
+                    "line-height": 1.2102272620567909,
+                    "typeface": "Inter"
+                  },
+                  {
+                    "type": "text",
+                    "margin": {
+                      "left": "91.0",
+                      "top": "485.0",
+                      "right": "609.0"
+                    },
+                    "size-constraints": {
+                      "width-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      },
+                      "height-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      }
+                    },
+                    "color": {
+                      "alpha": "1.0",
+                      "hue": "0.0",
+                      "saturation": "0.0",
+                      "value": "0.0"
+                    },
+                    "text-content": "28 Cầu Giấy",
+                    "overflow": "visible",
+                    "text-align-vertical": "center",
+                    "text-size": 45.0,
+                    "line-height": 1.171875
+                  },
+                  {
+                    "type": "image",
+                    "margin": {
+                      "left": "24.0",
+                      "top": "484.0",
+                      "right": "863.0"
+                    },
+                    "size-constraints": {
+                      "width-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      },
+                      "height-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      }
+                    },
+                    "image-content": "image_16.png",
+                    "scale": "cover"
+                  }
+                ],
+                "clip-content": false
+              },
+              {
+                "type": "group",
+                "margin": {
+                  "top": "1542.0",
+                  "bottom": "838.0"
+                },
+                "is-structured": false,
+                "children": [
+                  {
+                    "type": "group",
+                    "margin": {
+                      "left": "51.0",
+                      "top": "113.0",
+                      "right": "781.0",
+                      "bottom": "45.0"
+                    },
+                    "is-structured": false,
+                    "children": [
+                      {
+                        "type": "text",
+                        "margin": {
+                          "right": "30.0"
+                        },
+                        "size-constraints": {
+                          "width-constraints": {
+                            "sizing-mode": "proportional",
+                            "value": 1.0
+                          },
+                          "height-constraints": {
+                            "sizing-mode": "proportional",
+                            "value": 1.0
+                          }
+                        },
+                        "font-weight": 600.0,
+                        "color": {
+                          "alpha": "1.0",
+                          "hue": "0.0",
+                          "saturation": "0.0",
+                          "value": "0.0"
+                        },
+                        "text-content": "Xem thêm",
+                        "overflow": "visible",
+                        "text-align": "left",
+                        "text-size": 45.0,
+                        "line-height": 1.210227288140191,
+                        "typeface": "Inter",
+                        "underline": true
+                      },
+                      {
+                        "type": "image",
+                        "margin": {
+                          "left": "227.0",
+                          "top": "4.0"
+                        },
+                        "size-constraints": {
+                          "width-constraints": {
+                            "sizing-mode": "proportional",
+                            "value": 1.0
+                          },
+                          "height-constraints": {
+                            "sizing-mode": "proportional",
+                            "value": 1.0
+                          }
+                        },
+                        "image-content": "image_15.png",
+                        "scale": "cover"
+                      }
+                    ],
+                    "clip-content": false
+                  },
+                  {
+                    "type": "vector",
+                    "margin": {
+                      "top": "210.99999999724227",
+                      "bottom": "1.00000000275773"
+                    },
+                    "alignment": {
+                      "horizontal": {
+                        "attachment": "start",
+                        "offset": -0.001953125
+                      },
+                      "vertical": {
+                        "attachment": "start",
+                        "offset": -1.0
+                      }
+                    },
+                    "size-constraints": {
+                      "width-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      },
+                      "height-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      }
+                    },
+                    "vector-content": "line_9.svg"
+                  },
+                  {
+                    "type": "text",
+                    "margin": {
+                      "left": "34.0",
+                      "right": "852.0",
+                      "bottom": "133.0"
+                    },
+                    "size-constraints": {
+                      "width-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      },
+                      "height-constraints": {
+                        "sizing-mode": "proportional",
+                        "value": 1.0
+                      }
+                    },
+                    "font-weight": 600.0,
+                    "color": {
+                      "alpha": "1.0",
+                      "hue": "0.0",
+                      "saturation": "0.0",
+                      "value": "0.0"
+                    },
+                    "text-content": "Giá vé",
+                    "overflow": "visible",
+                    "text-align": "left",
+                    "text-size": 65.0,
+                    "line-height": 1.2102272620567909,
+                    "typeface": "Inter"
+                  }
+                ],
+                "clip-content": false
+              },
+              {
+                "type": "image",
+                "margin": {
+                  "left": "6.0",
+                  "top": "206.0",
+                  "right": "1006.0",
+                  "bottom": "2315.0"
+                },
+                "size-constraints": {
+                  "width-constraints": {
+                    "sizing-mode": "proportional",
+                    "value": 1.0
+                  },
+                  "height-constraints": {
+                    "sizing-mode": "proportional",
+                    "value": 1.0
+                  }
+                },
+                "image-content": "image_13.png",
+                "scale": "cover"
+              }
+            ],
+            "clip-content": false
+          }
+        ]
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}
