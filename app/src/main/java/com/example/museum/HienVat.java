@@ -4,13 +4,18 @@ public class HienVat {
     private String tenHienVat;
     private String thoiLuong;
     private String thongTin;
-    private String hinhAnh;
+    private int hinhAnh;
 
-    public HienVat(String tenHienVat, String s, String s1, String hinhAnh) {
+    public HienVat(String tenHienVat, String s, String s1, int hinhAnh) {
         this.tenHienVat = tenHienVat;
         this.thoiLuong = s;
         this.thongTin = s1;
         this.hinhAnh = hinhAnh;
+    }
+    public HienVat(String tenHienVat, String s, String s1) {
+        this.tenHienVat = tenHienVat;
+        this.thoiLuong = s;
+        this.thongTin = s1;
     }
 
     public void setTenHienVat(String tenHienVat) {
@@ -25,7 +30,7 @@ public class HienVat {
         this.thongTin = thongTin;
     }
 
-    public void setHinhAnh(String hinhAnh) {
+    public void setHinhAnh(int hinhAnh) {
         this.hinhAnh = hinhAnh;
     }
 
@@ -41,7 +46,7 @@ public class HienVat {
         return thongTin;
     }
 
-    public String getHinhAnh() {
+    public int getHinhAnh() {
         return hinhAnh;
     }
 }

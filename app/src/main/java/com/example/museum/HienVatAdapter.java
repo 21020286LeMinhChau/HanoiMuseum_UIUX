@@ -26,17 +26,52 @@ public class HienVatAdapter extends RecyclerView.Adapter<HienVatViewHolder>{
     @NonNull
     @Override
     public HienVatViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        Context context
+                = parent.getContext();
+        LayoutInflater inflater
+                = LayoutInflater.from(context);
+
+        // Inflate the layout
+
+        View photoView
+                = inflater
+                .inflate(R.layout.hienvat,
+                        parent, false);
+
+        HienVatViewHolder viewHolder
+                = new HienVatViewHolder(photoView);
+        return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull HienVatViewHolder holder, int position) {
+        int index = holder.getAdapterPosition();
+        holder.TenHienVat
+                .setText(list.get(position).getTenHienVat());
+        holder.ThoiLuong
+                .setText(list.get(position).getThoiLuong());
+        holder.ThongTin
+                .setText(list.get(position).getThongTin());
+        holder.HinhAnh
+                .setImageResource(list.get(position).getHinhAnh());
 
+        holder.view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                listiner.click(index);
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return list.size();
+    }
+    public void onAttachedToRecyclerView(
+            RecyclerView recyclerView)
+    {
+        super.onAttachedToRecyclerView(recyclerView);
     }
 }
 

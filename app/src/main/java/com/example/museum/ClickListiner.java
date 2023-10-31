@@ -4,9 +4,8 @@ public class ClickListiner {
 
     // here index is index
 // of item clicked
-    public int click(int index) {
+    public void click(int index) {
         // do something with index
-        return index;
     }
 
     ;

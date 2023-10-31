@@ -10,9 +10,13 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.Museum.NoActionBar"
-        tools:targetApi="31">
+        tools:targetApi="34"
+        >
         <activity
-            android:name=".ThongTinChung"
+            android:name=".map"
+            android:exported="false" />
+        <activity
+            android:name=".ThongTinRieng"
             android:exported="true"
             android:theme="@style/Theme.Museum.NoActionBar">
             <intent-filter>
@@ -21,10 +25,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".SplashSecond"></activity>
-        <activity
-            android:name=".SplashThird"></activity>
+        <activity android:name=".SplashSecond" />
+        <activity android:name=".SplashThird" />
+        <activity android:name=".ThongTinChung" />
     </application>
 
 </manifest>

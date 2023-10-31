@@ -19,6 +19,7 @@ public class HienVatViewHolder extends RecyclerView.ViewHolder{
         ThoiLuong = (TextView) view.findViewById(R.id.thoiluong);
         ThongTin = (TextView) view.findViewById(R.id.thongtin);
         HinhAnh = (ImageView) view.findViewById(R.id.hinhanh);
+        this.view = view;
 
     }
 }

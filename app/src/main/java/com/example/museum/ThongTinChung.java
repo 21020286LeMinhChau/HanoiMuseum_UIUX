@@ -7,6 +7,7 @@ import android.content.IntentFilter;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -27,6 +28,7 @@ public class    ThongTinChung extends AppCompatActivity{
         TextView thoiGian = findViewById(R.id.thoigian);
         TextView thongTinChung = findViewById(R.id.thongtinchungreal);
         TextView giaVe = findViewById(R.id.giave);
+        TextView thamQuan = findViewById(R.id.thamquan);
         thoiGian.setVisibility(TextView.GONE);
         giaVe.setVisibility(TextView.GONE);
 //        bottomNavigationView
@@ -36,6 +38,14 @@ public class    ThongTinChung extends AppCompatActivity{
 //                .setOnNavigationItemSelectedListener((BottomNavigationView.OnNavigationItemSelectedListener) this);
 //        bottomNavigationView.setSelectedItemId(R.id.explore);
         modifiedLayout(count);
+        thamQuan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(ThongTinChung.this, ThongTinRieng.class);
+                startActivity(intent);
+            }
+        });
     }
     TextView thamQuan;
     @SuppressLint("UseCompatLoadingForDrawables")
@@ -96,11 +106,6 @@ public class    ThongTinChung extends AppCompatActivity{
                 giaVe.setVisibility(TextView.VISIBLE);
                 xemThem2.setText("Thu gọn");
             }
-        });
-        thamQuan.setOnClickListener(v -> {
-            Intent intent = new Intent();
-            intent.setClass(ThongTinChung.this, ThongTinRieng.class);
-            startActivity(intent);
         });
     }
 
