@@ -1,4 +1,4 @@
-package com.example.museum;
+package com.example.museum.Khampha.Thamquan;
 
 import android.view.View;
 import android.widget.ImageView;
@@ -6,6 +6,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.museum.R;
 
 public class HienVatViewHolder extends RecyclerView.ViewHolder{
     TextView TenHienVat;

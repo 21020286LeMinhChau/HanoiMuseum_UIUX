@@ -1,57 +1,55 @@
-package com.example.museum;
+package com.example.museum.Khampha.Thamquan;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.museum.Khampha.thongtin;
+import com.example.museum.R;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class ThongTinRieng extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class ThamquanNew extends Fragment implements AdapterView.OnItemSelectedListener{
     HienVatAdapter adapter;
     RecyclerView recyclerView;
     ClickListiner listiner;
     String[] floor = {"Tầng 1", "Tầng 2", "Tầng 3", "Tầng 4", "Tầng 5"};
     LinkedList<HienVat> hienVats = new LinkedList<>();
-
+    @Nullable
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.thongtinrieng);
-        Spinner spin = findViewById(R.id.tang);
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             @Nullable ViewGroup container,
+                             @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(
+                R.layout.fragment_thamquan_new, container, false);
+        Spinner spin = view.findViewById(R.id.tang);
         spin.setOnItemSelectedListener(this);
-        ArrayAdapter<String> aa = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, floor);
+        ArrayAdapter<String> aa = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, floor);
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spin.setAdapter(aa);
-        TextView thongtinchung = findViewById(R.id.thongtinchung);
-        Intent intent = new Intent();
-        thongtinchung.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                intent.setClass(ThongTinRieng.this, ThongTinChung.class);
-                startActivity(intent);
-            }
-        });
-        Button map = findViewById(R.id.mapbutton);
+
+        Button map = view.findViewById(R.id.mapbutton);
         map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
-                intent.setClass(ThongTinRieng.this, map.class);
+                intent.setClass(requireContext(), com.example.museum.Khampha.Thamquan.map.class);
                 startActivity(intent);
             }
         });
@@ -59,22 +57,22 @@ public class ThongTinRieng extends AppCompatActivity implements AdapterView.OnIt
         list = getData();
 
         recyclerView
-                = (RecyclerView)findViewById(
+                = (RecyclerView)view.findViewById(
                 R.id.recyclerView);
         listiner = new ClickListiner() {
             @Override
             public void click(int index){
-                Toast.makeText(ThongTinRieng.this, "Clicked on : " + index, Toast.LENGTH_SHORT).show();
+                Toast.makeText(requireContext(), "Clicked on : " + index, Toast.LENGTH_SHORT).show();
             }
         };
         adapter
                 = new HienVatAdapter(
-                list, getApplication(),listiner);
+                list, requireActivity(),listiner);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(
-                new LinearLayoutManager(ThongTinRieng.this));
-        TextView thongTinTomTat = findViewById(R.id.thongtintomtat);
-        TextView xemthem = findViewById(R.id.xemthem);
+                new LinearLayoutManager(requireContext()));
+        TextView thongTinTomTat = view.findViewById(R.id.thongtintomtat);
+        TextView xemthem = view.findViewById(R.id.xemthem);
         xemthem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -90,23 +88,11 @@ public class ThongTinRieng extends AppCompatActivity implements AdapterView.OnIt
                 }
             }
         });
+        return view;
     }
 
 
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
-        super.onPointerCaptureChanged(hasCapture);
-    }
 
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        ((TextView) view).setTextSize(14);
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-
-    }
     private List<HienVat> getData()
     {
         List<HienVat> list = new ArrayList<>();
@@ -121,5 +107,15 @@ public class ThongTinRieng extends AppCompatActivity implements AdapterView.OnIt
                 "This is testing exam .."));
 
         return list;
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 }

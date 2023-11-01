@@ -1,4 +1,4 @@
-package com.example.museum;
+package com.example.museum.Khampha.Thamquan;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.museum.Khampha.thongtin;
+import com.example.museum.R;
 import com.github.barteksc.pdfviewer.PDFView;
 
 public class map extends AppCompatActivity {
@@ -22,7 +24,7 @@ public class map extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
-                intent.setClass(map.this, ThongTinRieng.class);
+                intent.setClass(map.this, thongtin.class);
                 startActivity(intent);
             }
         });
