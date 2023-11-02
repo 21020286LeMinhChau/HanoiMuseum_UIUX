@@ -10,6 +10,13 @@ android {
     namespace 'com.example.museum'
     compileSdk 34
 
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.4.3'
+    }
+
     defaultConfig {
         applicationId "com.example.museum"
         minSdk 24
@@ -30,8 +37,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     buildFeatures {
         viewBinding true
@@ -42,6 +49,8 @@ android {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
         }
     }
+
+    packagingOptions { resources.excludes.add("META-INF/*") }
 }
 
 realm {
