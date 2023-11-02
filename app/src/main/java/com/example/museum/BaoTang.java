@@ -1,32 +1,14 @@
 package com.example.museum;
 
-import java.io.Serializable;
-
-public class ItemsDomain implements Serializable {
+public class BaoTang {
     private String nameOfMuseum;
     private String theme;
     private String address;
-    private int priceOfTicket;
+    private String priceOfTicket;
     private String openings;
-    private  String pic;
+    private  int pic;
 
-    public String getTheme() {
-        return theme;
-    }
-
-    public void setTheme(String theme) {
-        this.theme = theme;
-    }
-
-    public String getPic() {
-        return pic;
-    }
-
-    public void setPic(String pic) {
-        this.pic = pic;
-    }
-
-    public ItemsDomain(String nameOfMuseum, String address, String theme, int priceOfTicket, String openings, String pic) {
+    public BaoTang(String nameOfMuseum, String theme, String address, String priceOfTicket, String openings, int pic) {
         this.nameOfMuseum = nameOfMuseum;
         this.theme = theme;
         this.address = address;
@@ -43,6 +25,14 @@ public class ItemsDomain implements Serializable {
         this.nameOfMuseum = nameOfMuseum;
     }
 
+    public String getTheme() {
+        return theme;
+    }
+
+    public void setTheme(String theme) {
+        this.theme = theme;
+    }
+
     public String getAddress() {
         return address;
     }
@@ -51,11 +41,11 @@ public class ItemsDomain implements Serializable {
         this.address = address;
     }
 
-    public int getPriceOfTicket() {
+    public String getPriceOfTicket() {
         return priceOfTicket;
     }
 
-    public void setPriceOfTicket(int priceOfTicket) {
+    public void setPriceOfTicket(String priceOfTicket) {
         this.priceOfTicket = priceOfTicket;
     }
 
@@ -65,5 +55,13 @@ public class ItemsDomain implements Serializable {
 
     public void setOpenings(String openings) {
         this.openings = openings;
+    }
+
+    public int getPic() {
+        return pic;
+    }
+
+    public void setPic(int pic) {
+        this.pic = pic;
     }
 }

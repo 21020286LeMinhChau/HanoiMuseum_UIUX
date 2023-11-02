@@ -11,7 +11,7 @@ public class SplashFirst extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.splash_first);
+        setContentView(R.layout.home);
 
 
     }

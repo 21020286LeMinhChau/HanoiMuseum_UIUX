@@ -16,7 +16,7 @@
             android:name=".map"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Home"
             android:exported="true"
             android:theme="@style/Theme.Museum.NoActionBar">
             <intent-filter>

@@ -2,9 +2,9 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="205dp"
-    android:layout_height="210dp"
-    android:layout_margin="8dp"
+    android:layout_width="260dp"
+    android:layout_height="260dp"
+    android:layout_margin="6dp"
     app:cardCornerRadius="10dp"
     app:cardElevation="3dp">
 
@@ -16,8 +16,8 @@
         <ImageView
             android:id="@+id/pic"
             android:layout_width="match_parent"
-            android:layout_height="154dp"
-            android:scaleType="fitStart"
+            android:layout_height="195dp"
+            android:scaleType="fitXY"
             android:src="@drawable/item1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -31,7 +31,7 @@
             android:paddingLeft="8px"
             android:text="Bảo tàng Mỹ thuật Việt Nam"
             android:textColor="@color/black"
-            android:textSize="32px"
+            android:textSize="36px"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/pic" />
@@ -40,11 +40,11 @@
             android:id="@+id/themeTxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/robotoslablight"
+            android:fontFamily="@font/robotoslabregular"
             android:paddingLeft="8px"
             android:text="Bảo tàng Nghệ thuật"
             android:textColor="@color/black"
-            android:textSize="16px"
+            android:textSize="20px"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/nameTxt" />
@@ -54,7 +54,7 @@
             android:layout_width="16px"
             android:layout_height="16px"
             android:layout_marginStart="3dp"
-            android:layout_marginTop="1dp"
+            android:layout_marginTop="2dp"
             android:src="@drawable/placeholder"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/themeTxt" />
@@ -64,20 +64,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:fontFamily="@font/robotoslablight"
+            android:fontFamily="@font/robotoslabregular"
             android:paddingLeft="8px"
             android:text="Phố Nguyễn Thái Học, Ba Đình"
             android:textColor="@color/black"
-            android:textSize="16px"
+            android:textSize="20px"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageView11"
             app:layout_constraintTop_toBottomOf="@+id/themeTxt" />
+
         <ImageView
             android:id="@+id/imageView12"
             android:layout_width="16px"
             android:layout_height="16px"
             android:layout_marginStart="3dp"
-            android:layout_marginTop="1dp"
+            android:layout_marginTop="2dp"
             android:src="@drawable/dollar"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/addressTxt" />
@@ -87,20 +88,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:fontFamily="@font/robotoslablight"
+            android:fontFamily="@font/robotoslabregular"
             android:paddingLeft="8px"
             android:text="100.000"
             android:textColor="@color/black"
-            android:textSize="16px"
+            android:textSize="20px"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageView12"
             app:layout_constraintTop_toBottomOf="@+id/addressTxt" />
+
         <ImageView
             android:id="@+id/imageView13"
             android:layout_width="16px"
             android:layout_height="16px"
             android:layout_marginStart="3dp"
-            android:layout_marginTop="1dp"
+            android:layout_marginTop="2dp"
             android:src="@drawable/time"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/priceTxt" />
@@ -110,16 +112,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:fontFamily="@font/robotoslablight"
+            android:fontFamily="@font/robotoslabregular"
             android:paddingLeft="8px"
             android:text="8 am - 8 pm"
             android:textColor="@color/black"
-            android:textSize="16px"
+            android:textSize="20px"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageView13"
             app:layout_constraintTop_toBottomOf="@+id/priceTxt" />
-
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -23,7 +23,7 @@
                     android:id="@+id/imageView14"
                     android:layout_width="wrap_content"
                     android:layout_height="274dp"
-                    android:scaleType="fitStart"
+                    android:scaleType="fitXY"
                     android:src="@drawable/hanoimuseum"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -32,9 +32,9 @@
                 <View
                     android:id="@+id/view"
                     android:layout_width="wrap_content"
-                    android:layout_height="60dp"
+                    android:layout_height="80dp"
                     android:background="#70000000"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView14"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
 
                 <TextView
@@ -44,9 +44,9 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginBottom="8dp"
                     android:fontFamily="@font/robotoslabregular"
-                    android:text="LEARN MORE"
+                    android:text="TÌM HIỂU THÊM"
                     android:textColor="@color/white"
-                    android:textSize="16px"
+                    android:textSize="10sp"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView14"
                     app:layout_constraintStart_toStartOf="@+id/view" />
 
@@ -60,7 +60,7 @@
                     android:text="Bảo tàng Hà Nội"
 
                     android:textColor="@color/white"
-                    android:textSize="40px"
+                    android:textSize="20sp"
                     app:layout_constraintBottom_toTopOf="@+id/textView15"
                     app:layout_constraintStart_toStartOf="@+id/imageView14" />
 
@@ -73,7 +73,7 @@
                     android:fontFamily="@font/robotoslablight"
                     android:text="Bảo tàng Nghệ Thuật"
                     android:textColor="@color/white"
-                    android:textSize="16px"
+                    android:textSize="12sp"
                     app:layout_constraintBottom_toTopOf="@+id/textView17"
                     app:layout_constraintStart_toStartOf="@+id/imageView14" />
 
