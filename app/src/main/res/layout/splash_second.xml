@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/robotoslabregular"
 
-        android:text="Những hiện vật ẩn sau các hậu cảnh của bảo tàng đều đang chờ bạn khám phá. Hãy bắt đầu cuộc hành trình của bạn."
+        android:text="Những câu chuyện ẩn sau các hiện vật của bảo tàng đang chờ bạn khám phá."
         android:textColor="@color/black"  />
 
     <Button

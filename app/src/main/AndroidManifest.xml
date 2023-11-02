@@ -20,7 +20,7 @@
             android:name=".Khampha.Thamquan.map"
             android:exported="false" />
         <activity
-            android:name=".Khampha.thongtin"
+            android:name=".Home"
             android:exported="true"
             android:theme="@style/Theme.Museum.NoActionBar"
             android:windowSoftInputMode="adjustNothing" >

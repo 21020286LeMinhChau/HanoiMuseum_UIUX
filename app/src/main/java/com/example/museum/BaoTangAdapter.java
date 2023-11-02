@@ -32,7 +32,6 @@ public class BaoTangAdapter extends  RecyclerView.Adapter<BaoTangAdapter.BaoTang
                 return;
             }
              holder.nameOfMuseum.setText(baoTang.getNameOfMuseum());
-             holder.theme.setText(baoTang.getTheme());
              holder.address.setText(baoTang.getAddress());
              holder.priceOfTicket.setText(baoTang.getPriceOfTicket());
              holder.openings.setText(baoTang.getOpenings());
@@ -52,7 +51,6 @@ public class BaoTangAdapter extends  RecyclerView.Adapter<BaoTangAdapter.BaoTang
 
     class BaoTangViewHolder extends RecyclerView.ViewHolder{
         private TextView nameOfMuseum;
-        private TextView theme;
         private TextView address;
         private TextView priceOfTicket;
         private TextView openings;
@@ -60,7 +58,6 @@ public class BaoTangAdapter extends  RecyclerView.Adapter<BaoTangAdapter.BaoTang
         public BaoTangViewHolder(@NonNull View itemView) {
             super(itemView);
             nameOfMuseum = (TextView) itemView.findViewById(R.id.nameTxt);
-            theme = (TextView) itemView.findViewById(R.id.themeTxt);
             address =  (TextView) itemView.findViewById(R.id.addressTxt);
             priceOfTicket = (TextView) itemView.findViewById(R.id.priceTxt);
             openings =(TextView)  itemView.findViewById(R.id.openingsTxt);

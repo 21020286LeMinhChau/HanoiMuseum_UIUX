@@ -2,15 +2,13 @@ package com.example.museum;
 
 public class BaoTang {
     private String nameOfMuseum;
-    private String theme;
     private String address;
     private String priceOfTicket;
     private String openings;
     private  int pic;
 
-    public BaoTang(String nameOfMuseum, String theme, String address, String priceOfTicket, String openings, int pic) {
+    public BaoTang(String nameOfMuseum, String address, String priceOfTicket, String openings, int pic) {
         this.nameOfMuseum = nameOfMuseum;
-        this.theme = theme;
         this.address = address;
         this.priceOfTicket = priceOfTicket;
         this.openings = openings;
@@ -25,13 +23,7 @@ public class BaoTang {
         this.nameOfMuseum = nameOfMuseum;
     }
 
-    public String getTheme() {
-        return theme;
-    }
 
-    public void setTheme(String theme) {
-        this.theme = theme;
-    }
 
     public String getAddress() {
         return address;
