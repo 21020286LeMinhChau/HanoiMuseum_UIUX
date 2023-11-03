@@ -8,11 +8,13 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager2.widget.ViewPager2;
 
 import java.util.List;
 
 public class BaoTangAdapter extends  RecyclerView.Adapter<BaoTangAdapter.BaoTangViewHolder> {
     private List<BaoTang> baoTangList;
+    private ViewPager2 viewPager2;
 
     public BaoTangAdapter(List<BaoTang> baoTangList) {
         this.baoTangList = baoTangList;

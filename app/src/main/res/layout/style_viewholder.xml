@@ -42,7 +42,7 @@
             android:fontFamily="@font/robotoslabmedium"
             android:text="Quân sự"
             android:textColor="@color/white"
-            android:textSize="48sp"
+            android:textSize="44sp"
             app:layout_constraintBottom_toBottomOf="@+id/picTheme"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
