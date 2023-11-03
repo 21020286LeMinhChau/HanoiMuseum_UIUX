@@ -1,4 +1,4 @@
-package com.example.museum;
+package com.example.museum.Trangchu;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

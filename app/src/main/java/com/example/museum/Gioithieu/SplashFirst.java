@@ -1,9 +1,11 @@
-package com.example.museum;
+package com.example.museum.Gioithieu;
 
 import android.os.Bundle;
 
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.museum.R;
 
 
 public class SplashFirst extends AppCompatActivity {

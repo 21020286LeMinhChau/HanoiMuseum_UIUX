@@ -20,7 +20,7 @@
             android:name=".Khampha.Thamquan.map"
             android:exported="false" />
         <activity
-            android:name=".Home"
+            android:name=".Trangchu.Home"
             android:exported="true"
             android:theme="@style/Theme.Museum.NoActionBar"
             android:windowSoftInputMode="adjustNothing" >
@@ -30,8 +30,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SplashSecond" />
-        <activity android:name=".SplashThird" />
+        <activity android:name=".Gioithieu.SplashSecond" />
+        <activity android:name=".Gioithieu.SplashThird" />
         <activity
             android:name=".Khampha.Thamquan.ThamQuan"
             android:windowSoftInputMode="adjustNothing" />

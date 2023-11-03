@@ -1,4 +1,4 @@
-package com.example.museum;
+package com.example.museum.Gioithieu;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.museum.R;
 
 
 public class SplashSecond  extends AppCompatActivity {

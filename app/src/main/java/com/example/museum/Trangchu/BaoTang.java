@@ -1,4 +1,4 @@
-package com.example.museum;
+package com.example.museum.Trangchu;
 
 public class BaoTang {
     private String nameOfMuseum;

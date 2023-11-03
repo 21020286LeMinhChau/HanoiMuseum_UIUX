@@ -1,4 +1,4 @@
-package com.example.museum;
+package com.example.museum.Trangchu;
 
 import android.os.Bundle;
 
@@ -8,11 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.museum.R;
 
-public class Fragment3 extends Fragment {
+
+public class Fragment1 extends Fragment {
 
 
-    public Fragment3() {
+    public Fragment1() {
         // Required empty public constructor
     }
 
@@ -20,6 +22,6 @@ public class Fragment3 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_item3, container, false);
+        return inflater.inflate(R.layout.fragment_item1, container, false);
     }
 }
