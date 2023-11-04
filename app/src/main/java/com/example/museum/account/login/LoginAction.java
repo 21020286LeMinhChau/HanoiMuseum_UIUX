@@ -15,6 +15,7 @@ import com.example.museum.Gioithieu.SplashThird;
 import com.example.museum.MainActivity;
 import com.example.museum.R;
 
+import com.example.museum.Trangchu.Home;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class LoginAction  extends AppCompatActivity {
@@ -79,7 +80,7 @@ public class LoginAction  extends AppCompatActivity {
                 password.getEditText().setText("");
             }else{
                 Toast.makeText(getApplicationContext(), "Login Successfully!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(LoginAction.this, MainActivity.class);
+                Intent intent = new Intent(LoginAction.this, Home.class);
                 startActivity(intent);
             }
         }

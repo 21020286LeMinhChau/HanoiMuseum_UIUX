@@ -5,7 +5,17 @@ public class BaoTang {
     private String address;
     private String priceOfTicket;
     private String openings;
+    private String topic;
     private  int pic;
+
+    public BaoTang(String nameOfMuseum, String address, String priceOfTicket, String openings,String topic, int pic) {
+        this.nameOfMuseum = nameOfMuseum;
+        this.address = address;
+        this.priceOfTicket = priceOfTicket;
+        this.openings = openings;
+        this.topic = topic;
+        this.pic = pic;
+    }
 
     public BaoTang(String nameOfMuseum, String address, String priceOfTicket, String openings, int pic) {
         this.nameOfMuseum = nameOfMuseum;

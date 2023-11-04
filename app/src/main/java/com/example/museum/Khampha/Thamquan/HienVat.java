@@ -4,7 +4,16 @@ public class HienVat {
     private String tenHienVat;
     private String thoiLuong;
     private String thongTin;
+    private String chude;
     private int hinhAnh;
+
+    public HienVat(String tenHienVat, String thoiLuong, String thongTin,String chude, int hinhAnh) {
+        this.tenHienVat = tenHienVat;
+        this.thoiLuong = thoiLuong;
+        this.thongTin = thongTin;
+        this.chude = chude;
+        this.hinhAnh = hinhAnh;
+    }
 
     public HienVat(String tenHienVat, String s, String s1, int hinhAnh) {
         this.tenHienVat = tenHienVat;
