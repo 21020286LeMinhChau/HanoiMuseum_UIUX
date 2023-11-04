@@ -5,6 +5,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:ignore="ExtraText">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/loadingFrame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="10dp"
+            android:background="@color/transparent_black"
+            android:visibility="invisible"
+            >
+                <ProgressBar
+                    android:id="@+id/progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/Theme.Museum.WhiteAccent"
+                    android:visibility="invisible"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.5">
+
+                </ProgressBar>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
         <Button
             android:id="@+id/back_btn"
             android:layout_width="35dp"
@@ -128,15 +154,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
+            android:layout_margin="20dp"
             android:backgroundTint="@color/yellow"
             android:fontFamily="@font/robotoslabregular"
             android:text="Login"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.4"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.716"
-            android:layout_margin="20dp"/>
+            app:layout_constraintTop_toBottomOf="@+id/password"
+            app:layout_constraintVertical_bias="0.387" />
 </androidx.constraintlayout.widget.ConstraintLayout>

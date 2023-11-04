@@ -106,7 +106,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/agree_btn"
+        android:id="@+id/TaC_btn"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -128,15 +128,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
+        android:layout_margin="20dp"
+        android:layout_marginBottom="156dp"
         android:backgroundTint="@color/yellow"
         android:fontFamily="@font/robotoslabregular"
         android:text="Create Account"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.716"
-        android:layout_margin="20dp"/>
+        app:layout_constraintTop_toBottomOf="@+id/TaC_btn"
+        app:layout_constraintVertical_bias="0.316" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,10 +2,14 @@ package com.example.museum.database;
 
 
 
+import android.os.AsyncTask;
+import android.os.StrictMode;
 import android.util.Log;
 
 
 import org.bson.Document;
+
+import java.net.UnknownHostException;
 
 import io.realm.mongodb.App;
 import io.realm.mongodb.AppConfiguration;
@@ -15,7 +19,7 @@ import io.realm.mongodb.mongo.MongoClient;
 import io.realm.mongodb.mongo.MongoCollection;
 import io.realm.mongodb.mongo.MongoDatabase;
 public class MongoDBConnection {
-    private static final String Appid = "money-meow-jufwk";
+    private static final String Appid = "application-0-sigfy";
     private static App app;
 
     public static App getApp() {
@@ -23,19 +27,18 @@ public class MongoDBConnection {
     }
 
     public static void connect() {
-
         app = new App(new AppConfiguration.Builder(Appid).build());
-        app.loginAsync(Credentials.emailPassword("haibaraaicute@gmail.com", "123456"), new App.Callback<User>() {
+        app.loginAsync(Credentials.emailPassword("mmunt59@gmail.com", "123456"), new App.Callback<User>() {
             @Override
             public void onResult(App.Result<User> result) {
                 if(result.isSuccess())
                 {
-                    Log.v("User","Logged In Successfully");
+                    Log.v("AUTH","MongoDB Connected");
 
                 }
                 else
                 {
-                    Log.v("User","Failed to Login");
+                    Log.e("AUTH", result.getError().toString());
                 }
             }
         });
@@ -50,10 +53,12 @@ public class MongoDBConnection {
             MongoDBConnection.connect();
         }
 
+
         User user = MongoDBConnection.getApp().currentUser();
         MongoClient mongoClient = user.getMongoClient("mongodb-atlas");
         MongoDatabase mongoDatabase = mongoClient.getDatabase(database);
         MongoCollection<Document> mongoCollection = mongoDatabase.getCollection(collection);
         return mongoCollection;
     }
+
 }
