@@ -3,6 +3,7 @@ package com.example.museum;
 import android.content.Intent;
 import android.os.Bundle;
 
+
 import com.example.museum.account.Account;
 import com.example.museum.account.createAccount.CreateAccount;
 import com.example.museum.account.login.LoginAction;
@@ -16,6 +17,14 @@ import android.view.View;
 
 import android.widget.Button;
 
+import android.view.View;
+import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.museum.Gioithieu.SplashSecond;
+
+
 import io.realm.Realm;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Realm.init(this);
@@ -42,4 +52,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }

@@ -11,9 +11,10 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import com.example.museum.Gioithieu.SplashThird;
 import com.example.museum.MainActivity;
 import com.example.museum.R;
-import com.example.museum.SplashThird;
+
 import com.google.android.material.textfield.TextInputLayout;
 
 public class LoginAction  extends AppCompatActivity {

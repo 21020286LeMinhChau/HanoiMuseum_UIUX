@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/robotoslabregular"
 
-        android:text="Hãy tận hưởng cuộc hành trình và tham gia khám phá lịch sử và nghệ thuật thông qua ứng dụng của chúng tôi."
+        android:text="Hãy tận hưởng cuộc hành trình và tham gia khám phá lịch sử - nghệ thuật thông qua ứng dụng của chúng tôi."
         android:textColor="@color/black" />
 
     <Button

@@ -8,9 +8,10 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.museum.Gioithieu.SplashThird;
 import com.example.museum.MainActivity;
 import com.example.museum.R;
-import com.example.museum.SplashThird;
+
 import com.example.museum.account.Account;
 import com.example.museum.account.PasswordEncryption;
 import com.google.android.material.textfield.TextInputLayout;
