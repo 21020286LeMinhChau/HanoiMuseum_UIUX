@@ -15,6 +15,12 @@ public class ObjectQuery {
         return hienvat;
     }
 
+    public static HienVat FindByID(String id){
+        Document docs = new Document(MongoDBQuery.queryOne("hanoi-museum","objects",new Document("_id",id)));
+        HienVat hienvat = new HienVat(docs.getString("name"),docs.getString("timing"), docs.getString("info"),docs.getString("topic"), docs.getInteger("pic"));
+        return hienvat;
+    }
+
     public static List<HienVat> FindByTopic(String topic){
         List<Document> docs = new ArrayList<>(MongoDBQuery.find("hanoi-museum","objects",new Document("topic",topic)));
         List<HienVat> hienVats = new ArrayList<>();

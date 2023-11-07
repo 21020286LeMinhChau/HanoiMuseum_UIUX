@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 
+import com.example.museum.QR.ScanQR;
 import com.example.museum.account.Account;
 import com.example.museum.account.createAccount.CreateAccount;
 import com.example.museum.account.login.LoginAction;
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
-                intent.setClass(MainActivity.this, SplashSecond.class);
+                intent.setClass(MainActivity.this, ScanQR.class);
                 startActivity(intent);
             }
         });
