@@ -1,4 +1,4 @@
-package com.example.museum;
+package com.example.museum.Audio;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import android.widget.VideoView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.museum.R;
 
 public class Video extends AppCompatActivity {
     @Override

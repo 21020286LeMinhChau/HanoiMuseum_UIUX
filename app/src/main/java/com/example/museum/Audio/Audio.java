@@ -1,4 +1,4 @@
-package com.example.museum;
+package com.example.museum.Audio;
 
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -14,7 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
-import com.example.museum.Trangchu.ViewPager2Adapter;
+import com.example.museum.R;
 
 public class Audio extends AppCompatActivity {
     private ImageView imagePlayPause;
