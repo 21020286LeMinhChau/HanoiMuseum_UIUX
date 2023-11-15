@@ -1,6 +1,5 @@
-package com.example.museum.Trangchu;
+package com.example.museum.Khampha.Search;
 
-import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,12 +7,28 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.annotation.SuppressLint;
+import android.os.Bundle;
+
 import com.example.museum.R;
+import com.example.museum.Trangchu.BaoTang;
+import com.example.museum.Trangchu.BaoTangAdapter;
+import com.example.museum.Trangchu.ChuDe;
+import com.example.museum.Trangchu.ChuDeAdapter;
+import com.example.museum.Trangchu.ViewPager2Adapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Home extends AppCompatActivity {
+public class TimKiemChung extends AppCompatActivity {
+
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_tim_kiem_chung);
+//    }
+
+
     private RecyclerView rcvBaoTang;
     private List<BaoTang> listBaoTang;
     private BaoTangAdapter baoTangAdapter;
@@ -22,20 +37,19 @@ public class Home extends AppCompatActivity {
     private ChuDeAdapter chuDeAdapter;
     private ViewPager2 viewPager2;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home);
-
-        viewPager2 = findViewById(R.id.viewpager2);
-        ViewPager2Adapter viewPager2Adapter = new ViewPager2Adapter(this);
-        viewPager2.setAdapter(viewPager2Adapter);
+        setContentView(R.layout.activity_tim_kiem_chung);
 
 
 
 
-        rcvBaoTang= findViewById(R.id.viewRecommend);
-        rcvChuDe= findViewById(R.id.viewStyleMuseum);
+
+
+        rcvBaoTang= findViewById(R.id.chung_pho_bien);
+        rcvChuDe= findViewById(R.id.chung_hien_vat);
         // Them Bao Tang de xuat
         listBaoTang = new ArrayList<>();
         BaoTang baoTang1 = new BaoTang("Bảo tàng Mỹ thuật",  " Hà Nội", " 100000", "8am-10pm", R.drawable.item1);
@@ -70,4 +84,6 @@ public class Home extends AppCompatActivity {
         rcvChuDe.setLayoutManager(linearLayoutManager_theme);
         rcvChuDe.setAdapter(chuDeAdapter);
     }
+
+
 }

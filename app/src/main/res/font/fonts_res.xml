@@ -16,4 +16,21 @@
         android:fontStyle="normal"
         android:font="@font/robotoslabregular"
         ></font>
+
+
+    <font
+        android:fontStyle="normal"
+        android:font="@font/judsonbold"
+        >
+    </font>
+    <font
+        android:fontStyle="italic"
+        android:font="@font/judsonitalic"
+        >
+    </font>
+    <font
+        android:fontStyle="normal"
+        android:font="@font/judsonregular"
+        >
+    </font>
 </font-family>
