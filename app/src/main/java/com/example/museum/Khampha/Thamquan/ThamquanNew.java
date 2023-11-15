@@ -93,18 +93,18 @@ public class ThamquanNew extends Fragment implements AdapterView.OnItemSelectedL
 
 
 
-    private List<HienVat> getData()
+    public List<HienVat> getData()
     {
         List<HienVat> list = new ArrayList<>();
         list.add(new HienVat("Gốm chu đậu",
                 "0:35",
-                "Thời Lý", R.drawable.bat));
-        list.add(new HienVat("Second Exam",
-                "June 09, 2015",
-                "b of l"));
-        list.add(new HienVat("My Test Exam",
-                "April 27, 2017",
-                "This is testing exam .."));
+                "Thời Lý", R.drawable.bat, "https://webaudioapi.com/samples/audio-tag/chrono.mp3"));
+        list.add(new HienVat("Item 1",
+                "0:57",
+                "Thời Đinh",R.drawable.bat,"https://webaudioapi.com/samples/audio-tag/chrono.mp3"));
+        list.add(new HienVat("Item 2",
+                "0:35",
+                "Thời Nguyễn",R.drawable.bat,"https://webaudioapi.com/samples/audio-tag/chrono.mp3"));
 
         return list;
     }

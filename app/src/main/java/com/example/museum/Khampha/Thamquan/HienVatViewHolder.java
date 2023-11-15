@@ -14,6 +14,7 @@ public class HienVatViewHolder extends RecyclerView.ViewHolder{
     TextView ThoiLuong;
     TextView ThongTin;
     ImageView HinhAnh;
+    TextView AudioSource;
     View view;
     public HienVatViewHolder(@NonNull View view) {
         super(view);

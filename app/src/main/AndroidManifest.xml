@@ -23,7 +23,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="34">
 
-        <activity android:name=".MainActivity"
+        <activity android:name=".Khampha.thongtin"
             android:exported="true">
 
             <intent-filter>
@@ -41,9 +41,9 @@
             android:exported="false">
         </activity>
 
-        <activity
-            android:name=".Audio.Audio"
-            android:exported="false"/>
+<!--        <activity-->
+<!--            android:name=".Audio.Audio"-->
+<!--            android:exported="false"/>-->
         <activity
             android:name=".Khampha.Thamquan.map"
             android:exported="false" />
