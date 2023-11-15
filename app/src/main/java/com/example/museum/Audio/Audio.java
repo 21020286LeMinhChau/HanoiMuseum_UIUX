@@ -14,6 +14,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.example.museum.Khampha.Thamquan.HienVat;
+import com.example.museum.Khampha.Thamquan.HienVatAdapter;
 import com.example.museum.R;
 
 public class Audio extends AppCompatActivity {
@@ -40,6 +42,9 @@ public class Audio extends AppCompatActivity {
         playerSeekBar=findViewById(R.id.playerSeekBar);
         mediaPlayer = new MediaPlayer();
         playerSeekBar.setMax(100);
+        HienVat hienvat = new HienVat("Gốm chu đậu",
+                 "0:35",
+                 "Thời Lý", R.drawable.bat, "https://webaudioapi.com/samples/audio-tag/chrono.mp3");
         imagePlayPause.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -55,7 +60,7 @@ public class Audio extends AppCompatActivity {
                 }
             }
         });
-        prepareMediaPlayer();
+        prepareMediaPlayer(hienvat);
         playerSeekBar.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -67,9 +72,9 @@ public class Audio extends AppCompatActivity {
             }
         });
     }
-    private void prepareMediaPlayer(){
+    private void prepareMediaPlayer(HienVat hienVat){
         try{
-            mediaPlayer.setDataSource("https://webaudioapi.com/samples/audio-tag/chrono.mp3"); // URL of music file
+            mediaPlayer.setDataSource(hienVat.getAudioSource()); // URL of music file
             mediaPlayer.prepare();
             textTotalDuration.setText(milliSecondsToTimer(mediaPlayer.getDuration()));
         } catch (Exception exception){
