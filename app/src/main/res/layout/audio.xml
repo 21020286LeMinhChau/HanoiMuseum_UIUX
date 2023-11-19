@@ -8,7 +8,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
-        android:layout_height="800dp"
+        android:layout_height="770dp"
         android:fitsSystemWindows="true">
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
@@ -194,13 +194,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:layout_marginTop="48dp"
+                    android:layout_marginTop="36dp"
                     android:backgroundTint="#1B1B1B"
                     android:src="@drawable/playlist"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageButton4" />
             </androidx.constraintlayout.widget.ConstraintLayout>
             <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"/>
@@ -212,15 +213,51 @@
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
         android:background="@drawable/bg_shape">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/moreInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/robotoslabmedium"
+                android:text="Thông tin thêm"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="34dp"
+                android:layout_marginEnd="16dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/robotoslablight"
+                android:minLines="12"
+                android:text="Xe tăng, là một biểu tượng vững chắc của sức mạnh quân sự và công nghệ hiện đại, đóng vai trò quan trọng trong lịch sử chiến tranh và đối đầu quân sự. Được thiết kế với mục đích chủ yếu là đánh chiến và bảo vệ, xe tăng tỏ ra là một phương tiện chiến đấu không thể thiếu trong nhiều chiến lược quân sự. Được trang bị với lớp giáp chắc chắn và vũ khí hiện đại, xe tăng không chỉ có khả năng chống đạn mạnh mẽ mà còn có thể tung ra những đòn tấn công mạnh mẽ từ xa."
+                android:textColor="@color/white"
+
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/moreInfo"
+                app:layout_constraintTop_toTopOf="@id/moreInfo" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:baselineAlignBottom="false"
-        android:src="@drawable/arrowdownaudio"
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:baselineAlignBottom="false"-->
+<!--        android:src="@drawable/arrowdownaudio"-->
 
 
-        />
+<!--        />-->
 <!--        app:layout_anchor="@id/appbar"-->
 <!--        app:layout_anchorGravity="end"-->
 

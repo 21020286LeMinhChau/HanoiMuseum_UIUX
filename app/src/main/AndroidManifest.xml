@@ -23,7 +23,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="34">
 
-        <activity android:name=".Khampha.thongtin"
+        <activity android:name=".Audio.Audio"
             android:exported="true">
 
             <intent-filter>
