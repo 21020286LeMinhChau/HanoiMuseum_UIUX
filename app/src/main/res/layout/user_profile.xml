@@ -8,8 +8,10 @@
     android:background="#ececec">
 
     <ScrollView
+        android:id="@+id/scrollView3"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -45,8 +47,8 @@
                     android:id="@+id/username"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Lion Fischer"
                     android:layout_marginTop="16dp"
+                    android:text="Lion Fischer"
                     android:textSize="25sp"
                     android:textStyle="bold"
 
@@ -66,6 +68,7 @@
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/infoBtn"
+                        style="@android:style/Widget.Button"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:layout_marginStart="32dp"
@@ -77,53 +80,53 @@
                         android:drawablePadding="20dp"
                         android:paddingStart="20dp"
                         android:text="Thông tin"
+                        android:textAlignment="viewStart"
                         android:textSize="18sp"
-                        android:textStyle="bold"
-                        style="@android:style/Widget.Button"
-                        android:textAlignment="viewStart" />
+                        android:textStyle="bold" />
+
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/editBtn"
+                        style="@android:style/Widget.Button"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:layout_marginStart="32dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="32dp"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        style="@android:style/Widget.Button"
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/btn_background_1"
                         android:drawableStart="@drawable/ic_edit"
                         android:drawablePadding="20dp"
                         android:paddingStart="20dp"
                         android:text="Chỉnh sửa thông tin"
-                        android:textAlignment="viewStart" />
+                        android:textAlignment="viewStart"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/policyBtn"
+                        style="@android:style/Widget.Button"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:layout_marginStart="32dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="32dp"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        style="@android:style/Widget.Button"
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/btn_background_1"
                         android:drawableStart="@drawable/ic_policy"
                         android:drawablePadding="20dp"
                         android:paddingStart="20dp"
                         android:text="Điều khoản bảo mật"
-                        android:textAlignment="viewStart" />
+                        android:textAlignment="viewStart"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/logoutBtn"
+                        style="@android:style/Widget.Button"
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:layout_marginStart="32dp"
                         android:layout_marginTop="10dp"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        style="@android:style/Widget.Button"
                         android:layout_marginEnd="32dp"
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/btn_background_1"
@@ -131,13 +134,42 @@
                         android:drawablePadding="20dp"
                         android:paddingStart="20dp"
                         android:text="Đăng xuất"
-                        android:textAlignment="viewStart" />
+                        android:textAlignment="viewStart"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
 
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/show_screen"
+        android:layout_width="350dp"
+        android:layout_height="500dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="invisible">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            android:background="@drawable/ic_close"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
         android:layout_width="match_parent"
