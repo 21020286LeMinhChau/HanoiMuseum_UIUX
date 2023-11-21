@@ -25,14 +25,14 @@
         android:usesCleartextTraffic="true"
             tools:targetApi="34"></activity>
 
-        <activity android:name=".MainActivity"
+        <activity android:name=".Audio.Audio"
             android:exported="true">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
 
 
@@ -45,9 +45,9 @@
 
 
 
-        <activity
-            android:name=".Audio.Audio"
-            android:exported="false"/>
+<!--        <activity-->
+<!--            android:name=".Audio.Audio"-->
+<!--            android:exported="false"/>-->
         <activity
             android:name=".Khampha.Thamquan.map"
             android:exported="false" />
@@ -55,6 +55,7 @@
             android:name=".Trangchu.Home"
             android:exported="true"
             android:theme="@style/Theme.Museum.NoActionBar"
+
             android:windowSoftInputMode="adjustNothing">
 
         </activity>
@@ -63,6 +64,18 @@
             android:exported="false"></activity>
         <activity android:name=".Gioithieu.SplashSecond" />
         <activity android:name=".Gioithieu.SplashThird" />
+
+
+        <activity android:name=".account.profile.profile"
+            android:exported="true">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+
+
     </application>
 
 </manifest>
