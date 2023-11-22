@@ -20,17 +20,17 @@
 
     <font
         android:fontStyle="normal"
-        android:font="@font/judsonbold"
+        android:font="@font/judson_bold"
         >
     </font>
     <font
         android:fontStyle="italic"
-        android:font="@font/judsonitalic"
+        android:font="@font/judson_italic"
         >
     </font>
     <font
         android:fontStyle="normal"
-        android:font="@font/judsonregular"
+        android:font="@font/judson_regular"
         >
     </font>
 </font-family>
