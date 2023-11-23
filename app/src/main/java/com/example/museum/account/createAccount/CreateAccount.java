@@ -38,6 +38,7 @@ public class CreateAccount extends AppCompatActivity {
 
         signUpBtn = (Button) findViewById(R.id.createAcc_btn);
         backBtn = (Button)  findViewById(R.id.back_btn);
+        TaCBtn = (Button) findViewById(R.id.TaC_btn);
 
         signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override

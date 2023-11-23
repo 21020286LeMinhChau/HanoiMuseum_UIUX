@@ -20,6 +20,18 @@
         android:theme="@style/Theme.Museum.NoActionBar"
 
         tools:targetApi="34">
+
+
+        <activity android:name=".MainActivity"
+            android:exported="true">
+                        <intent-filter>
+                            <action android:name="android.intent.action.MAIN" />
+
+                            <category android:name="android.intent.category.LAUNCHER" />
+                        </intent-filter>
+
+        </activity>
+
         <activity
             android:name=".Khampha.Search.TimKiemChung"
         android:usesCleartextTraffic="true"
@@ -68,22 +80,11 @@
 
         <activity android:name=".account.profile.profile"
             android:exported="true">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
         </activity>
 
 
         <activity android:name=".account.TaP.TaP"
             android:exported="true">
-
-            <intent-filter>
-                        <action android:name="android.intent.action.MAIN" />
-
-                   <category android:name="android.intent.category.LAUNCHER" />
-                   </intent-filter>-->
 
         </activity>
 
