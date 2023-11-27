@@ -2,11 +2,10 @@ package com.example.museum.Trangchu;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 public class ViewPager2Adapter extends FragmentStateAdapter {
-    public ViewPager2Adapter(@NonNull FragmentActivity fragmentActivity) {
+    public ViewPager2Adapter(@NonNull Home fragmentActivity) {
         super(fragmentActivity);
     }
 

@@ -1,6 +1,10 @@
 package com.example.museum.Trangchu;
 
+import androidx.fragment.app.Fragment;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,7 +17,7 @@ import com.example.museum.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Home extends AppCompatActivity {
+public class Home extends Fragment {
     private RecyclerView rcvBaoTang;
     private List<BaoTang> listBaoTang;
     private BaoTangAdapter baoTangAdapter;
@@ -23,19 +27,15 @@ public class Home extends AppCompatActivity {
     private ViewPager2 viewPager2;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.home);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.home, container, false);
 
-        viewPager2 = findViewById(R.id.viewpager2);
+        viewPager2 = rootView.findViewById(R.id.viewpager2);
         ViewPager2Adapter viewPager2Adapter = new ViewPager2Adapter(this);
         viewPager2.setAdapter(viewPager2Adapter);
 
-
-
-
-        rcvBaoTang= findViewById(R.id.viewRecommend);
-        rcvChuDe= findViewById(R.id.viewStyleMuseum);
+        rcvBaoTang= rootView.findViewById(R.id.viewRecommend);
+        rcvChuDe= rootView.findViewById(R.id.viewStyleMuseum);
         // Them Bao Tang de xuat
         listBaoTang = new ArrayList<>();
          BaoTang baoTang1 = new BaoTang("Bảo tàng Mỹ thuật",  " Hà Nội", " 100000", "8am-10pm", R.drawable.item1);
@@ -61,13 +61,14 @@ public class Home extends AppCompatActivity {
 
 
         baoTangAdapter = new BaoTangAdapter(listBaoTang);
-        LinearLayoutManager linearLayoutManager_museum = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false);
+        LinearLayoutManager linearLayoutManager_museum = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL,false);
         rcvBaoTang.setLayoutManager(linearLayoutManager_museum);
         rcvBaoTang.setAdapter(baoTangAdapter);
 
         chuDeAdapter = new ChuDeAdapter(listChuDe);
-        LinearLayoutManager linearLayoutManager_theme = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false);
+        LinearLayoutManager linearLayoutManager_theme = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL,false);
         rcvChuDe.setLayoutManager(linearLayoutManager_theme);
         rcvChuDe.setAdapter(chuDeAdapter);
+        return rootView;
     }
 }

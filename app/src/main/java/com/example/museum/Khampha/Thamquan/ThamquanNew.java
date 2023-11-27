@@ -2,12 +2,15 @@ package com.example.museum.Khampha.Thamquan;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Layout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,11 +18,13 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.museum.Khampha.thongtin;
 import com.example.museum.R;
+import com.github.barteksc.pdfviewer.PDFView;
+import com.github.barteksc.pdfviewer.listener.OnLoadCompleteListener;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -28,6 +33,7 @@ import java.util.List;
 public class ThamquanNew extends Fragment implements AdapterView.OnItemSelectedListener{
     HienVatAdapter adapter;
     RecyclerView recyclerView;
+    View mapThongTin;
     ClickListiner listiner;
     String[] floor = {"Tầng 1", "Tầng 2", "Tầng 3", "Tầng 4", "Tầng 5"};
     LinkedList<HienVat> hienVats = new LinkedList<>();
@@ -45,14 +51,35 @@ public class ThamquanNew extends Fragment implements AdapterView.OnItemSelectedL
         spin.setAdapter(aa);
 
         Button map = view.findViewById(R.id.mapbutton);
+        mapThongTin = view.findViewById(R.id.include);
+        View thamquan = view.findViewById(R.id.scrollThamquan);
+
         map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setClass(requireContext(), com.example.museum.Khampha.Thamquan.map.class);
-                startActivity(intent);
+                mapThongTin.setVisibility(View.VISIBLE);
+                thamquan.setVisibility(View.GONE);
+
+                ImageButton back = mapThongTin.findViewById(R.id.back);
+                PDFView pdfView = mapThongTin.findViewById(R.id.pdfView);
+                pdfView.fromAsset("map1.pdf").onLoad(new OnLoadCompleteListener() {
+                    @Override
+                    public void loadComplete(int nbPages) {
+                        Log.d("TAG", "loadComplete: " + nbPages);
+
+                    }
+                }).load();
+                back.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        mapThongTin.setVisibility(View.GONE);
+                        thamquan.setVisibility(View.VISIBLE);
+                    }
+                });
             }
         });
+
+
         List<HienVat> list = new ArrayList<>();
         list = getData();
 
