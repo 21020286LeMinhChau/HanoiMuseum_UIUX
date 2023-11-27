@@ -9,7 +9,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.museum.Khampha.thongtinAll;
+import com.example.museum.QR.ScanQR;
 import com.example.museum.Trangchu.Home;
+import com.example.museum.account.profile.profile;
 import com.example.museum.databinding.ActivityMainRunBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.io.*;
@@ -21,19 +23,24 @@ public class Main_run extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if(savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment_activity_main, containerHome).commit();
+        }
         binding = ActivityMainRunBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         binding.navView.setOnItemSelectedListener(item->{
             switch (item.getItemId()) {
                 case R.id.homeStart:
-                    replaceFragment(containerHome);
+                    replaceFragment(new Home());
                     break;
                 case R.id.explore:
-                    replaceFragment(containerThongTin);
+                    replaceFragment(new thongtinAll());
                     return true;
                 case R.id.scan:
+                    replaceFragment(new ScanQR());
                     return true;
                 case R.id.profile:
+                    replaceFragment(new profile());
                     return true;
                 case R.id.map:
                     return true;

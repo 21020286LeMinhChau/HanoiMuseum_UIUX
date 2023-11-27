@@ -14,6 +14,54 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="share_app_text">Please kindly share User Profile Template with your friends!</string>
+
+    <!-- Chuỗi Điều khoản và Điều kiện sử dụng -->
+    <string name="terms_and_conditions_content">
+        <![CDATA[
+            <b>1.</b> Quyền và Trách nhiệm:<br/>
+            &emsp;&emsp;- Mô tả quyền và trách nhiệm của người sử dụng khi truy cập và sử dụng dịch vụ hoặc trang web.<br/>
+            &emsp;&emsp;- Quy định về việc sử dụng nội dung, dữ liệu và tài nguyên có sẵn trên dịch vụ.<br/>
+
+            <b>2.</b> Chấp nhận Điều khoản:<br/>
+            &emsp;&emsp;- Mô tả quy trình chấp nhận Điều khoản và điều kiện sử dụng.<br/>
+            &emsp;&emsp;- Cung cấp thông tin về việc người dùng phải đồng ý với các điều khoản trước khi sử dụng dịch vụ.<br/>
+
+            <b>3.</b> Chính sửa và Hủy bỏ:<br/>
+            &emsp;&emsp;- Quy định về quyền của nhà cung cấp để chỉnh sửa hoặc hủy bỏ các điều khoản mà không cần thông báo trước.<br/>
+
+            <b>4.</b> Bản quyền và Sở hữu trí tuệ:<br/>
+            &emsp;&emsp;- Chỉ định quyền sở hữu trí tuệ đối với nội dung được cung cấp trên dịch vụ hoặc trang web.<br/>
+
+            <b>5.</b> Trách nhiệm Pháp lý:<br/>
+            &emsp;&emsp;- Xác định trách nhiệm pháp lý của cả người cung cấp dịch vụ và người sử dụng.<br/>
+        ]]>
+    </string>
+
+    <!-- Chuỗi Chính sách Bảo mật -->
+    <string name="privacy_policy_content">
+        <![CDATA[
+            <b>1.</b> Dữ liệu Thu thập:<br/>
+            &emsp;&emsp;- Mô tả loại thông tin cá nhân mà dịch vụ hoặc trang web có thể thu thập từ người dùng.<br/>
+
+            <b>2.</b> Mục đích Thu thập Dữ liệu:<br/>
+            &emsp;&emsp;- Đặc tả mục đích chính của việc thu thập dữ liệu cá nhân.<br/>
+
+            <b>3.</b> Lưu trữ và Bảo mật Dữ liệu:<br/>
+            &emsp;&emsp;- Mô tả biện pháp bảo mật mà dịch vụ áp dụng để bảo vệ dữ liệu cá nhân.<br/>
+
+            <b>4.</b> Chia Sẻ Dữ liệu:<br/>
+            &emsp;&emsp;- Xác định liệu dữ liệu cá nhân có được chia sẻ với bên thứ ba hay không, và nếu có, mục đích của việc chia sẻ.<br/>
+
+            <b>5.</b> Quyền và Lựa chọn của Người dùng:<br/>
+            &emsp;&emsp;- Mô tả quyền lực của người sử dụng đối với dữ liệu cá nhân của họ và cách họ có thể điều chỉnh việc sử dụng thông tin của mình.<br/>
+
+            <b>6.</b> Thay Đổi trong Chính sách Bảo mật:<br/>
+            &emsp;&emsp;- Thông báo về quy định thay đổi trong chính sách bảo mật và cách thông báo sẽ được cung cấp.<br/>
+        ]]>
+    </string>
+
+
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
@@ -106,5 +154,5 @@
     <string name="title_activity_thong_tin">ActivityThongTin</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_main_run">Main_run</string>
+    <string name="zero">0:00</string>
 </resources>

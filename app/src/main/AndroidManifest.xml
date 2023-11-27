@@ -47,6 +47,7 @@
         </activity>
         <activity android:name=".Gioithieu.SplashSecond" />
         <activity android:name=".Gioithieu.SplashThird" />
+        <activity android:name=".account.TaP.TaP"/>
     </application>
 
 </manifest>
