@@ -5,21 +5,24 @@ public class HienVat {
     private String thoiLuong;
     private String thongTin;
     private String chude;
+    private String audioSource;
     private int hinhAnh;
 
-    public HienVat(String tenHienVat, String thoiLuong, String thongTin,String chude, int hinhAnh) {
+    public HienVat(String tenHienVat, String thoiLuong, String thongTin,String chude, String audioSource, int hinhAnh) {
         this.tenHienVat = tenHienVat;
         this.thoiLuong = thoiLuong;
         this.thongTin = thongTin;
         this.chude = chude;
+        this.audioSource = audioSource;
         this.hinhAnh = hinhAnh;
     }
 
-    public HienVat(String tenHienVat, String s, String s1, int hinhAnh) {
+    public HienVat(String tenHienVat, String s, String s1, int hinhAnh, String audioSource) {
         this.tenHienVat = tenHienVat;
         this.thoiLuong = s;
         this.thongTin = s1;
         this.hinhAnh = hinhAnh;
+        this.audioSource =audioSource;
     }
     public HienVat(String tenHienVat, String s, String s1) {
         this.tenHienVat = tenHienVat;
@@ -42,7 +45,9 @@ public class HienVat {
     public void setHinhAnh(int hinhAnh) {
         this.hinhAnh = hinhAnh;
     }
-
+    public void setAudioSource(String audioSource) {
+        this.audioSource=audioSource;
+    }
     public String getTenHienVat() {
         return tenHienVat;
     }
@@ -57,5 +62,8 @@ public class HienVat {
 
     public int getHinhAnh() {
         return hinhAnh;
+    }
+    public String getAudioSource() {
+        return audioSource;
     }
 }

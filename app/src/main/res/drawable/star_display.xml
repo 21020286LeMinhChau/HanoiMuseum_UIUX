@@ -3,3 +3,4 @@
     <item android:drawable="@drawable/star" android:state_checked="true" />
     <item android:drawable="@drawable/starcolor" android:state_checked="false" />
 </selector>
+

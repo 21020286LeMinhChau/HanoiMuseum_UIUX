@@ -15,6 +15,7 @@ import com.example.museum.R;
 import com.example.museum.Trangchu.Home;
 import com.example.museum.account.Account;
 import com.example.museum.account.PasswordEncryption;
+import com.example.museum.account.TaP.TaP;
 import com.google.android.material.textfield.TextInputLayout;
 import androidx.annotation.Nullable;
 
@@ -37,6 +38,7 @@ public class CreateAccount extends AppCompatActivity {
 
         signUpBtn = (Button) findViewById(R.id.createAcc_btn);
         backBtn = (Button)  findViewById(R.id.back_btn);
+        TaCBtn = (Button) findViewById(R.id.TaC_btn);
 
         signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,7 +57,7 @@ public class CreateAccount extends AppCompatActivity {
                                 account.addNewUserToDB();
 
                                 Toast.makeText(getApplicationContext(), "Sign Up Successfully!", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(CreateAccount.this, Home.class).putExtra("from", "Signup");
+                                Intent intent = new Intent(CreateAccount.this, Home.class);
                                 startActivity(intent);
                             }
                         });
@@ -69,6 +71,14 @@ public class CreateAccount extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(CreateAccount.this, SplashThird.class);
+                startActivity(intent);
+            }
+        });
+
+        TaCBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CreateAccount.this, TaP.class).putExtra("from", "Signup");
                 startActivity(intent);
             }
         });
