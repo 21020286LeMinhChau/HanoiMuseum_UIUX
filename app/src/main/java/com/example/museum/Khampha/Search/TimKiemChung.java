@@ -1,14 +1,19 @@
 package com.example.museum.Khampha.Search;
 
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.example.museum.R;
 import com.example.museum.Trangchu.BaoTang;
@@ -20,7 +25,7 @@ import com.example.museum.Trangchu.ViewPager2Adapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TimKiemChung extends AppCompatActivity {
+public class TimKiemChung extends Fragment {
 
 //    @Override
 //    protected void onCreate(Bundle savedInstanceState) {
@@ -39,17 +44,11 @@ public class TimKiemChung extends AppCompatActivity {
 
     @SuppressLint("MissingInflatedId")
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tim_kiem_chung);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.activity_tim_kiem_chung, container, false);
 
-
-
-
-
-
-        rcvBaoTang= findViewById(R.id.chung_pho_bien);
-        rcvChuDe= findViewById(R.id.chung_hien_vat);
+        rcvBaoTang= view.findViewById(R.id.chung_pho_bien);
+        rcvChuDe= view.findViewById(R.id.chung_hien_vat);
         // Them Bao Tang de xuat
         listBaoTang = new ArrayList<>();
         BaoTang baoTang1 = new BaoTang("Bảo tàng Mỹ thuật",  " Hà Nội", " 100000", "8am-10pm", R.drawable.item1);
@@ -75,14 +74,15 @@ public class TimKiemChung extends AppCompatActivity {
 
 
         baoTangAdapter = new BaoTangAdapter(listBaoTang);
-        LinearLayoutManager linearLayoutManager_museum = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false);
+        LinearLayoutManager linearLayoutManager_museum = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL,false);
         rcvBaoTang.setLayoutManager(linearLayoutManager_museum);
         rcvBaoTang.setAdapter(baoTangAdapter);
 
         chuDeAdapter = new ChuDeAdapter(listChuDe);
-        LinearLayoutManager linearLayoutManager_theme = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false);
+        LinearLayoutManager linearLayoutManager_theme = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL,false);
         rcvChuDe.setLayoutManager(linearLayoutManager_theme);
         rcvChuDe.setAdapter(chuDeAdapter);
+        return view;
     }
 
 

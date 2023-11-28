@@ -8,7 +8,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.museum.Khampha.Search.TimKiemChung;
 import com.example.museum.Khampha.thongtinAll;
+import com.example.museum.Map.MapsFragment;
 import com.example.museum.QR.ScanQR;
 import com.example.museum.Trangchu.Home;
 import com.example.museum.account.profile.profile;
@@ -43,6 +45,7 @@ public class Main_run extends AppCompatActivity {
                     replaceFragment(new profile());
                     return true;
                 case R.id.map:
+                    replaceFragment(new MapsFragment());
                     return true;
             }
             return true;
