@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.museum.Khampha.thongtinAll;
+import com.example.museum.Map.MapsFragment;
 import com.example.museum.QR.ScanQR;
 import com.example.museum.Trangchu.Home;
 import com.example.museum.account.LoginAccount;
@@ -18,8 +19,6 @@ import com.example.museum.account.profile.profile;
 import com.example.museum.database.MongoDBConnection;
 import com.example.museum.database.query.MongoDBQuery;
 import com.example.museum.databinding.ActivityMainRunBinding;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import java.io.*;
 
 import io.realm.Realm;
 
@@ -63,6 +62,7 @@ public class Main_run extends AppCompatActivity {
                     replaceFragment(new profile());
                     return true;
                 case R.id.map:
+                    replaceFragment(new MapsFragment());
                     return true;
             }
             return true;
