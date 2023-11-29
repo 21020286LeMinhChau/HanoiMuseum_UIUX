@@ -11,6 +11,179 @@
         android:layout_height="match_parent"
         android:background="#FFFFFFFF">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="411dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+            <ImageView
+                android:id="@+id/star"
+                android:layout_width="15dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView19"
+                app:srcCompat="@drawable/star_display" />
+
+            <ImageView
+                android:id="@+id/star6"
+                android:layout_width="15dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="2dp"
+                app:layout_constraintStart_toEndOf="@+id/star"
+                app:layout_constraintTop_toBottomOf="@+id/imageView19"
+                app:srcCompat="@drawable/star_display" />
+
+            <ImageView
+                android:id="@+id/star8"
+                android:layout_width="15dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="2dp"
+                app:layout_constraintStart_toEndOf="@+id/star7"
+                app:layout_constraintTop_toBottomOf="@+id/imageView19"
+                app:srcCompat="@drawable/star_display" />
+
+            <ImageView
+                android:id="@+id/star7"
+                android:layout_width="15dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="2dp"
+                app:layout_constraintStart_toEndOf="@+id/star6"
+                app:layout_constraintTop_toBottomOf="@+id/imageView19"
+                app:srcCompat="@drawable/star_display" />
+
+            <ImageView
+                android:id="@+id/star9"
+                android:layout_width="15dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="2dp"
+                app:layout_constraintStart_toEndOf="@+id/star8"
+                app:layout_constraintTop_toBottomOf="@+id/imageView19"
+                app:srcCompat="@drawable/star_display" />
+
+            <ImageView
+                android:id="@+id/imageView19"
+                android:layout_width="55dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/avatar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:text="Minh Chou Xinh"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/imageView19"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView29"
+                android:layout_width="385dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="15dp"
+                android:text="Đây là đánh giá của chị C. Đây là đánh giá của chị C.Đây là đánh giá của chị C.Đây là đánh giá của chị C.Đây là đánh giá của chị C.Đây là đánh giá của chị C."
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/star8" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="411dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView16">
+
+            <ImageView
+                android:id="@+id/star10"
+                android:layout_width="15dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView22"
+                app:srcCompat="@drawable/star_display" />
+
+            <ImageView
+                android:id="@+id/star11"
+                android:layout_width="15dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="2dp"
+                app:layout_constraintStart_toEndOf="@+id/star10"
+                app:layout_constraintTop_toBottomOf="@+id/imageView22"
+                app:srcCompat="@drawable/star_display" />
+
+            <ImageView
+                android:id="@+id/star12"
+                android:layout_width="15dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="2dp"
+                app:layout_constraintStart_toEndOf="@+id/star11"
+                app:layout_constraintTop_toBottomOf="@+id/imageView22"
+                app:srcCompat="@drawable/star_display" />
+
+            <ImageView
+                android:id="@+id/star13"
+                android:layout_width="15dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="2dp"
+                app:layout_constraintStart_toEndOf="@+id/star12"
+                app:layout_constraintTop_toBottomOf="@+id/imageView22"
+                app:srcCompat="@drawable/star_display" />
+
+            <ImageView
+                android:id="@+id/star14"
+                android:layout_width="15dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="2dp"
+                app:layout_constraintStart_toEndOf="@+id/star13"
+                app:layout_constraintTop_toBottomOf="@+id/imageView22"
+                app:srcCompat="@drawable/star_display" />
+
+            <ImageView
+                android:id="@+id/imageView22"
+                android:layout_width="55dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/avatar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:text="Minh Chou Xinh"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/imageView22"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView31"
+                android:layout_width="385dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="15dp"
+                android:text="Đây là đánh giá của chị C. Đây là đánh giá của chị C.Đây là đánh giá của chị C.Đây là đánh giá của chị C.Đây là đánh giá của chị C.Đây là đánh giá của chị C."
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/star10" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
         <TextView
             android:id="@+id/textView24"
             android:layout_width="wrap_content"
@@ -64,12 +237,13 @@
         <RatingBar
             android:id="@+id/ratingBar"
             android:layout_width="283dp"
-            android:layout_height="51dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="12dp"
             android:layout_marginBottom="32dp"
             android:scaleX="0.7"
             android:scaleY="0.7"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView18"
             app:layout_constraintTop_toBottomOf="@+id/textView28"
             app:layout_constraintVertical_bias="0.0" />
 
@@ -165,5 +339,47 @@
             android:text="Chia sẻ trải nghiệm của bạn để giúp đỡ người khác"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView26" />
+
+        <ImageView
+            android:id="@+id/imageView18"
+            android:layout_width="55dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/avatar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+        <EditText
+            android:id="@+id/editTextTextMultiLine"
+            android:layout_width="364dp"
+            android:layout_height="86dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            android:text="con gà"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+
+        <ImageView
+            android:id="@+id/imageView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/line"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Đăng"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
