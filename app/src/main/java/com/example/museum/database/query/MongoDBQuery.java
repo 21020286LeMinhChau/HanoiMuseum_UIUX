@@ -1,5 +1,7 @@
 package com.example.museum.database.query;
 
+import android.util.Log;
+
 import com.example.museum.database.MongoDBConnection;
 
 import org.bson.Document;
@@ -12,6 +14,9 @@ import io.realm.mongodb.mongo.MongoCollection;
 import io.realm.mongodb.mongo.iterable.MongoCursor;
 
 public class MongoDBQuery {
+    public static Document doc = new Document("email","test");
+    public static List<Document> docs;
+
     public static boolean isExist(String database, String collection, Document document) {
         Document result = queryOne(database, collection, document);
 

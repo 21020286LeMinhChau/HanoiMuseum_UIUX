@@ -10,10 +10,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.museum.Gioithieu.SplashThird;
 import com.example.museum.MainActivity;
+import com.example.museum.MainRun;
 import com.example.museum.R;
 
 import com.example.museum.Trangchu.Home;
 import com.example.museum.account.Account;
+import com.example.museum.account.LoginAccount;
 import com.example.museum.account.PasswordEncryption;
 import com.example.museum.account.TaP.TaP;
 import com.google.android.material.textfield.TextInputLayout;
@@ -57,7 +59,8 @@ public class CreateAccount extends AppCompatActivity {
                                 account.addNewUserToDB();
 
                                 Toast.makeText(getApplicationContext(), "Sign Up Successfully!", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(CreateAccount.this, Home.class);
+                                LoginAccount.account = new Account(email.getEditText().getText().toString(),password.getEditText().getText().toString());
+                                Intent intent = new Intent(CreateAccount.this, MainRun.class);
                                 startActivity(intent);
                             }
                         });

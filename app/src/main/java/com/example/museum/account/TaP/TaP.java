@@ -4,12 +4,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.Spanned;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.museum.MainRun;
 import com.example.museum.R;
 import com.example.museum.Trangchu.Home;
 import com.example.museum.account.createAccount.CreateAccount;
@@ -46,11 +48,13 @@ public class TaP extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = getIntent();
                 String sourceActivity = intent.getStringExtra("from");
-                if(sourceActivity == "Signup"){
-                    Intent nIntent = new Intent(TaP.this, CreateAccount.class).putExtra("from", "Signup");
+                Log.v("test",sourceActivity);
+                if(sourceActivity.equals("Signup")){
+                    Intent nIntent = new Intent(TaP.this, CreateAccount.class);
                     startActivity(nIntent);
                 }else{
-                    Intent nIntent = new Intent(TaP.this, profile.class).putExtra("from", "Signup");
+                    MainRun.fromTaP = true;
+                    Intent nIntent = new Intent(TaP.this, MainRun.class);
                     startActivity(nIntent);
                 }
             }
