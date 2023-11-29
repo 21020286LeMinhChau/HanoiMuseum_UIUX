@@ -16,8 +16,8 @@
     <string name="title_notifications">Notifications</string>
     <string name="share_app_text">Please kindly share User Profile Template with your friends!</string>
 
-        <!-- Chuỗi Điều khoản và Điều kiện sử dụng -->
-        <string name="terms_and_conditions_content">
+    <!-- Chuỗi Điều khoản và Điều kiện sử dụng -->
+    <string name="terms_and_conditions_content">
         <![CDATA[
             <b>1.</b> Quyền và Trách nhiệm:<br/>
             &emsp;&emsp;- Mô tả quyền và trách nhiệm của người sử dụng khi truy cập và sử dụng dịch vụ hoặc trang web.<br/>
@@ -38,8 +38,8 @@
         ]]>
     </string>
 
-        <!-- Chuỗi Chính sách Bảo mật -->
-        <string name="privacy_policy_content">
+    <!-- Chuỗi Chính sách Bảo mật -->
+    <string name="privacy_policy_content">
         <![CDATA[
             <b>1.</b> Dữ liệu Thu thập:<br/>
             &emsp;&emsp;- Mô tả loại thông tin cá nhân mà dịch vụ hoặc trang web có thể thu thập từ người dùng.<br/>

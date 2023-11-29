@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Khampha.DanhGia">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFFFF">
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:text="5.0"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/progressBar4"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="260dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toEndOf="@+id/textView24"
+            app:layout_constraintTop_toBottomOf="@+id/progressBar3" />
+
+        <ProgressBar
+            android:id="@+id/progressBar2"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="260dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toEndOf="@+id/textView24"
+            app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="260dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toEndOf="@+id/textView24"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/progressBar5"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="260dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toEndOf="@+id/textView24"
+            app:layout_constraintTop_toBottomOf="@+id/progressBar4" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="283dp"
+            android:layout_height="51dp"
+            android:layout_marginBottom="32dp"
+            android:scaleX="0.7"
+            android:scaleY="0.7"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView28"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ProgressBar
+            android:id="@+id/progressBar3"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="260dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toEndOf="@+id/textView24"
+            app:layout_constraintTop_toBottomOf="@+id/progressBar2" />
+
+        <ImageView
+            android:id="@+id/star1"
+            android:layout_width="15dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="15dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView24"
+            app:srcCompat="@drawable/star_display" />
+
+        <ImageView
+            android:id="@+id/star2"
+            android:layout_width="15dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="2dp"
+            app:layout_constraintLeft_toRightOf="@id/star1"
+            app:layout_constraintTop_toBottomOf="@+id/textView24"
+            app:srcCompat="@drawable/star_display" />
+
+        <ImageView
+            android:id="@+id/star3"
+            android:layout_width="15dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="2dp"
+            app:layout_constraintLeft_toRightOf="@id/star2"
+            app:layout_constraintTop_toBottomOf="@+id/textView24"
+            app:srcCompat="@drawable/star_display" />
+
+        <ImageView
+            android:id="@+id/star4"
+            android:layout_width="15dp"
+            android:layout_height="20dp"
+
+            android:layout_marginLeft="2dp"
+            app:layout_constraintLeft_toRightOf="@id/star3"
+            app:layout_constraintTop_toBottomOf="@+id/textView24"
+            app:srcCompat="@drawable/star_display" />
+
+        <ImageView
+            android:id="@+id/star5"
+            android:layout_width="15dp"
+            android:layout_height="20dp"
+
+            android:layout_marginLeft="2dp"
+
+            app:layout_constraintLeft_toRightOf="@id/star4"
+            app:layout_constraintTop_toBottomOf="@+id/textView24"
+            app:srcCompat="@drawable/star_display" />
+
+        <TextView
+            android:id="@+id/textView27"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:text="(200)"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@+id/ratingBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/star3"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/textView26"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="Xếp hạng và đánh giá"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/ratingBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView27"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="Chia sẻ trải nghiệm của bạn để giúp đỡ người khác"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView26" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

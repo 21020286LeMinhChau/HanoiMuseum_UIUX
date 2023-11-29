@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.museum.R;
 
 import java.util.List;
@@ -36,7 +37,12 @@ public class ChuDeAdapter extends  RecyclerView.Adapter<ChuDeAdapter.ChuDeViewHo
 
         holder.theme.setText(chuDe.getTheme());
 
-        holder.pic.setImageResource(chuDe.getPic());
+//        holder.pic.setImageResource(chuDe.getPicture());
+
+        Glide.with(holder.itemView.getContext())
+                .load(chuDe.getPicture())
+                .into(holder.pic);
+
 
 
 

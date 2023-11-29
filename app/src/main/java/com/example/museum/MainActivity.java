@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent();
 //                intent.setClass(MainActivity.this, SplashSecond.class);
-                intent.setClass(MainActivity.this, Home.class);
+                intent.setClass(MainActivity.this, Main_run.class);
                 startActivity(intent);
             }
         });

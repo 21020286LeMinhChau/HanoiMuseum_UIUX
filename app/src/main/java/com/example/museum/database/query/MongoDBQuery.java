@@ -46,6 +46,7 @@ public class MongoDBQuery {
         List<Document> res = new ArrayList<>();
         RealmResultTask<MongoCursor<Document>> findTask = mongoCollection.find().iterator();
         MongoCursor<Document> results = findTask.get();
+
         while (results.hasNext()) {
             Document result = results.next();
             res.add(result);
