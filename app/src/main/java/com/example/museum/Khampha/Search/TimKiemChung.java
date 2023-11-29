@@ -61,15 +61,15 @@ public class TimKiemChung extends Fragment {
         listBaoTang.add(baoTang4);
         // Them chu de Bao Tang
         listChuDe = new ArrayList<>();
-        ChuDe chuDe1 = new ChuDe("Quân sự", R.drawable.quansu);
-        ChuDe chuDe2 = new ChuDe("Nghệ thuật", R.drawable.nghethuat);
-        ChuDe chuDe3 = new ChuDe("Dân tộc", R.drawable.dantoc);
-        ChuDe chuDe4 = new ChuDe("Khoa học", R.drawable.khoahoc);
+//        ChuDe chuDe1 = new ChuDe("Quân sự", R.drawable.quansu);
+//        ChuDe chuDe2 = new ChuDe("Nghệ thuật", R.drawable.nghethuat);
+//        ChuDe chuDe3 = new ChuDe("Dân tộc", R.drawable.dantoc);
+//        ChuDe chuDe4 = new ChuDe("Khoa học", R.drawable.khoahoc);
 
-        listChuDe.add(chuDe1);
-        listChuDe.add(chuDe2);
-        listChuDe.add(chuDe3);
-        listChuDe.add(chuDe4);
+//        listChuDe.add(chuDe1);
+//        listChuDe.add(chuDe2);
+//        listChuDe.add(chuDe3);
+//        listChuDe.add(chuDe4);
 
 
 

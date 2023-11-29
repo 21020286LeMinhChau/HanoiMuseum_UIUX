@@ -1,21 +1,22 @@
 package com.example.museum.Trangchu;
 
-import androidx.fragment.app.Fragment;
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
+import androidx.fragment.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.museum.R;
+import com.example.museum.database.query.TopicQuery;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Home extends Fragment {
     private RecyclerView rcvBaoTang;
@@ -25,6 +26,8 @@ public class Home extends Fragment {
     private List<ChuDe> listChuDe;
     private ChuDeAdapter chuDeAdapter;
     private ViewPager2 viewPager2;
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -46,17 +49,14 @@ public class Home extends Fragment {
         listBaoTang.add(baoTang2);
         listBaoTang.add(baoTang3);
         listBaoTang.add(baoTang4);
-        // Them chu de Bao Tang
-        listChuDe = new ArrayList<>();
-        ChuDe chuDe1 = new ChuDe("Quân sự", R.drawable.quansu);
-        ChuDe chuDe2 = new ChuDe("Nghệ thuật", R.drawable.nghethuat);
-        ChuDe chuDe3 = new ChuDe("Dân tộc", R.drawable.dantoc);
-        ChuDe chuDe4 = new ChuDe("Khoa học", R.drawable.khoahoc);
 
-        listChuDe.add(chuDe1);
-        listChuDe.add(chuDe2);
-        listChuDe.add(chuDe3);
-        listChuDe.add(chuDe4);
+
+
+        ExecuteGetChuDe executeGetChuDe = new ExecuteGetChuDe();
+        executeGetChuDe.execute();
+
+
+
 
 
 
@@ -65,10 +65,27 @@ public class Home extends Fragment {
         rcvBaoTang.setLayoutManager(linearLayoutManager_museum);
         rcvBaoTang.setAdapter(baoTangAdapter);
 
-        chuDeAdapter = new ChuDeAdapter(listChuDe);
-        LinearLayoutManager linearLayoutManager_theme = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL,false);
-        rcvChuDe.setLayoutManager(linearLayoutManager_theme);
-        rcvChuDe.setAdapter(chuDeAdapter);
         return rootView;
+
+
+
+    }
+
+    public class ExecuteGetChuDe extends AsyncTask<Void,Void,Void>{
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+//            List<ChuDe> listChuDe1 = new ArrayList<>();
+            listChuDe = TopicQuery.getTopics();
+            return null;
+        }
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            chuDeAdapter = new ChuDeAdapter(listChuDe);
+            LinearLayoutManager linearLayoutManager_theme = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL,false);
+            rcvChuDe.setLayoutManager(linearLayoutManager_theme);
+            rcvChuDe.setAdapter(chuDeAdapter);
+        }
     }
 }

@@ -10,6 +10,7 @@ import android.util.Log;
 import org.bson.Document;
 
 import java.net.UnknownHostException;
+import java.util.Set;
 
 import io.realm.mongodb.App;
 import io.realm.mongodb.AppConfiguration;
@@ -18,6 +19,7 @@ import io.realm.mongodb.User;
 import io.realm.mongodb.mongo.MongoClient;
 import io.realm.mongodb.mongo.MongoCollection;
 import io.realm.mongodb.mongo.MongoDatabase;
+import io.realm.mongodb.mongo.iterable.MongoIterable;
 public class MongoDBConnection {
     private static final String Appid = "application-0-sigfy";
     private static App app;
@@ -57,8 +59,16 @@ public class MongoDBConnection {
         User user = MongoDBConnection.getApp().currentUser();
         MongoClient mongoClient = user.getMongoClient("mongodb-atlas");
         MongoDatabase mongoDatabase = mongoClient.getDatabase(database);
+
+
+
+
         MongoCollection<Document> mongoCollection = mongoDatabase.getCollection(collection);
         return mongoCollection;
     }
+
+
+
+
 
 }

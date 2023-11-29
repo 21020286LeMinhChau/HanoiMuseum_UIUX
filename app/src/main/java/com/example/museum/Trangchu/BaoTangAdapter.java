@@ -35,11 +35,11 @@ public class BaoTangAdapter extends  RecyclerView.Adapter<BaoTangAdapter.BaoTang
             if(baoTang == null){
                 return;
             }
-             holder.nameOfMuseum.setText(baoTang.getNameOfMuseum());
-             holder.address.setText(baoTang.getAddress());
-             holder.priceOfTicket.setText(baoTang.getPriceOfTicket());
-             holder.openings.setText(baoTang.getOpenings());
-             holder.pic.setImageResource(baoTang.getPic());
+            holder.nameOfMuseum.setText(baoTang.getNameOfMuseum());
+            holder.address.setText(baoTang.getAddress());
+            holder.priceOfTicket.setText(baoTang.getPriceOfTicket());
+            holder.openings.setText(baoTang.getOpenings());
+            holder.pic.setImageResource(baoTang.getPic());
 
 
 
