@@ -3,6 +3,7 @@ package com.example.museum.account.login;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -13,9 +14,12 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.museum.Gioithieu.SplashThird;
 import com.example.museum.MainActivity;
+import com.example.museum.Main_run;
 import com.example.museum.R;
 
 import com.example.museum.Trangchu.Home;
+import com.example.museum.account.Account;
+import com.example.museum.account.LoginAccount;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class LoginAction  extends AppCompatActivity {
@@ -80,7 +84,9 @@ public class LoginAction  extends AppCompatActivity {
                 password.getEditText().setText("");
             }else{
                 Toast.makeText(getApplicationContext(), "Login Successfully!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(LoginAction.this, Home.class);
+                LoginAccount.account = new Account(email.getEditText().getText().toString(),password.getEditText().getText().toString());
+                Log.v("test",email.getEditText().toString());
+                Intent intent = new Intent(LoginAction.this, Main_run.class);
                 startActivity(intent);
             }
         }

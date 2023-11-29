@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -48,6 +49,8 @@
         <activity android:name=".Gioithieu.SplashSecond" />
         <activity android:name=".Gioithieu.SplashThird" />
         <activity android:name=".account.TaP.TaP"/>
+        <activity android:name=".account.profile.profile"
+            android:exported="true"/>
     </application>
 
 </manifest>

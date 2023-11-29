@@ -1,6 +1,9 @@
 package com.example.museum.account.createAccount;
 
+import com.example.museum.database.query.MongoDBQuery;
 import com.google.android.material.textfield.TextInputLayout;
+
+import org.bson.Document;
 
 public class AccountValidation {
     public static boolean isEmailInvalid(TextInputLayout valInput) {
@@ -13,7 +16,10 @@ public class AccountValidation {
         } else if (!val.matches(emailRegex)) {
             valInput.setError("Email format is invalid!");
             return true;
-        } else {
+        }else if (MongoDBQuery.isExist("hanoi-museum", "users", new Document().append("email", val))) {
+            valInput.setError("User name has existed!");
+            return true;
+        }  else {
             valInput.setError(null);
             return false;
         }

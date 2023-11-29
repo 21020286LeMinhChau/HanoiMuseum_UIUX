@@ -4,6 +4,7 @@ package com.example.museum.account.profile;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,15 +25,17 @@ import com.example.museum.MainActivity;
 import com.example.museum.R;
 import com.example.museum.Main_run;
 import com.example.museum.account.Account;
+import com.example.museum.account.LoginAccount;
 import com.example.museum.account.TaP.TaP;
 import com.example.museum.account.createAccount.CreateAccount;
+import com.example.museum.database.query.MongoDBQuery;
 
 import at.markushi.ui.CircleButton;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class profile extends Fragment {
 
-   Account account = new Account("test","abc") ;
+   Account account = LoginAccount.account;
 
    ConstraintLayout editScreen;
 
@@ -42,6 +45,7 @@ public class profile extends Fragment {
    Button policyBtn;
    Button logBtn;
    Button closeBtn;
+   Button confirmBtn;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -52,6 +56,7 @@ public class profile extends Fragment {
         logBtn = view.findViewById(R.id.logoutBtn);
         closeBtn = view.findViewById(R.id.Close_Button);
         editScreen = view.findViewById(R.id.show_screen);
+        confirmBtn = view.findViewById(R.id.confirm_btn);
 
         if(account == null){
             username.setText("xin vui lòng đăng nhập");
@@ -100,10 +105,18 @@ public class profile extends Fragment {
             logBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    account = null;
+                    LoginAccount.account = null;
+                    Main_run.logOut = true;
                     Intent intent = new Intent();
                     intent.setClass(getContext(), Main_run.class);
                     startActivity(intent);
+                }
+            });
+
+            confirmBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    editScreen.setVisibility(View.GONE);
                 }
             });
         }
