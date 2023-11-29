@@ -59,7 +59,7 @@ public class CreateAccount extends AppCompatActivity {
                                 account.addNewUserToDB();
 
                                 Toast.makeText(getApplicationContext(), "Sign Up Successfully!", Toast.LENGTH_SHORT).show();
-                                LoginAccount.account = new Account(email.getEditText().toString(),password.getEditText().toString());
+                                LoginAccount.account = new Account(email.getEditText().getText().toString(),password.getEditText().getText().toString());
                                 Intent intent = new Intent(CreateAccount.this, Main_run.class);
                                 startActivity(intent);
                             }

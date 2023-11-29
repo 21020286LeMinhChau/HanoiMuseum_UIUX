@@ -16,10 +16,7 @@ public class AccountValidation {
         } else if (!val.matches(emailRegex)) {
             valInput.setError("Email format is invalid!");
             return true;
-        }else if (MongoDBQuery.isExist("hanoi-museum", "users", new Document().append("email", val))) {
-            valInput.setError("User name has existed!");
-            return true;
-        }  else {
+        } else {
             valInput.setError(null);
             return false;
         }
