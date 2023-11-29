@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.bumptech.glide.Glide;
 import com.example.museum.R;
 
 import java.util.List;
@@ -38,8 +39,10 @@ public class BaoTangAdapter extends  RecyclerView.Adapter<BaoTangAdapter.BaoTang
             holder.nameOfMuseum.setText(baoTang.getNameOfMuseum());
             holder.address.setText(baoTang.getAddress());
             holder.priceOfTicket.setText(baoTang.getPriceOfTicket());
-            holder.openings.setText(baoTang.getOpenings());
-            holder.pic.setImageResource(baoTang.getPic());
+            holder.openings.setText(baoTang.getOpeningsNow());
+            Glide.with(holder.itemView.getContext())
+                    .load(baoTang.getPic())
+                    .into(holder.pic);
 
 
 

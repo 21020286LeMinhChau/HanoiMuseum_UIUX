@@ -49,16 +49,16 @@ public class TimKiemChung extends Fragment {
 
         rcvBaoTang= view.findViewById(R.id.chung_pho_bien);
         rcvChuDe= view.findViewById(R.id.chung_hien_vat);
-        // Them Bao Tang de xuat
+//        // Them Bao Tang de xuat
         listBaoTang = new ArrayList<>();
-        BaoTang baoTang1 = new BaoTang("Bảo tàng Mỹ thuật",  " Hà Nội", " 100000", "8am-10pm", R.drawable.item1);
-        BaoTang baoTang2 = new BaoTang("Bảo tàng Quân đội Việt Nam", " Hà Nội", " 100000", "8am-10pm", R.drawable.item4);
-        BaoTang baoTang3 = new BaoTang("Bảo tàng Thiên nhiên",  " Hà Nội", " 100000", "8am-10pm", R.drawable.item3);
-        BaoTang baoTang4 = new BaoTang("Bảo tàng Hồ Chí Minh",  " Hà Nội", " 100000", "8am-10pm", R.drawable.item2);
-        listBaoTang.add(baoTang1);
-        listBaoTang.add(baoTang2);
-        listBaoTang.add(baoTang3);
-        listBaoTang.add(baoTang4);
+//        BaoTang baoTang1 = new BaoTang("Bảo tàng Mỹ thuật",  " Hà Nội", " 100000", "8am-10pm", R.drawable.item1);
+//        BaoTang baoTang2 = new BaoTang("Bảo tàng Quân đội Việt Nam", " Hà Nội", " 100000", "8am-10pm", R.drawable.item4);
+//        BaoTang baoTang3 = new BaoTang("Bảo tàng Thiên nhiên",  " Hà Nội", " 100000", "8am-10pm", R.drawable.item3);
+//        BaoTang baoTang4 = new BaoTang("Bảo tàng Hồ Chí Minh",  " Hà Nội", " 100000", "8am-10pm", R.drawable.item2);
+//        listBaoTang.add(baoTang1);
+//        listBaoTang.add(baoTang2);
+//        listBaoTang.add(baoTang3);
+//        listBaoTang.add(baoTang4);
         // Them chu de Bao Tang
         listChuDe = new ArrayList<>();
 //        ChuDe chuDe1 = new ChuDe("Quân sự", R.drawable.quansu);

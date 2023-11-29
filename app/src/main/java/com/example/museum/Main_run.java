@@ -1,22 +1,17 @@
 package com.example.museum;
 
 import android.os.Bundle;
-import android.view.MenuItem;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.museum.Khampha.Search.TimKiemChung;
 import com.example.museum.Khampha.thongtinAll;
 import com.example.museum.Map.MapsFragment;
 import com.example.museum.QR.ScanQR;
 import com.example.museum.Trangchu.Home;
 import com.example.museum.account.profile.profile;
 import com.example.museum.databinding.ActivityMainRunBinding;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import java.io.*;
 
 public class Main_run extends AppCompatActivity {
     ActivityMainRunBinding binding;
