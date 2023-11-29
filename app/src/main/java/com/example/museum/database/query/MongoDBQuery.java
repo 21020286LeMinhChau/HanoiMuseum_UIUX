@@ -38,7 +38,10 @@ public class MongoDBQuery {
         return res;
     }
 
+
+
     public static List<Document> findAll(String database, String collection) {
+
         MongoCollection<Document> mongoCollection = MongoDBConnection.accessDatabase(database, collection);
         List<Document> res = new ArrayList<>();
         RealmResultTask<MongoCursor<Document>> findTask = mongoCollection.find().iterator();
@@ -49,4 +52,6 @@ public class MongoDBQuery {
         }
         return res;
     }
+
+
 }

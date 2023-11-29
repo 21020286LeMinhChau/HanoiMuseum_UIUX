@@ -1,6 +1,11 @@
 package com.example.museum.Trangchu;
 
+import android.adservices.topics.Topic;
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +14,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.museum.R;
+import com.example.museum.account.login.LoginAction;
+import com.example.museum.account.login.LoginValidation;
+import com.example.museum.database.query.TopicQuery;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +30,17 @@ public class Home extends AppCompatActivity {
     private ChuDeAdapter chuDeAdapter;
     private ViewPager2 viewPager2;
 
+
+    public class ExecuteGetChuDe extends AsyncTask<Void,Void,Boolean>{
+
+        @Override
+        protected Boolean doInBackground(Void... voids) {
+            List<ChuDe> listChuDe1 = new ArrayList<>();
+            listChuDe1 = TopicQuery.getTopics();
+            System.out.println("size + " + listChuDe1.size());
+            return true;
+        }
+    }
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +65,13 @@ public class Home extends AppCompatActivity {
         listBaoTang.add(baoTang2);
         listBaoTang.add(baoTang3);
         listBaoTang.add(baoTang4);
+
+
+
+        ExecuteGetChuDe executeGetChuDe = new ExecuteGetChuDe();
+        executeGetChuDe.execute();
+
+
         // Them chu de Bao Tang
         listChuDe = new ArrayList<>();
         ChuDe chuDe1 = new ChuDe("Quân sự", R.drawable.quansu);

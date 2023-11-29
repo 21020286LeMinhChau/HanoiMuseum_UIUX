@@ -9,10 +9,10 @@ import java.util.List;
 
 public class TopicQuery {
     public static List<ChuDe> getTopics(){
-        List<Document> docs = new ArrayList<>(MongoDBQuery.findAll("hanoi-museum","topics"));
+        List<Document> docs = new ArrayList<>(MongoDBQuery.findAll("hanoi-museum","museums_chude"));
         List<ChuDe> topics = new ArrayList<>();
         for(int i=0;i<topics.size();i++) {
-            topics.add(new ChuDe(docs.get(i).getString("topic"),docs.get(i).getInteger("pic")));
+            topics.add(new ChuDe(docs.get(i).getString("name"),docs.get(i).getInteger("picture")));
         }
         return topics;
     }
