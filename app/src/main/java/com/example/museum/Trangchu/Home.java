@@ -3,7 +3,9 @@ package com.example.museum.Trangchu;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+
 import androidx.fragment.app.Fragment;
+
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -29,7 +31,6 @@ public class Home extends Fragment {
     private ViewPager2 viewPager2;
 
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.home, container, false);
@@ -38,18 +39,9 @@ public class Home extends Fragment {
         ViewPager2Adapter viewPager2Adapter = new ViewPager2Adapter(this);
         viewPager2.setAdapter(viewPager2Adapter);
 
-        rcvBaoTang= rootView.findViewById(R.id.viewRecommend);
-        rcvChuDe= rootView.findViewById(R.id.viewStyleMuseum);
-        // Them Bao Tang de xuat
-//        listBaoTang = new ArrayList<>();
-//        BaoTang baoTang1 = new BaoTang("Bảo tàng Mỹ thuật",  " Hà Nội", " 100000", "8am-10pm", R.drawable.item1);
-//        BaoTang baoTang2 = new BaoTang("Bảo tàng Quân đội Việt Nam", " Hà Nội", " 100000", "8am-10pm", R.drawable.item4);
-//        BaoTang baoTang3 = new BaoTang("Bảo tàng Thiên nhiên",  " Hà Nội", " 100000", "8am-10pm", R.drawable.item3);
-//        BaoTang baoTang4 = new BaoTang("Bảo tàng Hồ Chí Minh",  " Hà Nội", " 100000", "8am-10pm", R.drawable.item2);
-//        listBaoTang.add(baoTang1);
-//        listBaoTang.add(baoTang2);
-//        listBaoTang.add(baoTang3);
-//        listBaoTang.add(baoTang4);
+        rcvBaoTang = rootView.findViewById(R.id.viewRecommend);
+        rcvChuDe = rootView.findViewById(R.id.viewStyleMuseum);
+
         ExecuteGetBaoTang executeGetBaoTang = new ExecuteGetBaoTang();
         executeGetBaoTang.execute();
 
@@ -57,62 +49,49 @@ public class Home extends Fragment {
         ExecuteGetChuDe executeGetChuDe = new ExecuteGetChuDe();
         executeGetChuDe.execute();
 
-
-
-
-
-//
-//        baoTangAdapter = new BaoTangAdapter(listBaoTang);
-//        LinearLayoutManager linearLayoutManager_museum = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL,false);
-//        rcvBaoTang.setLayoutManager(linearLayoutManager_museum);
-//        rcvBaoTang.setAdapter(baoTangAdapter);
-
         return rootView;
     }
 
-    public class ExecuteGetBaoTang extends AsyncTask<Void,Void,Void>{
+    public class ExecuteGetBaoTang extends AsyncTask<Void, Void, Void> {
 
         @Override
         protected Void doInBackground(Void... voids) {
             List<BaoTang> getListBaoTang = new ArrayList<>();
             getListBaoTang = MuseumQuery.getRandomMuseum(4);
-            
-            System.out.println("getListBaoTang: " + getListBaoTang);
+
             listBaoTang = new ArrayList<>();
             for (int i = 0; i < getListBaoTang.size(); i++) {
                 listBaoTang.add(getListBaoTang.get(i));
             }
-            System.out.println("listBaoTang: " + listBaoTang);
 
 
             return null;
         }
+
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
             baoTangAdapter = new BaoTangAdapter(listBaoTang);
-            LinearLayoutManager linearLayoutManager_museum = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL,false);
+            LinearLayoutManager linearLayoutManager_museum = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
             rcvBaoTang.setLayoutManager(linearLayoutManager_museum);
             rcvBaoTang.setAdapter(baoTangAdapter);
         }
     }
 
 
-    public class ExecuteGetChuDe extends AsyncTask<Void,Void,Void>{
+    public class ExecuteGetChuDe extends AsyncTask<Void, Void, Void> {
 
         @Override
         protected Void doInBackground(Void... voids) {
             List<ChuDe> getListChuDe = new ArrayList<>();
             getListChuDe = TopicQuery.getTopics();
-//            get random 4 topics
 
 
             Random random = new Random();
-//             create Set to avoid duplicate
             List<Integer> randomList = new ArrayList<>();
-            while (randomList.size() < 4 && randomList.size() < getListChuDe.size()){
+            while (randomList.size() < 4 && randomList.size() < getListChuDe.size()) {
                 int randomInt = random.nextInt(getListChuDe.size());
-                if(!randomList.contains(randomInt)){
+                if (!randomList.contains(randomInt)) {
                     randomList.add(randomInt);
                 }
             }
@@ -124,11 +103,12 @@ public class Home extends Fragment {
 
             return null;
         }
+
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
             chuDeAdapter = new ChuDeAdapter(listChuDe);
-            LinearLayoutManager linearLayoutManager_theme = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL,false);
+            LinearLayoutManager linearLayoutManager_theme = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
             rcvChuDe.setLayoutManager(linearLayoutManager_theme);
             rcvChuDe.setAdapter(chuDeAdapter);
         }

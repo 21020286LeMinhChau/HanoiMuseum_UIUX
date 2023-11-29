@@ -20,6 +20,7 @@ public class DanhGia extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View view = inflater
                 .inflate(R.layout.fragment_danhgia, container, false);
+
         return view;
     }
 }

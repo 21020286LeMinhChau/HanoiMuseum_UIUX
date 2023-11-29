@@ -8,27 +8,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
-import com.example.museum.Gioithieu.SplashSecond;
 import com.example.museum.Gioithieu.SplashThird;
-import com.example.museum.MainActivity;
 import com.example.museum.R;
-import com.example.museum.Main_run;
+import com.example.museum.MainRun;
 import com.example.museum.account.Account;
 import com.example.museum.account.TaP.TaP;
-import com.example.museum.account.createAccount.CreateAccount;
-
-import at.markushi.ui.CircleButton;
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class profile extends Fragment {
 
@@ -102,7 +93,7 @@ public class profile extends Fragment {
                 public void onClick(View v) {
                     account = null;
                     Intent intent = new Intent();
-                    intent.setClass(getContext(), Main_run.class);
+                    intent.setClass(getContext(), MainRun.class);
                     startActivity(intent);
                 }
             });

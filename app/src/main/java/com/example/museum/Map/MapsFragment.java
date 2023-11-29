@@ -70,12 +70,16 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapsFragment extends Fragment implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    private UiSettings mUiSettings;
+    private double x_toado;
+    private double y_toado;
 
 
 //    public void onCreate(Bundle savedInstanceState) {
@@ -91,6 +95,15 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
         View rootView = inflater.inflate(R.layout.fragment_maps, container, false);
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        Bundle bundle = getArguments();
+        if (bundle != null) {
+            x_toado = bundle.getDouble("x_toado");
+            y_toado = bundle.getDouble("y_toado");
+        }
+
+
+
         return rootView;
     }
 
@@ -107,14 +120,26 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
+//        set ui setting for map
+        mUiSettings = mMap.getUiSettings();
+        mUiSettings.setZoomControlsEnabled(true);
+        mUiSettings.setCompassEnabled(true);
         // Add a marker in Sydney and move the camera
-        LatLng test = new LatLng(21.035693, 105.832624);
+        LatLng test = new LatLng(x_toado, y_toado);
         mMap.addMarker(new MarkerOptions()
                 .position(test)
-                .title("Marker in Sydney"));
+                .title("Vị trí của Bảo tàng"));
         float zoomLevel = 15.0f; //This goes up to 21
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(test, zoomLevel));
     }
-}
 
+
+    public GoogleMap getMap(){
+        return mMap;
+    }
+
+    public void setMap(GoogleMap map){
+        mMap = map;
+    }
+
+}

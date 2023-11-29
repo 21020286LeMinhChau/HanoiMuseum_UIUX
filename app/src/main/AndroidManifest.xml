@@ -32,7 +32,7 @@
         <!-- android:exported="false" -->
         <!-- android:label="@string/title_activity_main_run" /> -->
         <activity
-            android:name=".Main_run"
+            android:name=".MainRun"
             android:exported="true">
 
         </activity>

@@ -7,13 +7,19 @@ public class BaoTang {
     private String nameOfMuseum;
     private String address;
     private String priceOfTicket;
+    List<String> priceOfTicketFree;
+    List<String> priceOfTicketNotFree;
     private List<String> openings;
     private String opening_now;
     private String topic;
-    private  String pic;
+    private String pic;
+    private double x_toado;
+    private double y_toado;
+    private int comment;
+    private double vote;
+    private String gioi_thieu;
 
-
-    public void preprocessingData() {
+    public void preprocessingDay() {
 //        get today (thứ 2, thứ 3, ...)
         int day_of_week = Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
         switch (day_of_week) {
@@ -43,6 +49,7 @@ public class BaoTang {
                 break;
         }
     }
+
     public BaoTang(String nameOfMuseum, String address, String priceOfTicket, List<String> openings, String topic, String pic, boolean fromDatabase) {
         this.nameOfMuseum = nameOfMuseum;
         this.address = address;
@@ -50,27 +57,43 @@ public class BaoTang {
         this.openings = openings;
         this.topic = topic;
         this.pic = pic;
-        if (fromDatabase) {
-            preprocessingData();
+        if (openings != null) {
+            preprocessingDay();
         }
     }
 
-//    public BaoTang(String nameOfMuseum, String address, String priceOfTicket, String openings,String topic, String pic) {
-//        this.nameOfMuseum = nameOfMuseum;
-//        this.address = address;
-//        this.priceOfTicket = priceOfTicket;
-//        this.openings = openings;
-//        this.topic = topic;
-//        this.pic = pic;
-//    }
-//
-//    public BaoTang(String nameOfMuseum, String address, String priceOfTicket, String openings, String pic) {
-//        this.nameOfMuseum = nameOfMuseum;
-//        this.address = address;
-//        this.priceOfTicket = priceOfTicket;
-//        this.openings = openings;
-//        this.pic = pic;
-//    }
+    /**
+     * Constructor for BaoTang for ThongTinAll
+     *
+     * @param nameOfMuseum
+     * @param picture
+     * @param vote
+     * @param cmt
+     */
+    public BaoTang(String nameOfMuseum, String picture, Double vote, Integer cmt) {
+        this.nameOfMuseum = nameOfMuseum;
+        this.pic = picture;
+        this.vote = vote;
+        this.comment = cmt;
+
+    }
+
+
+    public BaoTang(String nameOfMuseum, List<String> openings, List<String> priceOfTicket, List<String> priceOfTicketFree, String gioiThieu, Double x_toado, Double y_toado) {
+        this.nameOfMuseum = nameOfMuseum;
+        this.openings = openings;
+        this.priceOfTicketNotFree = priceOfTicket;
+        this.priceOfTicketFree = priceOfTicketFree;
+        this.gioi_thieu = gioiThieu;
+        this.x_toado = x_toado;
+        this.y_toado = y_toado;
+
+        if (openings != null) {
+            preprocessingDay();
+        }
+    }
+
+
 
     public String getNameOfMuseum() {
         return nameOfMuseum;
@@ -79,7 +102,6 @@ public class BaoTang {
     public void setNameOfMuseum(String nameOfMuseum) {
         this.nameOfMuseum = nameOfMuseum;
     }
-
 
 
     public String getAddress() {
@@ -112,5 +134,37 @@ public class BaoTang {
 
     public void setPic(String pic) {
         this.pic = pic;
+    }
+
+    public int getComment() {
+        return comment;
+    }
+
+    public double getVote() {
+        return vote;
+    }
+
+    public String getGioiThieu() {
+        return gioi_thieu;
+    }
+
+    public List<String> getPriceFree() {
+        return priceOfTicketFree;
+    }
+
+    public List<String> getPriceNotFree() {
+        return priceOfTicketNotFree;
+    }
+
+    public List<String> getOpeningTime() {
+        return openings;
+    }
+
+    public double getX_toado() {
+        return x_toado;
+    }
+
+    public double getY_toado() {
+        return y_toado;
     }
 }

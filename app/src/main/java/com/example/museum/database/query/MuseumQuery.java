@@ -68,4 +68,19 @@ public class MuseumQuery {
         return museums;
     }
 
+    public static BaoTang getMuseumByName_ThongTinAll(String name) {
+        Document doc = MongoDBQuery.queryOne("hanoi-museum","museums",new Document("name", name));
+        BaoTang museum = new BaoTang(doc.getString("name"), doc.getString("picture"),
+                doc.getDouble("vote"), doc.getInteger("comment"));
+        return museum;
+    }
+
+    public static BaoTang getMuseumByNam_ThongTinChungNew(String name) {
+        Document doc = MongoDBQuery.queryOne("hanoi-museum","museums",new Document("name", name));
+        BaoTang museum = new BaoTang(doc.getString("name"), doc.getList("opening_times", String.class),
+                doc.getList("price", String.class), doc.getList("price_free", String.class),
+                doc.getString("gioi_thieu"), doc.getDouble("x_toado"), doc.getDouble("y_toado"));
+        return museum;
+    }
+
 }

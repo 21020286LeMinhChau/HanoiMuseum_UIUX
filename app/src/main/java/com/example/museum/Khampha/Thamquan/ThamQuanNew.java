@@ -1,8 +1,6 @@
 package com.example.museum.Khampha.Thamquan;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.text.Layout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,7 +16,6 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -30,7 +27,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class ThamquanNew extends Fragment implements AdapterView.OnItemSelectedListener{
+public class ThamQuanNew extends Fragment implements AdapterView.OnItemSelectedListener{
     HienVatAdapter adapter;
     RecyclerView recyclerView;
     View mapThongTin;
