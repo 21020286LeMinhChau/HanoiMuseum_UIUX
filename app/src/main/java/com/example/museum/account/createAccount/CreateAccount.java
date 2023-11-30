@@ -6,20 +6,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.museum.Gioithieu.SplashThird;
 import com.example.museum.MainActivity;
 import com.example.museum.MainRun;
 import com.example.museum.R;
-
-import com.example.museum.Trangchu.Home;
 import com.example.museum.account.Account;
 import com.example.museum.account.LoginAccount;
 import com.example.museum.account.PasswordEncryption;
 import com.example.museum.account.TaP.TaP;
 import com.google.android.material.textfield.TextInputLayout;
-import androidx.annotation.Nullable;
 
 public class CreateAccount extends AppCompatActivity {
     private Account account;
@@ -30,7 +28,6 @@ public class CreateAccount extends AppCompatActivity {
     Button backBtn;
     Button TaCBtn;
 
-
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_account);
@@ -39,7 +36,7 @@ public class CreateAccount extends AppCompatActivity {
         password = (TextInputLayout) findViewById(R.id.password);
 
         signUpBtn = (Button) findViewById(R.id.createAcc_btn);
-        backBtn = (Button)  findViewById(R.id.back_btn);
+        backBtn = (Button) findViewById(R.id.back_btn);
         TaCBtn = (Button) findViewById(R.id.TaC_btn);
 
         signUpBtn.setOnClickListener(new View.OnClickListener() {
@@ -50,16 +47,19 @@ public class CreateAccount extends AppCompatActivity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                if(AccountValidation.isEmailInvalid(email)||
-                                        AccountValidation.isPasswordInvalid(password)){
+                                if (AccountValidation.isEmailInvalid(email) ||
+                                        AccountValidation.isPasswordInvalid(password)) {
                                     password.getEditText().setText("");
                                     return;
                                 }
-                                account = new Account(email.getEditText().getText().toString(), PasswordEncryption.encrypt(password.getEditText().getText().toString()));
+                                account = new Account(email.getEditText().getText().toString(),
+                                        PasswordEncryption.encrypt(password.getEditText().getText().toString()));
                                 account.addNewUserToDB();
 
-                                Toast.makeText(getApplicationContext(), "Sign Up Successfully!", Toast.LENGTH_SHORT).show();
-                                LoginAccount.account = new Account(email.getEditText().getText().toString(),password.getEditText().getText().toString());
+                                Toast.makeText(getApplicationContext(), "Sign Up Successfully!", Toast.LENGTH_SHORT)
+                                        .show();
+                                LoginAccount.account = new Account(email.getEditText().getText().toString(),
+                                        password.getEditText().getText().toString());
                                 Intent intent = new Intent(CreateAccount.this, MainRun.class);
                                 startActivity(intent);
                             }
@@ -70,7 +70,7 @@ public class CreateAccount extends AppCompatActivity {
             }
 
         });
-        backBtn.setOnClickListener(new View.OnClickListener(){
+        backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(CreateAccount.this, SplashThird.class);

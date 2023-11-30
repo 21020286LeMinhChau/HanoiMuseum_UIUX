@@ -47,7 +47,6 @@ public class BaoTangAdapter extends RecyclerView.Adapter<BaoTangAdapter.BaoTangV
                 .load(baoTang.getPic())
                 .into(holder.pic);
 
-
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,7 +64,6 @@ public class BaoTangAdapter extends RecyclerView.Adapter<BaoTangAdapter.BaoTangV
         });
     }
 
-
     @Override
     public int getItemCount() {
         if (baoTangList != null) {
@@ -80,6 +78,9 @@ public class BaoTangAdapter extends RecyclerView.Adapter<BaoTangAdapter.BaoTangV
         private TextView address;
         private TextView priceOfTicket;
         private TextView openings;
+        // private TextView diadiem;
+        // private TextView status;
+
         private ImageView pic;
 
         public BaoTangViewHolder(@NonNull View itemView) {
@@ -89,7 +90,6 @@ public class BaoTangAdapter extends RecyclerView.Adapter<BaoTangAdapter.BaoTangV
             priceOfTicket = (TextView) itemView.findViewById(R.id.priceTxt);
             openings = (TextView) itemView.findViewById(R.id.openingsTxt);
             pic = (ImageView) itemView.findViewById(R.id.pic);
-
 
         }
     }
