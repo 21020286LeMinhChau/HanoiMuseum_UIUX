@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="textInputLayout" type="id" />
+    <item name="recyclerView2" type="id" />
+    <item name="imageView20" type="id" />
+</resources>

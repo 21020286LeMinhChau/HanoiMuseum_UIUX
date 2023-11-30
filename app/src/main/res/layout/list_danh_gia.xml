@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tennguoidanhgia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="12dp"
+        android:text="Nguyễn Văn A"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/noidungdanhgia"
+        android:layout_width="395dp"
+        android:layout_height="42dp"
+        android:layout_below="@id/hinhanhnguoidanhgia"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:text="Đây là giới thiệu chung, giới thiệu chung Đây là giới thiệu chung, giới thiệu chungĐây là giới thiệu chung, giới thiệu chung"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/thoigiandanhgia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tennguoidanhgia"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="5dp"
+        android:text="Thời gian"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:id="@+id/hinhanhnguoidanhgia"
+        android:layout_width="81dp"
+        android:layout_height="81dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="330dp"
+        android:layout_marginStart="5dp"
+        android:src="@drawable/user" />
+
+    <ImageView
+        android:id="@+id/starDanhGia1"
+        android:layout_width="15dp"
+        android:layout_height="20dp"
+        android:layout_below="@id/thoigiandanhgia"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="2dp"
+        android:src="@drawable/starcolor" />
+
+    <ImageView
+        android:id="@+id/starDanhGia2"
+        android:layout_width="15dp"
+        android:layout_height="20dp"
+        android:layout_below="@id/thoigiandanhgia"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="2dp"
+        android:layout_toEndOf="@+id/starDanhGia1"
+        android:src="@drawable/starcolor" />
+
+    <ImageView
+        android:id="@+id/starDanhGia3"
+        android:layout_width="15dp"
+        android:layout_height="20dp"
+        android:layout_below="@id/thoigiandanhgia"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="2dp"
+        android:layout_toEndOf="@+id/starDanhGia2"
+        android:src="@drawable/starcolor" />
+
+    <ImageView
+        android:id="@+id/starDanhGia4"
+        android:layout_width="15dp"
+        android:layout_height="20dp"
+        android:layout_below="@id/thoigiandanhgia"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="2dp"
+        android:layout_toEndOf="@+id/starDanhGia3"
+        android:src="@drawable/starcolor" />
+
+    <ImageView
+        android:id="@+id/starDanhGia5"
+        android:layout_width="15dp"
+        android:layout_height="20dp"
+        android:layout_below="@id/thoigiandanhgia"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="2dp"
+        android:layout_toEndOf="@+id/starDanhGia4"
+        android:src="@drawable/starcolor" />
+
+</RelativeLayout>
+
