@@ -1,5 +1,6 @@
 package com.example.museum.QR;
 
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -18,8 +19,12 @@ import com.budiyev.android.codescanner.CodeScanner;
 import com.budiyev.android.codescanner.CodeScannerView;
 import com.budiyev.android.codescanner.DecodeCallback;
 
+import com.example.museum.Audio.Audio;
+import com.example.museum.Gioithieu.SplashSecond;
 import com.example.museum.Khampha.Thamquan.HienVat;
+import com.example.museum.MainActivity;
 import com.example.museum.R;
+import com.example.museum.account.TaP.TaP;
 import com.example.museum.database.query.ObjectQuery;
 import com.google.zxing.Result;
 
@@ -49,6 +54,9 @@ public class ScanQR extends Fragment{
                             onResume();
                         }
                         // di den trang thong tin hien vat
+                        Intent intent = new Intent(getContext(), TaP.class).putExtra("Hien vat", "objectID");
+                        startActivity(intent);
+
                     }
                 });
             }

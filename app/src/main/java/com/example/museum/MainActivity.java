@@ -4,13 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 
-import com.example.museum.QR.ScanQR;
-import com.example.museum.Trangchu.Home;
-import com.example.museum.account.Account;
-import com.example.museum.account.createAccount.CreateAccount;
-import com.example.museum.account.login.LoginAction;
 import com.example.museum.database.MongoDBConnection;
-import com.example.museum.database.query.UserQuery;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,13 +12,6 @@ import android.os.StrictMode;
 import android.view.View;
 
 import android.widget.Button;
-
-import android.view.View;
-import android.widget.Button;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.museum.Gioithieu.SplashSecond;
 
 
 import io.realm.Realm;
@@ -50,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent();
 //                intent.setClass(MainActivity.this, SplashSecond.class);
-                intent.setClass(MainActivity.this, Main_run.class);
+                intent.setClass(MainActivity.this, MainRun.class);
                 startActivity(intent);
             }
         });
