@@ -14,16 +14,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-<<<<<<< HEAD:app/src/main/java/com/example/museum/Khampha/thongtinAll.java
 import com.example.museum.Khampha.DanhGia.DanhGia;
-import com.example.museum.Khampha.Thamquan.ThamquanNew;
-=======
 import com.bumptech.glide.Glide;
 import com.example.museum.Khampha.Thamquan.ThamQuanNew;
->>>>>>> origin/master:app/src/main/java/com/example/museum/Khampha/ThongTinAll.java
 import com.example.museum.R;
 import com.example.museum.Trangchu.BaoTang;
-
 import com.example.museum.database.query.MuseumQuery;
 
 /**
