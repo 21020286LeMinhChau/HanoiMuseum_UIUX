@@ -30,6 +30,7 @@ public class BaoTangAdapter extends  RecyclerView.Adapter<BaoTangAdapter.BaoTang
         return new BaoTangViewHolder(view);
     }
 
+
     @Override
     public void onBindViewHolder(@NonNull BaoTangViewHolder holder, int position) {
             BaoTang baoTang = baoTangList.get(position);
@@ -40,7 +41,10 @@ public class BaoTangAdapter extends  RecyclerView.Adapter<BaoTangAdapter.BaoTang
             holder.address.setText(baoTang.getAddress());
             holder.priceOfTicket.setText(baoTang.getPriceOfTicket());
             holder.openings.setText(baoTang.getOpeningsNow());
-            Glide.with(holder.itemView.getContext())
+//            holder.diadiem.setText(baoTang.getDiadiem());
+//            holder.status.setText(baoTang.getStatus());
+
+        Glide.with(holder.itemView.getContext())
                     .load(baoTang.getPic())
                     .into(holder.pic);
 
@@ -61,6 +65,9 @@ public class BaoTangAdapter extends  RecyclerView.Adapter<BaoTangAdapter.BaoTang
         private TextView address;
         private TextView priceOfTicket;
         private TextView openings;
+//        private TextView diadiem;
+//        private TextView status;
+
         private ImageView pic;
         public BaoTangViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -69,6 +76,8 @@ public class BaoTangAdapter extends  RecyclerView.Adapter<BaoTangAdapter.BaoTang
             priceOfTicket = (TextView) itemView.findViewById(R.id.priceTxt);
             openings =(TextView)  itemView.findViewById(R.id.openingsTxt);
             pic =(ImageView) itemView.findViewById(R.id.pic);
+//            diadiem =  (TextView) itemView.findViewById(R.id.diadiemTxt);
+//            status = (TextView) itemView.findViewById(R.id.statusTxt);
 
 
 

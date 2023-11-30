@@ -6,20 +6,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.museum.Gioithieu.SplashThird;
-import com.example.museum.MainActivity;
 import com.example.museum.Main_run;
 import com.example.museum.R;
-
-import com.example.museum.Trangchu.Home;
 import com.example.museum.account.Account;
 import com.example.museum.account.LoginAccount;
 import com.example.museum.account.PasswordEncryption;
 import com.example.museum.account.TaP.TaP;
 import com.google.android.material.textfield.TextInputLayout;
-import androidx.annotation.Nullable;
 
 public class CreateAccount extends AppCompatActivity {
     private Account account;

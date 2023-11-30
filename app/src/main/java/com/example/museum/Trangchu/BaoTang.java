@@ -12,6 +12,34 @@ public class BaoTang {
     private String topic;
     private  String pic;
 
+    public String getDiadiem() {
+        return diadiem;
+    }
+
+    public void setDiadiem(String diadiem) {
+        this.diadiem = diadiem;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    private String diadiem;
+    private String status;
+
+    public int getAnh() {
+        return anh;
+    }
+
+    public void setAnh(int anh) {
+        this.anh = anh;
+    }
+
+    private int anh;
 
     public void preprocessingData() {
 //        get today (thứ 2, thứ 3, ...)
@@ -53,6 +81,13 @@ public class BaoTang {
         if (fromDatabase) {
             preprocessingData();
         }
+    }
+    public BaoTang(String nameOfMuseum, String diadiem, String status, int anh) {
+        this.nameOfMuseum = nameOfMuseum;
+        this.diadiem = diadiem;
+        this.status = status;
+        this.anh = anh;
+
     }
 
 //    public BaoTang(String nameOfMuseum, String address, String priceOfTicket, String openings,String topic, String pic) {
