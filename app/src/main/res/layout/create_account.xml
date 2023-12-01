@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:ignore="ExtraText">
+
     <Button
         android:id="@+id/back_btn"
         android:layout_width="35dp"
@@ -17,18 +18,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.022" />
+
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="300px"
+        android:layout_width="118dp"
         android:layout_height="0dp"
         android:background="@drawable/museum"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.151" />
+        app:layout_constraintVertical_bias="0.118" />
 
     <TextView
         android:id="@+id/textView8"
@@ -38,7 +40,7 @@
         android:paddingStart="20dp"
         android:text="Tạo tài khoản"
         android:textColor="@color/black"
-        android:textSize="64px"
+        android:textSize="28px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -54,7 +56,6 @@
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
         android:text="Để đăng nhập hoặc đăng ký, xin vui lòng nhập email"
-        android:textSize="48px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -70,18 +71,19 @@
         android:layout_margin="20dp"
         android:hint="Email"
         app:endIconMode="clear_text"
-        app:startIconDrawable="@drawable/baseline_mail_outline_24"
-
         app:layout_constraintBottom_toBottomOf="parent"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9"
-        app:layout_constraintVertical_bias="0">
+        app:layout_constraintVertical_bias="0"
+        app:startIconDrawable="@drawable/baseline_mail_outline_24">
+
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
+            android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/password"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -97,11 +99,11 @@
         app:layout_constraintTop_toBottomOf="@+id/email"
         app:layout_constraintVertical_bias="0"
         app:startIconDrawable="@drawable/baseline_lock_24">
+
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            />
+            android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -110,11 +112,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:padding="0dp"
         android:gravity="left"
-        android:text="Khi nhấn vào nút tạo tài khoản, đồng nghĩa với việc bạn đã chấp nhận các điều khoản về bảo mật "
+        android:padding="0dp"
+        android:text="Khi nhấn vào nút tạo tài khoản, đồng nghĩa với việc bạn đã chấp nhận các điều khoản sử dụng và an toàn bảo mật"
         android:textColor="@color/black"
-        android:textSize="32px"
+        android:textSize="24px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -135,7 +137,49 @@
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TaC_btn"
-        app:layout_constraintVertical_bias="0.316" />
+        app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@+id/createAcc_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="20dp"
+            android:text="------------------Hoặc đăng nhập bằng------------------"
+            android:fontFamily="@font/robotoslabregular"
+
+            android:textColor="@color/grayText"
+
+            android:gravity="center_horizontal"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:backgroundTint="@color/gray"
+                android:scaleType="fitCenter"
+                android:src="@drawable/google"
+                tools:ignore="MissingConstraints"/>
+            <ImageButton
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:layout_constraintLeft_toRightOf="@+id/imageButton2"
+                android:layout_marginLeft="10dp"
+                android:backgroundTint="@color/gray"
+                android:scaleType="fitCenter"
+                android:src="@drawable/facebook"
+                tools:ignore="MissingConstraints"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
+
