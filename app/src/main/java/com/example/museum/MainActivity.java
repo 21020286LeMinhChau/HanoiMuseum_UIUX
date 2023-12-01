@@ -1,10 +1,15 @@
 package com.example.museum;
 
+import static java.security.AccessController.getContext;
+import static io.realm.Realm.getApplicationContext;
+
 import android.content.Intent;
 import android.os.Bundle;
 
 
 import com.example.museum.database.MongoDBConnection;
+import com.google.android.libraries.places.api.Places;
+import com.google.android.libraries.places.api.net.PlacesClient;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -28,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         MongoDBConnection.connect();
+
+
 
         setContentView(R.layout.splash_first);
 

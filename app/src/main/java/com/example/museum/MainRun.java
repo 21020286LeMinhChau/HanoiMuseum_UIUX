@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.museum.Khampha.ThongTinAll;
 import com.example.museum.Map.MapsFragment;
+import com.example.museum.Map.MapsFragmentFullOption;
 import com.example.museum.QR.ScanQR;
 import com.example.museum.Trangchu.Home;
 import com.example.museum.account.LoginAccount;
@@ -62,7 +63,7 @@ public class MainRun extends AppCompatActivity {
                     replaceFragment(new profile());
                     return true;
                 case R.id.map:
-                    replaceFragment(new MapsFragment());
+                    replaceFragment(new MapsFragmentFullOption());
                     return true;
             }
             return true;
