@@ -43,6 +43,8 @@
             android:exported="true"/>
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="${MAPS_API_KEY}" />
+            android:value="AIzaSyC-LVT9MJus_MMgSJ9xdDEc8lUYQu1-J-g" />
+        <activity android:name=".Khampha.Search.TimKiemBaoTang" />
+        <activity android:name=".Khampha.Search.TimKiemHienVat" />
     </application>
 </manifest>

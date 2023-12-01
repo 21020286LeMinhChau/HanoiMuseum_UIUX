@@ -19,8 +19,10 @@ public class BaoTang {
     private double vote;
     private String gioi_thieu;
 
-    public void preprocessingDay() {
-//        get today (thứ 2, thứ 3, ...)
+    private int anh;
+
+    public void preprocessingData() {
+        // get today (thứ 2, thứ 3, ...)
         int day_of_week = Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
         switch (day_of_week) {
             case Calendar.MONDAY:
@@ -50,7 +52,8 @@ public class BaoTang {
         }
     }
 
-    public BaoTang(String nameOfMuseum, String address, String priceOfTicket, List<String> openings, String topic, String pic, boolean fromDatabase) {
+    public BaoTang(String nameOfMuseum, String address, String priceOfTicket, List<String> openings, String topic,
+            String pic, boolean fromDatabase) {
         this.nameOfMuseum = nameOfMuseum;
         this.address = address;
         this.priceOfTicket = priceOfTicket;
@@ -60,6 +63,14 @@ public class BaoTang {
         if (openings != null) {
             preprocessingDay();
         }
+    }
+
+    public BaoTang(String nameOfMuseum, String diadiem, String status, int anh) {
+        this.nameOfMuseum = nameOfMuseum;
+        this.diadiem = diadiem;
+        this.status = status;
+        this.anh = anh;
+
     }
 
     /**
@@ -78,8 +89,8 @@ public class BaoTang {
 
     }
 
-
-    public BaoTang(String nameOfMuseum, List<String> openings, List<String> priceOfTicket, List<String> priceOfTicketFree, String gioiThieu, Double x_toado, Double y_toado) {
+    public BaoTang(String nameOfMuseum, List<String> openings, List<String> priceOfTicket,
+            List<String> priceOfTicketFree, String gioiThieu, Double x_toado, Double y_toado) {
         this.nameOfMuseum = nameOfMuseum;
         this.openings = openings;
         this.priceOfTicketNotFree = priceOfTicket;
@@ -93,8 +104,6 @@ public class BaoTang {
         }
     }
 
-
-
     public String getNameOfMuseum() {
         return nameOfMuseum;
     }
@@ -102,7 +111,6 @@ public class BaoTang {
     public void setNameOfMuseum(String nameOfMuseum) {
         this.nameOfMuseum = nameOfMuseum;
     }
-
 
     public String getAddress() {
         return address;
@@ -158,6 +166,33 @@ public class BaoTang {
 
     public List<String> getOpeningTime() {
         return openings;
+    }
+
+    public String getDiadiem() {
+        return diadiem;
+    }
+
+    public void setDiadiem(String diadiem) {
+        this.diadiem = diadiem;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    private String diadiem;
+    private String status;
+
+    public int getAnh() {
+        return anh;
+    }
+
+    public void setAnh(int anh) {
+        this.anh = anh;
     }
 
     public double getX_toado() {

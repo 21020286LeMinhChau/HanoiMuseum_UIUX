@@ -18,5 +18,9 @@
     <color name="colorBlack">#000000</color>
     <color name="colorWhiteman">#FFFFFF</color>
     <color name="colorGray">#333333</color>
+    <color name="colorGreen">#FF4CAF50</color>
+    <color name="colorSearch">#63B9D6F3</color>
+
+
 
 </resources>

@@ -7,6 +7,7 @@ public class HienVat {
     private String chude;
     private String audioSource;
     private int hinhAnh;
+    private String author;
 
     public HienVat(String tenHienVat, String thoiLuong, String thongTin,String chude, String audioSource, int hinhAnh) {
         this.tenHienVat = tenHienVat;
@@ -30,6 +31,19 @@ public class HienVat {
         this.thongTin = s1;
     }
 
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public HienVat(String tenHienVat, String author, int hinhAnh) {
+        this.tenHienVat = tenHienVat;
+        this.author = author;
+        this.hinhAnh = hinhAnh;
+    }
     public void setTenHienVat(String tenHienVat) {
         this.tenHienVat = tenHienVat;
     }
