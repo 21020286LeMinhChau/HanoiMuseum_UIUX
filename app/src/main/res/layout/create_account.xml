@@ -21,7 +21,7 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="300px"
+        android:layout_width="118dp"
         android:layout_height="0dp"
         android:background="@drawable/museum"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -40,7 +40,7 @@
         android:paddingStart="20dp"
         android:text="Tạo tài khoản"
         android:textColor="@color/black"
-        android:textSize="64px"
+        android:textSize="28px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -56,7 +56,6 @@
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
         android:text="Để đăng nhập hoặc đăng ký, xin vui lòng nhập email"
-        android:textSize="48px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

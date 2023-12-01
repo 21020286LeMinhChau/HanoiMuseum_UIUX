@@ -47,8 +47,8 @@
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="105dp"
-            android:layout_height="98dp"
+            android:layout_width="118dp"
+            android:layout_height="0dp"
             android:background="@drawable/museum"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="1:1"
@@ -65,7 +65,7 @@
             android:paddingStart="20dp"
             android:text="Đăng nhập vào IMuseum"
             android:textColor="@color/black"
-            android:textSize="64px"
+            android:textSize="28dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -81,7 +81,6 @@
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
             android:text="Để đăng nhập hoặc đăng ký, xin vui lòng nhập email"
-            android:textSize="48px"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
