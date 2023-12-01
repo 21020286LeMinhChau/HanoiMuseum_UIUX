@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.museum.Khampha.Thamquan.ClickListiner;
+import com.example.museum.Khampha.DanhGia.ClickListiner2;
 import com.example.museum.Khampha.Thamquan.HienVatViewHolder;
 import com.example.museum.R;
 
@@ -16,10 +16,10 @@ import java.util.Collections;
 import java.util.List;
 
 public class ListDanhGiaAdapter extends RecyclerView.Adapter<ListDanhGiaViewHolder>{
-    List<ListDanhGia> list = Collections.emptyList();
+    List<ListDanhGia> list;
     Context context;
-    ClickListiner listiner;
-    public ListDanhGiaAdapter(List<ListDanhGia> list, Context context, ClickListiner listiner) {
+    ClickListiner2 listiner;
+    public ListDanhGiaAdapter(List<ListDanhGia> list, Context context, ClickListiner2 listiner) {
         this.list = list;
         this.context = context;
         this.listiner = listiner;
@@ -64,16 +64,16 @@ public class ListDanhGiaAdapter extends RecyclerView.Adapter<ListDanhGiaViewHold
         holder.star5
                 .setImageResource(list.get(position).getStar5());
 
-        holder.view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                listiner.click(index);
-            }
-        });
+        holder.view.setOnClickListener(view -> listiner.click(index));
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return list.size();
+    }
+    public void onAttachedToRecyclerView(
+            RecyclerView recyclerView)
+    {
+        super.onAttachedToRecyclerView(recyclerView);
     }
 }

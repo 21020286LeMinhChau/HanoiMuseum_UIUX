@@ -19,6 +19,18 @@ public class ListDanhGia {
         this.thoiGianDanhGia = thoiGianDanhGia;
         this.avatar = avatar;
     }
+    public ListDanhGia(String tenNguoiDanhGia, String noiDungDanhGia, int soSao, String thoiGianDanhGia, int avatar, int star1, int star2, int star3, int star4, int star5) {
+        this.tenNguoiDanhGia = tenNguoiDanhGia;
+        this.noiDungDanhGia = noiDungDanhGia;
+        this.soSao = soSao;
+        this.thoiGianDanhGia = thoiGianDanhGia;
+        this.avatar = avatar;
+        this.star1 = star1;
+        this.star2 = star2;
+        this.star3 = star3;
+        this.star4 = star4;
+        this.star5 = star5;
+    }
     public String getTenNguoiDanhGia() {
         return tenNguoiDanhGia;
     }

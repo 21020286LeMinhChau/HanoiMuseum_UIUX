@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="140dp">
 
     <TextView
         android:id="@+id/tennguoidanhgia"
@@ -18,7 +18,7 @@
     <TextView
         android:id="@+id/noidungdanhgia"
         android:layout_width="395dp"
-        android:layout_height="42dp"
+        android:layout_height="wrap_content"
         android:layout_below="@id/hinhanhnguoidanhgia"
         android:layout_marginStart="5dp"
         android:layout_marginTop="10dp"

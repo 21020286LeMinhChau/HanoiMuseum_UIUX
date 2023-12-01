@@ -20,7 +20,9 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.museum.Khampha.DanhGia.ClickListiner2;
 import com.example.museum.Khampha.Thamquan.ClickListiner;
+import com.example.museum.Khampha.Thamquan.HienVat;
 import com.example.museum.Khampha.Thamquan.HienVatAdapter;
 import com.example.museum.R;
 import com.google.android.material.textfield.TextInputLayout;
@@ -29,9 +31,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DanhGia extends Fragment {
+
     ListDanhGiaAdapter adapter2;
-    RecyclerView recyclerView;
-    ClickListiner listiner;
+    RecyclerView recyclerView2;
+    ClickListiner2 listiner2;
 
     @Nullable
     @Override
@@ -43,6 +46,9 @@ public class DanhGia extends Fragment {
         TextInputLayout textInputLayout = view.findViewById(R.id.textInputLayout);
         Button button = view.findViewById(R.id.button);
         EditText editText = textInputLayout.findViewById(R.id.editText);
+        recyclerView2
+                = view.findViewById(
+                R.id.recyclerView2);
         editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
@@ -60,25 +66,46 @@ public class DanhGia extends Fragment {
                 Log.d("DanhGia", editText.getText().toString());
             }
         });
-        List<ListDanhGia> list = new ArrayList<>();
-        list.add(new ListDanhGia("Nguyễn Văn A", "Hay lắm bà con ơi",3,"1 ngày trước",R.drawable.avatar));
-        list.add(new ListDanhGia("Nguyễn Văn B", "Hay lắm bà con ơi",4,"1 ngày trước",R.drawable.avatar));
-        list.add(new ListDanhGia("Nguyễn Văn C", "Hay lắm bà con ơi",5,"1 ngày trước",R.drawable.avatar));
-        recyclerView
+        List<ListDanhGia> list;
+        list = getData();
+
+        recyclerView2
                 = (RecyclerView)view.findViewById(
                 R.id.recyclerView2);
-        listiner = new ClickListiner() {
+        listiner2 = new com.example.museum.Khampha.DanhGia.ClickListiner2() {
             @Override
             public void click(int index){
                 Toast.makeText(requireContext(), "Clicked on : " + index, Toast.LENGTH_SHORT).show();
             }
         };
-        adapter2
-                = new ListDanhGiaAdapter(
-                list, requireActivity(),listiner);
-        recyclerView.setAdapter(adapter2);
-        recyclerView.setLayoutManager(
+        adapter2 = new ListDanhGiaAdapter(list, requireActivity(),listiner2);
+
+        recyclerView2.setAdapter(adapter2);
+
+        recyclerView2.setLayoutManager(
                 new LinearLayoutManager(requireContext()));
         return view;
     }
+    public List<ListDanhGia> getData() {
+        List<ListDanhGia> list = new ArrayList<>();
+        list.add(new ListDanhGia("Nguyễn Văn A", "Rất hay",2,"1 giờ trước", R.drawable.avatar, R.drawable.star, R.drawable.star, R.drawable.star, R.drawable.star, R.drawable.star));
+        list.add(new ListDanhGia("Nguyễn Văn B", "Rất hay",2,"1 giờ trước", R.drawable.avatar, R.drawable.star, R.drawable.star, R.drawable.star, R.drawable.star, R.drawable.star));
+        list.add(new ListDanhGia("Nguyễn Văn C", "Rất hay",2,"1 giờ trước", R.drawable.avatar, R.drawable.star, R.drawable.star, R.drawable.star, R.drawable.star, R.drawable.star));
+        return list;
+    }
+//    public List<HienVat> getData()
+//    {
+//        List<HienVat> list = new ArrayList<>();
+//        list.add(new HienVat("Gốm chu đậu",
+//                "0:35",
+//                "Thời Lý", R.drawable.bat, "https://webaudioapi.com/samples/audio-tag/chrono.mp3"));
+//        list.add(new HienVat("Item 1",
+//                "0:57",
+//                "Thời Đinh",R.drawable.bat,"https://webaudioapi.com/samples/audio-tag/chrono.mp3"));
+//        list.add(new HienVat("Item 2",
+//                "0:35",
+//                "Thời Nguyễn",R.drawable.bat,"https://webaudioapi.com/samples/audio-tag/chrono.mp3"));
+//
+//        return list;
+//    }
 }
