@@ -53,6 +53,8 @@ public class ListDanhGiaAdapter extends RecyclerView.Adapter<ListDanhGiaViewHold
                 .setText(list.get(position).getTenNguoiDanhGia());
         holder.NoiDungDanhGia
                 .setText(list.get(position).getNoiDungDanhGia());
+        holder.ThoiGianDanhGia
+                .setText(list.get(position).getThoiGianDanhGia());
         holder.star1
                 .setImageResource(list.get(position).getStar1());
         holder.star2

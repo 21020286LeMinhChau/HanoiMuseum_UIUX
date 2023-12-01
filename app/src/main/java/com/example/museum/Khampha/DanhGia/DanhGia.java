@@ -1,6 +1,7 @@
 package com.example.museum.Khampha.DanhGia;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -11,6 +12,7 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -68,11 +70,11 @@ public class DanhGia extends Fragment {
         });
         List<ListDanhGia> list;
         list = getData();
-
+        setStarAll(list);
         recyclerView2
                 = (RecyclerView)view.findViewById(
                 R.id.recyclerView2);
-        listiner2 = new com.example.museum.Khampha.DanhGia.ClickListiner2() {
+        listiner2 = new ClickListiner2() {
             @Override
             public void click(int index){
                 Toast.makeText(requireContext(), "Clicked on : " + index, Toast.LENGTH_SHORT).show();
@@ -88,24 +90,19 @@ public class DanhGia extends Fragment {
     }
     public List<ListDanhGia> getData() {
         List<ListDanhGia> list = new ArrayList<>();
-        list.add(new ListDanhGia("Nguyễn Văn A", "Rất hay",2,"1 giờ trước", R.drawable.avatar, R.drawable.star, R.drawable.star, R.drawable.star, R.drawable.star, R.drawable.star));
-        list.add(new ListDanhGia("Nguyễn Văn B", "Rất hay",2,"1 giờ trước", R.drawable.avatar, R.drawable.star, R.drawable.star, R.drawable.star, R.drawable.star, R.drawable.star));
-        list.add(new ListDanhGia("Nguyễn Văn C", "Rất hay",2,"1 giờ trước", R.drawable.avatar, R.drawable.star, R.drawable.star, R.drawable.star, R.drawable.star, R.drawable.star));
+        list.add(new ListDanhGia("Nguyễn Văn A", "Đây là giới thiệu chung, giới thiệu chung Đây là giới thiệu chung, giới thiệu chungĐây là giới thiệu chung, giới thiệu chung",2,"1 giờ trước", R.drawable.user, R.drawable.star, R.drawable.star, R.drawable.star, R.drawable.star, R.drawable.star));
+        list.add(new ListDanhGia("Nguyễn Văn B", "Đây là giới thiệu chung, giới thiệu chung Đây là giới thiệu chung, giới thiệu chungĐây là giới thiệu chung, giới thiệu chung",3,"1 giờ trước", R.drawable.user, R.drawable.star, R.drawable.star, R.drawable.star, R.drawable.star, R.drawable.star));
+        list.add(new ListDanhGia("Nguyễn Văn C", "Đây là giới thiệu chung, giới thiệu chung Đây là giới thiệu chung, giới thiệu chungĐây là giới thiệu chung, giới thiệu chung",4,"1 giờ trước", R.drawable.user, R.drawable.star, R.drawable.star, R.drawable.star, R.drawable.star, R.drawable.star));
         return list;
     }
-//    public List<HienVat> getData()
-//    {
-//        List<HienVat> list = new ArrayList<>();
-//        list.add(new HienVat("Gốm chu đậu",
-//                "0:35",
-//                "Thời Lý", R.drawable.bat, "https://webaudioapi.com/samples/audio-tag/chrono.mp3"));
-//        list.add(new HienVat("Item 1",
-//                "0:57",
-//                "Thời Đinh",R.drawable.bat,"https://webaudioapi.com/samples/audio-tag/chrono.mp3"));
-//        list.add(new HienVat("Item 2",
-//                "0:35",
-//                "Thời Nguyễn",R.drawable.bat,"https://webaudioapi.com/samples/audio-tag/chrono.mp3"));
-//
-//        return list;
-//    }
+    public void setStarAll(List<ListDanhGia> listDanhGia){
+        for (int i = 0; i < listDanhGia.size(); i++) {
+
+            int count = listDanhGia.get(i).getSoSao();
+            for (int j = 0; j < 5; j++) {
+                int ID = (j < count) ? R.drawable.starcolor : R.drawable.star;
+                listDanhGia.get(i).setStar(j + 1, ID);
+            }
+        }
+    }
 }

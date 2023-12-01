@@ -2,14 +2,15 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="140dp">
+    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/tennguoidanhgia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@+id/hinhanhnguoidanhgia"
         android:text="Nguyễn Văn A"
         android:textColor="@color/black"
         android:textSize="14sp"
@@ -17,10 +18,10 @@
 
     <TextView
         android:id="@+id/noidungdanhgia"
-        android:layout_width="395dp"
+        android:layout_width="379dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/hinhanhnguoidanhgia"
-        android:layout_marginStart="5dp"
+        android:layout_below="@id/starDanhGia1"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:text="Đây là giới thiệu chung, giới thiệu chung Đây là giới thiệu chung, giới thiệu chungĐây là giới thiệu chung, giới thiệu chung"
         android:textColor="@color/black"
@@ -31,29 +32,42 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tennguoidanhgia"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="21dp"
+        android:layout_toEndOf="@id/starDanhGia5"
         android:text="Thời gian"
         android:textColor="@color/black"
         android:textSize="12sp" />
 
     <ImageView
         android:id="@+id/hinhanhnguoidanhgia"
-        android:layout_width="81dp"
-        android:layout_height="81dp"
-        android:layout_alignParentEnd="true"
+        android:layout_width="39dp"
+        android:layout_height="39dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="330dp"
-        android:layout_marginStart="5dp"
+        android:scaleType="centerCrop"
+
         android:src="@drawable/user" />
+
+    <ImageView
+        android:id="@+id/starDanhGia3"
+        android:layout_width="15dp"
+        android:layout_height="20dp"
+        android:layout_below="@id/hinhanhnguoidanhgia"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="2dp"
+        android:layout_toEndOf="@+id/starDanhGia2"
+        android:src="@drawable/starcolor" />
 
     <ImageView
         android:id="@+id/starDanhGia1"
         android:layout_width="15dp"
         android:layout_height="20dp"
-        android:layout_below="@id/thoigiandanhgia"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="12dp"
+        android:layout_below="@id/hinhanhnguoidanhgia"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="2dp"
         android:src="@drawable/starcolor" />
 
@@ -61,41 +75,46 @@
         android:id="@+id/starDanhGia2"
         android:layout_width="15dp"
         android:layout_height="20dp"
-        android:layout_below="@id/thoigiandanhgia"
-        android:layout_marginTop="12dp"
+        android:layout_below="@id/hinhanhnguoidanhgia"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="2dp"
         android:layout_toEndOf="@+id/starDanhGia1"
-        android:src="@drawable/starcolor" />
-
-    <ImageView
-        android:id="@+id/starDanhGia3"
-        android:layout_width="15dp"
-        android:layout_height="20dp"
-        android:layout_below="@id/thoigiandanhgia"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="2dp"
-        android:layout_toEndOf="@+id/starDanhGia2"
-        android:src="@drawable/starcolor" />
-
-    <ImageView
-        android:id="@+id/starDanhGia4"
-        android:layout_width="15dp"
-        android:layout_height="20dp"
-        android:layout_below="@id/thoigiandanhgia"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="2dp"
-        android:layout_toEndOf="@+id/starDanhGia3"
         android:src="@drawable/starcolor" />
 
     <ImageView
         android:id="@+id/starDanhGia5"
         android:layout_width="15dp"
         android:layout_height="20dp"
-        android:layout_below="@id/thoigiandanhgia"
-        android:layout_marginTop="12dp"
+        android:layout_below="@id/hinhanhnguoidanhgia"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="2dp"
         android:layout_toEndOf="@+id/starDanhGia4"
         android:src="@drawable/starcolor" />
+
+    <ImageView
+        android:id="@+id/starDanhGia4"
+        android:layout_width="15dp"
+        android:layout_height="20dp"
+        android:layout_below="@id/hinhanhnguoidanhgia"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="2dp"
+        android:layout_toEndOf="@+id/starDanhGia3"
+        android:src="@drawable/starcolor" />
+
+    <ImageView
+        android:id="@+id/line_in_danhgia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/noidungdanhgia"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentBottom="false"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="5dp"
+        app:srcCompat="@drawable/line" />
 
 </RelativeLayout>
 

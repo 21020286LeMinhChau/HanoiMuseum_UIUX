@@ -1,5 +1,7 @@
 package com.example.museum.Khampha.DanhGia;
 
+import android.graphics.drawable.Drawable;
+
 public class ListDanhGia {
     private String tenNguoiDanhGia;
     private String noiDungDanhGia;
@@ -90,6 +92,25 @@ public class ListDanhGia {
     }
     public void setStar5(int star5) {
         this.star5 = star5;
+    }
+    public void setStar(int index, int value) {
+        switch (index) {
+            case 1:
+                setStar1(value);
+                break;
+            case 2:
+                setStar2(value);
+                break;
+            case 3:
+                setStar3(value);
+                break;
+            case 4:
+                setStar4(value);
+                break;
+            case 5:
+                setStar5(value);
+                break;
+        }
     }
 
 }
