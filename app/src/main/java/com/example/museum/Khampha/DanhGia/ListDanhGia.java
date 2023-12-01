@@ -1,5 +1,7 @@
 package com.example.museum.Khampha.DanhGia;
 
+import android.graphics.drawable.Drawable;
+
 public class ListDanhGia {
     private String tenNguoiDanhGia;
     private String noiDungDanhGia;
@@ -18,6 +20,18 @@ public class ListDanhGia {
         this.soSao = soSao;
         this.thoiGianDanhGia = thoiGianDanhGia;
         this.avatar = avatar;
+    }
+    public ListDanhGia(String tenNguoiDanhGia, String noiDungDanhGia, int soSao, String thoiGianDanhGia, int avatar, int star1, int star2, int star3, int star4, int star5) {
+        this.tenNguoiDanhGia = tenNguoiDanhGia;
+        this.noiDungDanhGia = noiDungDanhGia;
+        this.soSao = soSao;
+        this.thoiGianDanhGia = thoiGianDanhGia;
+        this.avatar = avatar;
+        this.star1 = star1;
+        this.star2 = star2;
+        this.star3 = star3;
+        this.star4 = star4;
+        this.star5 = star5;
     }
     public String getTenNguoiDanhGia() {
         return tenNguoiDanhGia;
@@ -78,6 +92,25 @@ public class ListDanhGia {
     }
     public void setStar5(int star5) {
         this.star5 = star5;
+    }
+    public void setStar(int index, int value) {
+        switch (index) {
+            case 1:
+                setStar1(value);
+                break;
+            case 2:
+                setStar2(value);
+                break;
+            case 3:
+                setStar3(value);
+                break;
+            case 4:
+                setStar4(value);
+                break;
+            case 5:
+                setStar5(value);
+                break;
+        }
     }
 
 }

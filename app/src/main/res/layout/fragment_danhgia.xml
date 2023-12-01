@@ -98,7 +98,7 @@
             android:id="@+id/star1"
             android:layout_width="15dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView24"
             app:srcCompat="@drawable/star_display" />
@@ -107,7 +107,7 @@
             android:id="@+id/star2"
             android:layout_width="15dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="2dp"
+            android:layout_marginStart="2dp"
             app:layout_constraintLeft_toRightOf="@id/star1"
             app:layout_constraintTop_toBottomOf="@+id/textView24"
             app:srcCompat="@drawable/star_display" />
@@ -116,7 +116,7 @@
             android:id="@+id/star3"
             android:layout_width="15dp"
             android:layout_height="20dp"
-            android:layout_marginLeft="2dp"
+            android:layout_marginStart="2dp"
             app:layout_constraintLeft_toRightOf="@id/star2"
             app:layout_constraintTop_toBottomOf="@+id/textView24"
             app:srcCompat="@drawable/star_display" />
@@ -126,7 +126,7 @@
             android:layout_width="15dp"
             android:layout_height="20dp"
 
-            android:layout_marginLeft="2dp"
+            android:layout_marginStart="2dp"
             app:layout_constraintLeft_toRightOf="@id/star3"
             app:layout_constraintTop_toBottomOf="@+id/textView24"
             app:srcCompat="@drawable/star_display" />
@@ -136,7 +136,7 @@
             android:layout_width="15dp"
             android:layout_height="20dp"
 
-            android:layout_marginLeft="2dp"
+            android:layout_marginStart="2dp"
 
             app:layout_constraintLeft_toRightOf="@id/star4"
             app:layout_constraintTop_toBottomOf="@+id/textView24"
@@ -242,14 +242,12 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="12dp"
             android:nestedScrollingEnabled="false"
             android:overScrollMode="never"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imageView20">
-
-        </androidx.recyclerview.widget.RecyclerView>
+            app:layout_constraintTop_toBottomOf="@id/imageView20"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

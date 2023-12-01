@@ -100,16 +100,17 @@
 
         android:text="Bạn không muốn sử dụng toàn bộ quyền lợi của tài khoản ?" />
 
-    <TextView
-        android:id="@+id/textView7"
+    <Button
+        android:id="@+id/non_account_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Tiếp tục mà không cần đăng nhập"
         android:gravity="center_horizontal"
-        android:textSize="12sp"
+        android:textSize="10dp"
         android:textColor="@color/black"
+        android:backgroundTint="@color/white"
         android:fontFamily="@font/robotoslabregular"
-
+        style="?android:attr/borderlessButtonStyle"
         />
 
 

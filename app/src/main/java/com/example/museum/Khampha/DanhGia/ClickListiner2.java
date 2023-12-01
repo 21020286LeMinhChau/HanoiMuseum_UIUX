@@ -1,6 +1,6 @@
 package com.example.museum.Khampha.DanhGia;
 
-public class ClickListiner {
+public class ClickListiner2 {
 
         // here index is index
     // of item clicked

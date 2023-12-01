@@ -61,7 +61,7 @@ public class BaoTang {
         this.topic = topic;
         this.pic = pic;
         if (openings != null) {
-            preprocessingDay();
+            //preprocessingDay();
         }
     }
 
@@ -100,7 +100,7 @@ public class BaoTang {
         this.y_toado = y_toado;
 
         if (openings != null) {
-            preprocessingDay();
+            //preprocessingDay();
         }
     }
 
