@@ -110,7 +110,7 @@
         android:textColor="@color/black"
         android:backgroundTint="@color/white"
         android:fontFamily="@font/robotoslabregular"
-
+        android:background="none"
         />
 
 
