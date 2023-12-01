@@ -132,7 +132,7 @@ public class MapsFragmentFullOption extends Fragment implements OnMapReadyCallba
                     x_toado = location.getLatitude();
                     y_toado = location.getLongitude();
                     LatLng latLng = new LatLng(x_toado, y_toado);
-                    float zoomLevel = 12.0f; //This goes up to 21
+                    float zoomLevel = 15.0f; //This goes up to 21
                     mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoomLevel));
                 }
             }
