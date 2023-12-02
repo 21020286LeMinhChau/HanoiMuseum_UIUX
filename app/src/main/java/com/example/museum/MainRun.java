@@ -10,6 +10,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.museum.Khampha.Search.TimKiemAll;
+import com.example.museum.Khampha.Search.TimKiemChung;
 import com.example.museum.Khampha.ThongTinAll;
 import com.example.museum.Map.MapsFragment;
 import com.example.museum.Map.MapsFragmentFullOption;
@@ -54,7 +56,7 @@ public class MainRun extends AppCompatActivity {
                     replaceFragment(new Home());
                     break;
                 case R.id.explore:
-                    replaceFragment(new ThongTinAll());
+                    replaceFragment(new TimKiemChung());
                     return true;
                 case R.id.scan:
                     replaceFragment(new ScanQR());

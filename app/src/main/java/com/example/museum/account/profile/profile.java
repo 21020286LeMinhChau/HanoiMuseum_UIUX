@@ -49,7 +49,7 @@ public class profile extends Fragment {
         confirmBtn = view.findViewById(R.id.confirm_btn);
 
         if (account == null) {
-            username.setText("xin vui lòng đăng nhập");
+            username.setText("Xin vui lòng đăng nhập");
             Drawable icon = getResources().getDrawable(R.drawable.ic_log_in);
             editBtn.setCompoundDrawablesRelativeWithIntrinsicBounds(icon, null, null, null);
             editBtn.setText("Đăng nhập");

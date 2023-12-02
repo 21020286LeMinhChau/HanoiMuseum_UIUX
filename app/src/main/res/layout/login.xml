@@ -33,7 +33,7 @@
 
         <Button
             android:id="@+id/back_btn"
-            android:layout_width="35dp"
+            android:layout_width="20dp"
             android:layout_height="0dp"
             android:background="@drawable/back"
             android:text="test"
@@ -57,18 +57,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.118" />
+
         <TextView
             android:id="@+id/textView8"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/robotoslabbold"
-            android:paddingStart="20dp"
-            android:text="Đăng nhập vào IMuseum"
+            android:text="Đăng nhập vào HaNoiMuseum"
             android:textColor="@color/black"
-            android:textSize="28dp"
+            android:textSize="24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView4"
             app:layout_constraintVertical_bias="0.019" />
@@ -78,10 +77,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/robotoslabregular"
-            android:paddingStart="20dp"
-            android:paddingEnd="20dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
             android:text="Để đăng nhập hoặc đăng ký, xin vui lòng nhập email"
             app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="@color/grayText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -136,16 +136,14 @@
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
 
+            android:layout_marginEnd="20dp"
             android:padding="0dp"
             android:text="Quên mật khẩu"
             android:textColor="@color/black"
             android:textSize="24px"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/password"
             app:layout_constraintVertical_bias="0.0" />
 

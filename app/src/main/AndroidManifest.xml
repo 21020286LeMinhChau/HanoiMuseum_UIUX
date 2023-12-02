@@ -30,9 +30,9 @@
         <activity
             android:name=".account.createAccount.CreateAccount"
             android:exported="false"></activity>
-        <activity
-            android:name=".account.login.LoginAction"
-            android:exported="false"></activity>
+<!--        <activity-->
+<!--            android:name=".account.login.LoginAction"-->
+<!--            android:exported="false"></activity>-->
         <activity
             android:name=".MainActivity"
             android:exported="true"
