@@ -13,6 +13,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -48,6 +49,22 @@ public class DanhGia extends Fragment {
         TextInputLayout textInputLayout = view.findViewById(R.id.textInputLayout);
         Button button = view.findViewById(R.id.button);
         EditText editText = textInputLayout.findViewById(R.id.editText);
+        TextView numRate = view.findViewById(R.id.num_rate);
+        CharSequence h = numRate.getText();
+        h = h.subSequence(1, h.length()-1);
+
+        int g = Integer.parseInt((String) h);
+        ProgressBar progressBar = view.findViewById(R.id.progressBar);
+        ProgressBar progressBar2 = view.findViewById(R.id.progressBar2);
+        ProgressBar progressBar3 = view.findViewById(R.id.progressBar3);
+        ProgressBar progressBar4 = view.findViewById(R.id.progressBar4);
+        ProgressBar progressBar5 = view.findViewById(R.id.progressBar5);
+        List<Integer> numberOfStar = new ArrayList<>();
+        progressBar.setMax(g);
+        int k = g-20-30-40-50;
+        Log.d("DanhGia", String.valueOf(g));
+        numberOfStar = getNumberOfStar(k, 20, 30, 40, 20);
+
         recyclerView2
                 = view.findViewById(
                 R.id.recyclerView2);
@@ -104,5 +121,14 @@ public class DanhGia extends Fragment {
                 listDanhGia.get(i).setStar(j + 1, ID);
             }
         }
+    }
+    public List<Integer> getNumberOfStar(int star1, int star2, int star3, int star4, int star5){
+        List<Integer> numberOfStar = new ArrayList<>();
+        numberOfStar.add(star1);
+        numberOfStar.add(star2);
+        numberOfStar.add(star3);
+        numberOfStar.add(star4);
+        numberOfStar.add(star5);
+        return numberOfStar;
     }
 }
