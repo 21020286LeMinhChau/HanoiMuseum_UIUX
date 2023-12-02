@@ -135,8 +135,12 @@ public class ThongTinAll extends Fragment {
             ImageView pic = getView().findViewById(R.id.imageView5);
             TextView commentTxt = getView().findViewById(R.id.textView11);
 //            TextView voteTxt = getView().findViewById(R.id.voteTxt);
+//            Glide.with(getContext())
+//                    .load(picture)
+//                    .into(pic);
+
             Glide.with(getContext())
-                    .load(picture)
+                    .load("file:///android_asset/DbI/museums/" + picture)
                     .into(pic);
             commentTxt.setText(comment + " đánh giá");
 //            voteTxt.setText(vote + "");

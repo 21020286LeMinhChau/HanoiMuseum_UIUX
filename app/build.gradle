@@ -4,6 +4,10 @@ plugins {
     id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 
 }
+// mongodb password munt: NOUllxNBZzaQnqdG
+
+
+
 apply plugin: 'kotlin-kapt'
 apply plugin: 'realm-android'
 

@@ -39,10 +39,12 @@ public class ChuDeAdapter extends  RecyclerView.Adapter<ChuDeAdapter.ChuDeViewHo
 
 //        holder.pic.setImageResource(chuDe.getPicture());
 
+//        Glide.with(holder.itemView.getContext())
+//                .load(chuDe.getPicture())
+//                .into(holder.pic);
         Glide.with(holder.itemView.getContext())
-                .load(chuDe.getPicture())
+                .load("file:///android_asset/DbI/museums_chude/" + chuDe.getPicture())
                 .into(holder.pic);
-
 
 
 

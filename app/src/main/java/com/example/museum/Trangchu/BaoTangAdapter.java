@@ -43,10 +43,13 @@ public class BaoTangAdapter extends RecyclerView.Adapter<BaoTangAdapter.BaoTangV
         holder.address.setText(baoTang.getAddress());
         holder.priceOfTicket.setText(baoTang.getPriceOfTicket());
         holder.openings.setText(baoTang.getOpeningsNow());
+//        Glide.with(holder.itemView.getContext())
+//                .load(baoTang.getPic())
+//                .into(holder.pic);
+// pic -> link to assets/DbI/museums + pic
         Glide.with(holder.itemView.getContext())
-                .load(baoTang.getPic())
+                .load("file:///android_asset/DbI/museums/" + baoTang.getPic())
                 .into(holder.pic);
-
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

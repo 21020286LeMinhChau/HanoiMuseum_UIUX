@@ -149,6 +149,7 @@ public class MapsFragmentFullOption extends Fragment implements OnMapReadyCallba
     public void onMyLocationClick(@NonNull Location location) {
     }
 
+
     @Override
     public boolean onMyLocationButtonClick() {
         return false;

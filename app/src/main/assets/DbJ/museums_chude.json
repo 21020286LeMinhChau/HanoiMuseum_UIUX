@@ -1,0 +1,37 @@
+[
+  {
+    "_id": {
+      "$oid": "6554d462a0bb79a2549bfa85"
+    },
+    "name": "Quân sự",
+    "picture": "1.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "6554d5b8a0bb79a2549bfa87"
+    },
+    "name": "Khoa học tự nhiên",
+    "picture": "3.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "6554d62aa0bb79a2549bfa88"
+    },
+    "name": "Văn hoá",
+    "picture": "4.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "6554d693a0bb79a2549bfa89"
+    },
+    "name": "Lịch sử",
+    "picture": "5.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "6554d6d0a0bb79a2549bfa8a"
+    },
+    "name": "Thiên nhiên",
+    "picture": "6.jpg"
+  }
+]
