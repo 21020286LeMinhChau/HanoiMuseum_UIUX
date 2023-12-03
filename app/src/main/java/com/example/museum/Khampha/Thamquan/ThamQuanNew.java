@@ -77,7 +77,7 @@ public class ThamQuanNew extends Fragment implements AdapterView.OnItemSelectedL
         });
 
 
-        List<HienVat> list = new ArrayList<>();
+        List<HienVat> list;
         list = getData();
 
         recyclerView
@@ -97,19 +97,16 @@ public class ThamQuanNew extends Fragment implements AdapterView.OnItemSelectedL
                 new LinearLayoutManager(requireContext()));
         TextView thongTinTomTat = view.findViewById(R.id.thongtintomtat);
         TextView xemthem = view.findViewById(R.id.xemthem);
-        xemthem.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(thongTinTomTat.getMaxLines() == 2)
-                {
-                    thongTinTomTat.setMaxLines(Integer.MAX_VALUE);
-                    xemthem.setText("Thu gọn");
-                }
-                else
-                {
-                    thongTinTomTat.setMaxLines(2);
-                    xemthem.setText("Xem thêm");
-                }
+        xemthem.setOnClickListener(view1 -> {
+            if(thongTinTomTat.getMaxLines() == 2)
+            {
+                thongTinTomTat.setMaxLines(Integer.MAX_VALUE);
+                xemthem.setText("Thu gọn");
+            }
+            else
+            {
+                thongTinTomTat.setMaxLines(2);
+                xemthem.setText("Xem thêm");
             }
         });
         return view;

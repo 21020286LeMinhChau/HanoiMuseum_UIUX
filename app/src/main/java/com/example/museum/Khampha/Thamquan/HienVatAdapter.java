@@ -56,13 +56,7 @@ public class HienVatAdapter extends RecyclerView.Adapter<HienVatViewHolder>{
                 .setText(list.get(position).getThongTin());
         holder.HinhAnh
                 .setImageResource(list.get(position).getHinhAnh());
-        holder.view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view)
-            {
-                listiner.click(index);
-            }
-        });
+        holder.view.setOnClickListener(view -> listiner.click(index));
     }
 
     @Override

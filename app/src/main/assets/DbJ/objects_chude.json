@@ -1,0 +1,37 @@
+[{
+  "_id": {
+    "$oid": "6554d7e1a0bb79a2549bfa8b"
+  },
+  "picture": "https://sangom.vn/wp-content/uploads/2022/07/bao-tang-gom-bat-trang-31.jpg",
+  "name": "đồ gốm"
+},{
+  "_id": {
+    "$oid": "6554d82aa0bb79a2549bfa8c"
+  },
+  "picture": "https://media.mia.vn/uploads/blog-du-lich/bao-tang-dieu-khac-cham-da-nang-noi-luu-giu-di-san-cham-pa-03-1636330975.jpg",
+  "name": "tượng điêu khắc"
+},{
+  "_id": {
+    "$oid": "6554d87da0bb79a2549bfa8e"
+  },
+  "picture": "https://imagevietnam.vnanet.vn/upload/Thumnail/2014/9/12/Mark_20140912094327_CV27.jpg",
+  "name": "vũ khí"
+},{
+  "_id": {
+    "$oid": "6554d8a5a0bb79a2549bfa90"
+  },
+  "picture": "https://th.bing.com/th/id/R.797da9b680da7173ad31e33881425b6b?rik=zE4PmbTQq09qnA&riu=http%3a%2f%2fvietlandmarks.com%2fupload%2f14934400795904164faa082.jpg&ehk=Llq5OR0qxQhP%2f44oI2GhwFVOFQQJoBH7ASHojqo4Bos%3d&risl=&pid=ImgRaw&r=0",
+  "name": "máy bay"
+},{
+  "_id": {
+    "$oid": "6554d902a0bb79a2549bfa91"
+  },
+  "picture": "https://tranh3dntp.com/wp-content/uploads/2018/11/tranh-dan-gian-dong-ho-1.jpg",
+  "name": "tranh đông hồ"
+},{
+  "_id": {
+    "$oid": "6554d968a0bb79a2549bfa93"
+  },
+  "picture": "https://th.bing.com/th/id/OIP.wa-rukHmiQlQJXKCz_bqVQHaFj?pid=ImgDet&rs=1",
+  "name": "tranh sơn mài"
+}]

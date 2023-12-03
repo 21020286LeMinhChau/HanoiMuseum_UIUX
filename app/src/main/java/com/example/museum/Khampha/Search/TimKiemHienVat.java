@@ -3,11 +3,16 @@ package com.example.museum.Khampha.Search;
 import static com.example.museum.R.id.rcv_hienvat;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.widget.SearchView;
+
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,17 +22,19 @@ import com.example.museum.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TimKiemHienVat extends AppCompatActivity {
+public class TimKiemHienVat extends Fragment {
     private RecyclerView rcvHienVat;
     private SearchView searchView;
     private List<HienVat> listHienVat;
     private HienVatSearchAdapter adapter;
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.hienvat_search);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.hienvat_search, container, false);
 
-        searchView = findViewById(R.id.searchHienVatView);
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.hienvat_search);
+
+        searchView = rootView.findViewById(R.id.searchHienVatView);
         searchView.clearFocus();
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -41,8 +48,8 @@ public class TimKiemHienVat extends AppCompatActivity {
                 return true;
             }
         });
-        rcvHienVat = findViewById(rcv_hienvat);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this,2);
+        rcvHienVat = rootView.findViewById(rcv_hienvat);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(),2);
         rcvHienVat.setLayoutManager(gridLayoutManager);
         listHienVat = new ArrayList<>();
         listHienVat.add(new HienVat("Sách Đường Kách mệnh","Nguyễn Ái Quốc", R.drawable.hienvat1 ));
@@ -60,6 +67,8 @@ public class TimKiemHienVat extends AppCompatActivity {
 
         adapter = new HienVatSearchAdapter(listHienVat);
         rcvHienVat.setAdapter(adapter);
+        return rootView;
+
     }
 
     private void filterList(String text) {

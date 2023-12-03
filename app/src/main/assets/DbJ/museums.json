@@ -1,0 +1,100 @@
+[
+  {
+    "_id": {
+      "$oid": "6554d098a0bb79a2549bfa83"
+    },
+    "chude": "Quân sự",
+    "name": "Bảo tàng Hồ Chí Minh",
+    "price": [
+      "Khách quốc tế: 40000đ"
+    ],
+    "price_free": [
+      "Người Việt Nam",
+      "Người tàn tật",
+      "Thành viên Hiệp hội Bảo tàng Quốc tế ICOM"
+    ],
+    "opening_times": [
+      "8h00 - 16h30",
+      "8h00 - 16h30",
+      "8h00 - 16h30",
+      "8h00 - 16h30",
+      "Đóng cửa",
+      "8h00 - 16h30",
+      "Đóng cửa"
+    ],
+    "address": "Số 19, phố Ngọc Hà, quận Ba Đình, Hà Nội",
+    "picture": "1.jpg",
+    "price_min_max": "0đ - 40000đ",
+    "x_toado": 21.035693,
+    "y_toado": 105.832624,
+    "comment": 32,
+    "vote": 4.3,
+    "gioi_thieu": "Bảo tàng Hồ Chí Minh là bảo tàng ở Hà Nội tập trung chủ yếu vào việc trưng bày những hiện vật, tư liệu về cuộc đời và con người Hồ Chí Minh. Nằm trong khu vực có nhiều di tích như: Lăng Chủ tịch Hồ Chí Minh, Khu di tích Phủ Chủ tịch, Chùa Một Cột,... tạo thành một quần thể các di tích thu hút khách tham quan trong và ngoài nước..."
+  },
+  {
+    "_id": {
+      "$oid": "6554d383a0bb79a2549bfa84"
+    },
+    "chude": "Mỹ thuật",
+    "name": "Bảo tàng mỹ thuật Việt Nam",
+    "price": [
+      "Người lớn: 40.000 VND",
+      "Sinh viên, học sinh: 20.000 VND",
+      "Trẻ em và học sinh từ 06 đến 16 tuổi: 10.000 VND"
+    ],
+    "price_free": [
+      "Người khuyết tật đặc biệt nặng",
+      "Trẻ em dưới 6 tuổi",
+      ""
+    ],
+    "opening_times": [
+      "8h30 – 17h00",
+      "8h30 – 17h00",
+      "8h30 – 17h00",
+      "8h30 – 17h00",
+      "8h30 – 17h00",
+      "8h30 – 17h00",
+      "8h30 – 17h00"
+    ],
+    "address": "Số 66 Nguyễn Thái Học, quận Ba Đình, Hà Nội",
+    "picture": "2.jpg",
+    "price_min_max": "0đ - 40000đ",
+    "x_toado": 21.030739,
+    "y_toado": 105.8374646,
+    "comment": 123,
+    "vote": 2.3,
+    "gioi_thieu": "Bảo tàng Mỹ thuật Việt Nam là một trong những bảo tàng có vị trí quan trọng nhất trong việc lưu giữ kho tàng di sản văn hóa nghệ thuật của cộng đồng các dân tộc Việt Nam. Bảo tàng tọa lạc tại số 66 đường Nguyễn Thái Học, phường Điện Biên, quận Ba Đình, thành phố Hà Nội, nằm đối diện phía sau Văn Miếu - Quốc Tử Giám."
+  },
+  {
+    "_id": {
+      "$oid": "6554d9c2a0bb79a2549bfa94"
+    },
+    "chude": "quân sự",
+    "name": "Bảo tàng Lịch sử Quân sự Việt Nam",
+    "price": [
+      "Khách quốc tế: 40.000đ/khách",
+      "Khách trong nước: 20.000đ/khách",
+      "Trẻ em dưới 16 tuổi và người cao tuổi: 10.000đ/khách"
+    ],
+    "price_free": [
+      "Trẻ em dưới 6 tuổi"
+    ],
+    "opening_times": [
+      "Đóng cửa",
+      "8h00 - 16h30",
+      "8h00 - 16h30",
+      "8h00 - 16h30",
+      "Đóng cửa",
+      "8h00 - 16h30",
+      "8h00 - 16h30"
+    ],
+    "address": "Số 28A, đường Điện Biên Phủ, quận Ba Đình, Hà Nội",
+    "picture": "3.jpg",
+    "price_min_max": "0đ - 40000đ",
+    "x_toado": 21.032281,
+    "y_toado": 105.840017,
+    "comment": 121,
+    "vote": 3.9,
+    "gioi_thieu": "Bảo tàng Lịch sử Quân sự Việt Nam [1][2] là một trong các bảo tàng quốc gia và đứng đầu trong hệ thống Bảo tàng Quân đội, hiện đang lưu giữ, trưng bày hơn 15 vạn tài liệu, hiện vật, trong đó có nhiều sưu tập độc đáo và 4 Bảo vật Quốc gia, gồm máy bay MiG-21 số hiệu 4324, máy bay MiG-21 số hiệu 5121, Bản đồ Quyết tâm chiến dịch Hồ Chí Minh và xe tăng T-54B số hiệu 843..."
+  }
+]

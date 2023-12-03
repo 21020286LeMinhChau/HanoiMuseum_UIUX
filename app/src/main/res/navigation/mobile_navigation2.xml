@@ -13,7 +13,7 @@
     <fragment
         android:id="@+id/explore"
         android:label="Khám phá"
-        tools:layout="@layout/thongtinf" />
+        tools:layout="@layout/all_search" />
 
     <fragment
         android:id="@+id/scan"

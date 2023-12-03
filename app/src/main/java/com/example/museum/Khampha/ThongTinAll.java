@@ -14,8 +14,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.museum.Khampha.DanhGia.DanhGia;
 import com.bumptech.glide.Glide;
+import com.example.museum.Khampha.DanhGia.DanhGia;
 import com.example.museum.Khampha.Thamquan.ThamQuanNew;
 import com.example.museum.R;
 import com.example.museum.Trangchu.BaoTang;
@@ -135,8 +135,12 @@ public class ThongTinAll extends Fragment {
             ImageView pic = getView().findViewById(R.id.imageView5);
             TextView commentTxt = getView().findViewById(R.id.textView11);
 //            TextView voteTxt = getView().findViewById(R.id.voteTxt);
+//            Glide.with(getContext())
+//                    .load(picture)
+//                    .into(pic);
+
             Glide.with(getContext())
-                    .load(picture)
+                    .load("file:///android_asset/DbI/museums/" + picture)
                     .into(pic);
             commentTxt.setText(comment + " đánh giá");
 //            voteTxt.setText(vote + "");

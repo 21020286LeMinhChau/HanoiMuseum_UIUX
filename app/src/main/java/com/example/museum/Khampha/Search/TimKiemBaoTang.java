@@ -3,11 +3,16 @@ package com.example.museum.Khampha.Search;
 import static com.example.museum.R.id.rcv_baotang;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.widget.SearchView;
+
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,17 +22,18 @@ import com.example.museum.Trangchu.BaoTang;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TimKiemBaoTang extends AppCompatActivity {
+public class TimKiemBaoTang extends Fragment {
     private RecyclerView rcvBaoTang;
     private SearchView searchView;
     private List<BaoTang> listBaoTang;
     private BaoTangSearchAdapter adapter;
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.baotang_search);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.baotang_search);
+        View rootView = inflater.inflate(R.layout.baotang_search, container, false);
 
-        searchView = findViewById(R.id.searchView);
+        searchView = rootView.findViewById(R.id.searchView);
         searchView.clearFocus();
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -41,8 +47,8 @@ public class TimKiemBaoTang extends AppCompatActivity {
                 return true;
             }
         });
-        rcvBaoTang = findViewById(rcv_baotang);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this,2);
+        rcvBaoTang = rootView.findViewById(rcv_baotang);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(),2);
         rcvBaoTang.setLayoutManager(gridLayoutManager);
         listBaoTang = new ArrayList<>();
         listBaoTang.add(new BaoTang("Bảo tàng Mỹ thuật",  " Hà Nội","ĐANG MỞ CỬA" ,R.drawable.item1));
@@ -61,6 +67,8 @@ public class TimKiemBaoTang extends AppCompatActivity {
 
         adapter = new BaoTangSearchAdapter(listBaoTang);
         rcvBaoTang.setAdapter(adapter);
+        return rootView;
+
     }
 
     private void filterList(String text) {

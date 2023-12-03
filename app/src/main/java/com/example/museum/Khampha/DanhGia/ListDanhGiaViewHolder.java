@@ -18,6 +18,7 @@ public class ListDanhGiaViewHolder extends RecyclerView.ViewHolder{
     ImageView star3;
     ImageView star4;
     ImageView star5;
+    ImageView line;
     int soSao;
 
     View view;
@@ -33,6 +34,7 @@ public class ListDanhGiaViewHolder extends RecyclerView.ViewHolder{
         star3 = (ImageView) itemView.findViewById(R.id.starDanhGia3);
         star4 = (ImageView) itemView.findViewById(R.id.starDanhGia4);
         star5 = (ImageView) itemView.findViewById(R.id.starDanhGia5);
+        line = itemView.findViewById(R.id.line_in_danhgia);
         this.view = itemView;
     }
 }

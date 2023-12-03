@@ -21,7 +21,7 @@ public class BaoTang {
 
     private int anh;
 
-    public void preprocessingData() {
+    public void preprocessingDay() {
         // get today (thứ 2, thứ 3, ...)
         int day_of_week = Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
         switch (day_of_week) {
