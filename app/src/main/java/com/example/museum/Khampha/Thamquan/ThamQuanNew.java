@@ -122,15 +122,15 @@ public class ThamQuanNew extends Fragment  implements AdapterView.OnItemSelected
     public List<HienVat> getData()
     {
         List<HienVat> list = new ArrayList<>();
-        list.add(new HienVat("Gốm chu đậu",
+        list.add(new HienVat("Bình Phong",
                 "0:35",
-                "Thời Lý", R.drawable.bat, "https://webaudioapi.com/samples/audio-tag/chrono.mp3"));
-        list.add(new HienVat("Item 1",
+                "Nguyễn Gia Trí", R.drawable.hienvat4, "https://webaudioapi.com/samples/audio-tag/chrono.mp3"));
+        list.add(new HienVat("Kết nạp Đảng ở Điện Biên Phủ",
                 "0:57",
-                "Thời Đinh",R.drawable.bat,"https://webaudioapi.com/samples/audio-tag/chrono.mp3"));
-        list.add(new HienVat("Item 2",
+                "Nguyễn Sáng",R.drawable.hienvat9,"https://webaudioapi.com/samples/audio-tag/chrono.mp3"));
+        list.add(new HienVat("Hai thiếu nữ và em bé",
                 "0:35",
-                "Thời Nguyễn",R.drawable.bat,"https://webaudioapi.com/samples/audio-tag/chrono.mp3"));
+                "Tô Ngọc Vân",R.drawable.hienvat10,"https://webaudioapi.com/samples/audio-tag/chrono.mp3"));
 
         return list;
     }

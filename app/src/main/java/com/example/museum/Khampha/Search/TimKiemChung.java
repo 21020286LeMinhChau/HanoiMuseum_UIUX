@@ -74,10 +74,10 @@ public class TimKiemChung extends Fragment {
 
 
         listBaoTang = new ArrayList<>();
-        listBaoTang.add(new BaoTang("Bảo tàng Mỹ thuật",  " Hà Nội","ĐANG MỞ CỬA" ,R.drawable.item1));
-        listBaoTang.add(new BaoTang("Bảo tàng Quân sự",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item2));
-        listBaoTang.add(new BaoTang("Bảo tàng Mỹ thuật",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item3));
-        listBaoTang.add(new BaoTang("Bảo tàng Mỹ thuật",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item4));
+        listBaoTang.add(new BaoTang("Bảo tàng Văn Học",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item7));
+        listBaoTang.add(new BaoTang("Bảo tàng Lịch Sử Quốc Gia",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item8));
+        listBaoTang.add(new BaoTang("Bảo tàng Địa chất Hà Nội",  " Hà Nội","ĐANG MỞ CỬA" ,R.drawable.item9));
+        listBaoTang.add(new BaoTang("Bảo tàng Phụ Nữ Việt Nam",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item10));
 
 
 
@@ -86,6 +86,9 @@ public class TimKiemChung extends Fragment {
         listHienVat.add(new HienVat("Ấn vàng Sắc mệnh chi bảo","Thời Nguyễn", R.drawable.hienvat2 ));
         listHienVat.add(new HienVat("Trống đồng Ngọc Lũ","Trống đồng Đông Sơn", R.drawable.hienvat3 ));
         listHienVat.add(new HienVat("Bình Phong","Nguyễn Gia Trí", R.drawable.hienvat4 ));
+        listHienVat.add(new HienVat("Gióng","Nguyễn Tư Nghiêm", R.drawable.hienvat5 ));
+        listHienVat.add(new HienVat("Gà thư hùng","Tranh dân gian Đông Hồ", R.drawable.hienvat6 ));
+
 
         baoTangSearchAdapter = new BaoTangSearchAdapter(listBaoTang);
         LinearLayoutManager linearLayoutManager_baotang = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL,false);
