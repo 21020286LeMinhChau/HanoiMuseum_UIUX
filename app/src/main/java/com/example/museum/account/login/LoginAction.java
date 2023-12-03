@@ -1,6 +1,8 @@
 package com.example.museum.account.login;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -85,7 +87,14 @@ public class LoginAction  extends AppCompatActivity {
             }else{
                 Toast.makeText(getApplicationContext(), "Login Successfully!", Toast.LENGTH_SHORT).show();
                 LoginAccount.account = new Account(email.getEditText().getText().toString(),password.getEditText().getText().toString());
-                Log.v("test",email.getEditText().toString());
+                SharedPreferences sharedPreferences = getSharedPreferences("login", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putBoolean("isLoggedIn", true);
+                editor.putString("email",LoginAccount.account.getEmail());
+                editor.putString("password",LoginAccount.account.getPassword());
+                editor.putBoolean("firstTimeUsing", false);
+                editor.apply();
+                Log.v("test","yes");
                 Intent intent = new Intent(LoginAction.this, MainRun.class);
                 startActivity(intent);
             }

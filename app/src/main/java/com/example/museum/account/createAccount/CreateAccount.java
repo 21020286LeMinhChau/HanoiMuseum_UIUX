@@ -1,6 +1,8 @@
 package com.example.museum.account.createAccount;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -60,6 +62,13 @@ public class CreateAccount extends AppCompatActivity {
                                         .show();
                                 LoginAccount.account = new Account(email.getEditText().getText().toString(),
                                         password.getEditText().getText().toString());
+                                SharedPreferences sharedPreferences = getSharedPreferences("login", Context.MODE_PRIVATE);
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                editor.putBoolean("isLoggedIn", true);
+                                editor.putString("email",LoginAccount.account.getEmail());
+                                editor.putString("password",LoginAccount.account.getPassword());
+                                editor.putBoolean("firstTimeUsing", true);
+                                editor.apply();
                                 Intent intent = new Intent(CreateAccount.this, MainRun.class);
                                 startActivity(intent);
                             }

@@ -29,6 +29,8 @@ public class Account implements AddUserToDB {
         return email;
     }
 
+    public String getPassword(){return password;}
+
     @Override
     public void addNewUserToDB() {
             MongoDBInsert.insertOne("hanoi-museum", "users",

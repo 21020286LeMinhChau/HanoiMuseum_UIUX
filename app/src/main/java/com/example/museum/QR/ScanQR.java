@@ -54,7 +54,7 @@ public class ScanQR extends Fragment{
                             onResume();
                         }
                         // di den trang thong tin hien vat
-                        Intent intent = new Intent(getContext(), TaP.class).putExtra("Hien vat", "objectID");
+                        Intent intent = new Intent(getContext(), Audio.class).putExtra("Hien vat", "objectID");
                         startActivity(intent);
 
                     }
