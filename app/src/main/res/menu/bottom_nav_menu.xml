@@ -6,7 +6,7 @@
         android:title="Trang chủ" />
     <item
         android:id="@+id/explore"
-        android:icon="?android:attr/actionModeWebSearchDrawable"
+        android:icon="@drawable/icon2"
         android:title="Khám phá" />
     <item
         android:id="@+id/scan"

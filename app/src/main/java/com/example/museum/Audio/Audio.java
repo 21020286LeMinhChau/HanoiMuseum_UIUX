@@ -2,23 +2,27 @@ package com.example.museum.Audio;
 
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.os.Handler;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.museum.Khampha.Thamquan.HienVat;
 import com.example.museum.Khampha.Thamquan.HienVatAdapter;
 import com.example.museum.R;
 
-public class Audio extends AppCompatActivity {
+public class Audio extends Fragment {
     private ImageView imagePlayPause;
     private TextView textCurrentTime, textTotalDuration;
     private SeekBar playerSeekBar;
@@ -28,18 +32,21 @@ public class Audio extends AppCompatActivity {
     private Handler handler = new Handler();
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.audio);
-
-        viewPager2 = findViewById(R.id.viewpager3);
-        ViewPager2AudioAdapter viewPager2AudioAdapter = new ViewPager2AudioAdapter(this);
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                         @Nullable ViewGroup container,
+                         @Nullable Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.audio);
+        View view = inflater.inflate(
+                R.layout.audio, container, false);
+        viewPager2 = view.findViewById(R.id.viewpager3);
+        ViewPager2AudioAdapter viewPager2AudioAdapter = new ViewPager2AudioAdapter(getActivity());
         viewPager2.setAdapter(viewPager2AudioAdapter);
 
-        imagePlayPause = findViewById(R.id.imagePlayPause);
-        textCurrentTime = findViewById(R.id.textCurrentTime);
-        textTotalDuration= findViewById(R.id.textTotalDuration);
-        playerSeekBar=findViewById(R.id.playerSeekBar);
+        imagePlayPause = view.findViewById(R.id.imagePlayPause);
+        textCurrentTime = view.findViewById(R.id.textCurrentTime);
+        textTotalDuration= view.findViewById(R.id.textTotalDuration);
+        playerSeekBar= view.findViewById(R.id.playerSeekBar);
         mediaPlayer = new MediaPlayer();
         playerSeekBar.setMax(100);
         HienVat hienvat = new HienVat("Gốm chu đậu",
@@ -71,6 +78,8 @@ public class Audio extends AppCompatActivity {
                 return false;
             }
         });
+
+        return view;
     }
     private void prepareMediaPlayer(HienVat hienVat){
         try{
@@ -78,7 +87,7 @@ public class Audio extends AppCompatActivity {
             mediaPlayer.prepare();
             textTotalDuration.setText(milliSecondsToTimer(mediaPlayer.getDuration()));
         } catch (Exception exception){
-            Toast.makeText(this, exception.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), exception.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
     private Runnable updater = new Runnable() {

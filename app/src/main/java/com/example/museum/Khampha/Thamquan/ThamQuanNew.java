@@ -19,6 +19,7 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.museum.Audio.Audio;
 import com.example.museum.R;
 import com.github.barteksc.pdfviewer.PDFView;
 import com.github.barteksc.pdfviewer.listener.OnLoadCompleteListener;
@@ -27,7 +28,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class ThamQuanNew extends Fragment implements AdapterView.OnItemSelectedListener{
+public class ThamQuanNew extends Fragment  implements AdapterView.OnItemSelectedListener{
     HienVatAdapter adapter;
     RecyclerView recyclerView;
     View mapThongTin;
@@ -86,7 +87,8 @@ public class ThamQuanNew extends Fragment implements AdapterView.OnItemSelectedL
         listiner = new ClickListiner() {
             @Override
             public void click(int index){
-                Toast.makeText(requireContext(), "Clicked on : " + index, Toast.LENGTH_SHORT).show();
+
+//                Toast.makeText(requireContext(), "Clicked on : " + index, Toast.LENGTH_SHORT).show();
             }
         };
         adapter
@@ -111,6 +113,9 @@ public class ThamQuanNew extends Fragment implements AdapterView.OnItemSelectedL
         });
         return view;
     }
+
+
+
 
 
 
