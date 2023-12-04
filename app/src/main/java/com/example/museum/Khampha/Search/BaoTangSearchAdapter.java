@@ -1,5 +1,6 @@
 package com.example.museum.Khampha.Search;
 
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,9 +8,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.museum.Khampha.ThongTinAll;
 import com.example.museum.R;
 import com.example.museum.Trangchu.BaoTang;
 
@@ -47,7 +52,21 @@ public class BaoTangSearchAdapter extends  RecyclerView.Adapter<BaoTangSearchAda
         Glide.with(holder.itemView.getContext())
                 .load(baoTang.getAnh())
                 .into(holder.anh);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("name", baoTang.getNameOfMuseum());
+                ThongTinAll thongTinAll = new ThongTinAll();
 
+                thongTinAll.setArguments(bundle);
+
+                FragmentManager fragmentManager = ((FragmentActivity) v.getContext()).getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, thongTinAll);
+                fragmentTransaction.commit();
+            }
+        });
 
 
     }

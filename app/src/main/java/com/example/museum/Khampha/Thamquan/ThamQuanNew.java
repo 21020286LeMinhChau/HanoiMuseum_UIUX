@@ -1,5 +1,6 @@
 package com.example.museum.Khampha.Thamquan;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -87,8 +88,9 @@ public class ThamQuanNew extends Fragment  implements AdapterView.OnItemSelected
         listiner = new ClickListiner() {
             @Override
             public void click(int index){
+                Intent intent = new Intent(getActivity(), Audio.class);
+                startActivity(intent);
 
-//                Toast.makeText(requireContext(), "Clicked on : " + index, Toast.LENGTH_SHORT).show();
             }
         };
         adapter

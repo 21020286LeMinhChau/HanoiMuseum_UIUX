@@ -13,6 +13,8 @@ import android.widget.SearchView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -20,6 +22,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.museum.Khampha.Thamquan.HienVat;
 import com.example.museum.Khampha.Thamquan.ThamQuanNew;
+import com.example.museum.Khampha.ThongTinAll;
 import com.example.museum.Khampha.ThongTinChungNew;
 import com.example.museum.R;
 import com.example.museum.Trangchu.BaoTang;
@@ -104,15 +107,11 @@ public class TimKiemChung extends Fragment {
 //                .commit();
 
         baotangButton.setOnClickListener(view -> {
-            getChildFragmentManager().beginTransaction()
-                    .replace(R.id.searchChung1, timKiemBaoTang)
-                    .commit();
+            replaceFragment(timKiemBaoTang);
         });
 
         hienvatButton.setOnClickListener(view -> {
-            getChildFragmentManager().beginTransaction()
-                    .replace(R.id.searchChung1, timKiemHienVat)
-                    .commit();
+            replaceFragment(timKiemHienVat);
         });
 
         return rootView;
@@ -150,5 +149,11 @@ public class TimKiemChung extends Fragment {
         baoTangSearchAdapter.setFilteredList(filteredBaoTangList);
 
 
+    }
+    private void replaceFragment(Fragment fragment) {
+        FragmentManager fragmentManager = ((FragmentActivity) this.getContext()).getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, fragment);
+        fragmentTransaction.commit();
     }
 }

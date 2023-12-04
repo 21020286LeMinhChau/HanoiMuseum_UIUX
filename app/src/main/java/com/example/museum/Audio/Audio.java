@@ -1,11 +1,16 @@
 package com.example.museum.Audio;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -20,9 +25,13 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.museum.Khampha.Thamquan.HienVat;
 import com.example.museum.Khampha.Thamquan.HienVatAdapter;
+import com.example.museum.Khampha.ThongTinAll;
+import com.example.museum.MainRun;
 import com.example.museum.R;
 
-public class Audio extends Fragment {
+import io.realm.mongodb.App;
+
+public class Audio extends AppCompatActivity {
     private ImageView imagePlayPause;
     private TextView textCurrentTime, textTotalDuration;
     private SeekBar playerSeekBar;
@@ -30,24 +39,34 @@ public class Audio extends Fragment {
     private ViewPager2 viewPager2;
 
     private Handler handler = new Handler();
+    private MainRun mainRun;
+    ImageButton button_h;
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                         @Nullable ViewGroup container,
-                         @Nullable Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.audio);
-        View view = inflater.inflate(
-                R.layout.audio, container, false);
-        viewPager2 = view.findViewById(R.id.viewpager3);
-        ViewPager2AudioAdapter viewPager2AudioAdapter = new ViewPager2AudioAdapter(getActivity());
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.audio);
+//        View view = inflater.inflate(
+//                R.layout.audio, container, false);
+        viewPager2 = findViewById(R.id.viewpager3);
+        ViewPager2AudioAdapter viewPager2AudioAdapter = new ViewPager2AudioAdapter(this);
         viewPager2.setAdapter(viewPager2AudioAdapter);
 
-        imagePlayPause = view.findViewById(R.id.imagePlayPause);
-        textCurrentTime = view.findViewById(R.id.textCurrentTime);
-        textTotalDuration= view.findViewById(R.id.textTotalDuration);
-        playerSeekBar= view.findViewById(R.id.playerSeekBar);
+        imagePlayPause = findViewById(R.id.imagePlayPause);
+        textCurrentTime = findViewById(R.id.textCurrentTime);
+        textTotalDuration= findViewById(R.id.textTotalDuration);
+        playerSeekBar= findViewById(R.id.playerSeekBar);
         mediaPlayer = new MediaPlayer();
+        button_h = findViewById(R.id.imageButton3);
+        button_h.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("TAG", "onClick: ") ;
+                Intent intent = new Intent(Audio.this, MainRun.class);
+                startActivity(intent);
+            }
+        });
         playerSeekBar.setMax(100);
         HienVat hienvat = new HienVat("Gốm chu đậu",
                  "0:35",
@@ -68,18 +87,14 @@ public class Audio extends Fragment {
             }
         });
         prepareMediaPlayer(hienvat);
-        playerSeekBar.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                SeekBar seekBar = (SeekBar) view;
-                int playPosition = (mediaPlayer.getDuration()/100) * seekBar.getProgress();
-                mediaPlayer.seekTo(playPosition);
-                textCurrentTime.setText(milliSecondsToTimer(mediaPlayer.getCurrentPosition()));
-                return false;
-            }
+        playerSeekBar.setOnTouchListener((view, motionEvent) -> {
+            SeekBar seekBar = (SeekBar) view;
+            int playPosition = (mediaPlayer.getDuration()/100) * seekBar.getProgress();
+            mediaPlayer.seekTo(playPosition);
+            textCurrentTime.setText(milliSecondsToTimer(mediaPlayer.getCurrentPosition()));
+            return false;
         });
 
-        return view;
     }
     private void prepareMediaPlayer(HienVat hienVat){
         try{
@@ -87,7 +102,7 @@ public class Audio extends Fragment {
             mediaPlayer.prepare();
             textTotalDuration.setText(milliSecondsToTimer(mediaPlayer.getDuration()));
         } catch (Exception exception){
-            Toast.makeText(getActivity(), exception.getMessage(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, exception.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
     private Runnable updater = new Runnable() {
