@@ -3,6 +3,7 @@ package com.example.museum.QR;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.Manifest;
@@ -48,12 +49,13 @@ public class ScanQR extends Fragment{
                             Toast.makeText(getContext(),"get Error, please try again", Toast.LENGTH_SHORT).show();
                             onResume();
                         }
-                        hienVat = ObjectQuery.FindByID(objectID);
-                        if(hienVat == null){
-                            Toast.makeText(getContext(),"get Error, please try again", Toast.LENGTH_SHORT).show();
-                            onResume();
-                        }
+                        //hienVat = ObjectQuery.FindByID(objectID);
+//                        if(hienVat == null){
+//                            Toast.makeText(getContext(),"get Error, please try again", Toast.LENGTH_SHORT).show();
+//                            onResume();
+//                        }
                         // di den trang thong tin hien vat
+                        Log.v("success:" ,"yes");
                         Intent intent = new Intent(getContext(), Audio.class).putExtra("Hien vat", "objectID");
                         startActivity(intent);
 
