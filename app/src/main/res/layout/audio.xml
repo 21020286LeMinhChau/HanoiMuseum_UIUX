@@ -12,17 +12,7 @@
         android:layout_height="770dp"
         android:fitsSystemWindows="true">
 
-        <ImageButton
-            android:id="@+id/imageButton3"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
-            android:background="#1B1B1B"
-            android:clickable="true"
-            android:contentDescription="Image button"
-            android:contextClickable="true"
-            android:src="@drawable/arrowdownaudio" />
+
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
@@ -32,7 +22,19 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-
+                <ImageButton
+                    android:id="@+id/backAudio"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:background="#1B1B1B"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:clickable="true"
+                    android:contentDescription="Image button"
+                    android:contextClickable="true"
+                    android:src="@drawable/arrowdownaudio" />
                 <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/viewpager3"
                     android:layout_width="match_parent"
@@ -78,7 +80,7 @@
                     android:layout_marginStart="32dp"
                     android:layout_marginTop="16dp"
                     android:fontFamily="@font/robotoslabregular"
-                    android:text="Xe tăng chiến đấu"
+                    android:text="Bình Phong"
                     android:textColor="@color/white"
                     android:textSize="32sp"
                     app:layout_constraintStart_toStartOf="parent"
@@ -205,15 +207,14 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageButton4" />
 
-                <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/toolbar"
-                    android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    app:layout_collapseMode="pin"
-                    tools:layout_editor_absoluteX="0dp"
-                    tools:layout_editor_absoluteY="-3dp" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+              />
         </com.google.android.material.appbar.CollapsingToolbarLayout>
             </com.google.android.material.appbar.AppBarLayout>
     <androidx.core.widget.NestedScrollView
@@ -250,7 +251,7 @@
                 android:ellipsize="end"
                 android:fontFamily="@font/robotoslablight"
                 android:minLines="12"
-                android:text="Xe tăng, là một biểu tượng vững chắc của sức mạnh quân sự và công nghệ hiện đại, đóng vai trò quan trọng trong lịch sử chiến tranh và đối đầu quân sự. Được thiết kế với mục đích chủ yếu là đánh chiến và bảo vệ, xe tăng tỏ ra là một phương tiện chiến đấu không thể thiếu trong nhiều chiến lược quân sự. Được trang bị với lớp giáp chắc chắn và vũ khí hiện đại, xe tăng không chỉ có khả năng chống đạn mạnh mẽ mà còn có thể tung ra những đòn tấn công mạnh mẽ từ xa."
+                android:text="Mặt trước tranh là Thiếu nữ trong vườn mang phong cách nhẹ nhàng, bay bổng, thể hiện bảy nhân vật nữ ở các độ tuổi. Góc phải là hai bé gái đang nô đùa. Góc trái tranh là ba thiếu nữ mặc áo dài, khoác tay nhau dạo bước dưới khóm chuối. Gần giữa tranh, một người tuổi trung niên ngồi dưới gốc phù dung, trung tâm là một phụ nữ luống tuổi đang thưởng trà. Bằng biện pháp xây dựng không gian đồng hiện và kỹ thuật tạo hình, Nguyễn Gia Trí khắc họa đời người phụ nữ: Từ tuổi thơ ngây, lúc đương thì con gái, lập gia đình đến khi về già."
                 android:textColor="@color/white"
 
                 android:textSize="14sp"

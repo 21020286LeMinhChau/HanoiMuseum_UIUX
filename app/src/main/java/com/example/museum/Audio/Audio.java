@@ -25,6 +25,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.museum.Khampha.Thamquan.HienVat;
 import com.example.museum.Khampha.Thamquan.HienVatAdapter;
+import com.example.museum.Khampha.Thamquan.ThamQuanNew;
 import com.example.museum.Khampha.ThongTinAll;
 import com.example.museum.MainRun;
 import com.example.museum.R;
@@ -58,12 +59,12 @@ public class Audio extends AppCompatActivity {
         textTotalDuration= findViewById(R.id.textTotalDuration);
         playerSeekBar= findViewById(R.id.playerSeekBar);
         mediaPlayer = new MediaPlayer();
-        button_h = findViewById(R.id.imageButton3);
+        button_h = findViewById(R.id.backAudio);
         button_h.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.d("TAG", "onClick: ") ;
-                Intent intent = new Intent(Audio.this, MainRun.class);
+                Intent intent = new Intent(Audio.this, ThamQuanNew.class);
                 startActivity(intent);
             }
         });
