@@ -51,18 +51,16 @@ public class TimKiemBaoTang extends Fragment {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(),2);
         rcvBaoTang.setLayoutManager(gridLayoutManager);
         listBaoTang = new ArrayList<>();
-        listBaoTang.add(new BaoTang("Bảo tàng Mỹ thuật",  " Hà Nội","ĐANG MỞ CỬA" ,R.drawable.item1));
-        listBaoTang.add(new BaoTang("Bảo tàng Quân sự",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item2));
-        listBaoTang.add(new BaoTang("Bảo tàng Mỹ thuật",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item3));
-        listBaoTang.add(new BaoTang("Bảo tàng Mỹ thuật",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item4));
-        listBaoTang.add(new BaoTang("Bảo tàng Mỹ thuật",  " Hà Nội","ĐANG MỞ CỬA" ,R.drawable.item5));
+
         listBaoTang.add(new BaoTang("Bảo tàng Quân sự",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item6));
         listBaoTang.add(new BaoTang("Bảo tàng Mỹ thuật",  " Hà Nội","ĐANG MỞ CỬA" ,R.drawable.item1));
-        listBaoTang.add(new BaoTang("Bảo tàng Quân sự",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item2));
-        listBaoTang.add(new BaoTang("Bảo tàng Mỹ thuật",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item3));
-        listBaoTang.add(new BaoTang("Bảo tàng Mỹ thuật",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item4));
-        listBaoTang.add(new BaoTang("Bảo tàng Mỹ thuật",  " Hà Nội","ĐANG MỞ CỬA" ,R.drawable.item5));
-        listBaoTang.add(new BaoTang("Bảo tàng Quân sự",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item6));
+        listBaoTang.add(new BaoTang("Bảo tàng Quân sự",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item4));
+        listBaoTang.add(new BaoTang("Bảo tàng Hà Nội",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item5));
+        listBaoTang.add(new BaoTang("Bảo tàng Văn Học Việt Nam",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item7));
+        listBaoTang.add(new BaoTang("Bảo tàng Lịch Sử Quốc Gia",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item8));
+        listBaoTang.add(new BaoTang("Bảo tàng Địa chất Hà Nội",  " Hà Nội","ĐANG MỞ CỬA" ,R.drawable.item9));
+        listBaoTang.add(new BaoTang("Bảo tàng Phụ Nữ Việt Nam",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item10));
+
 
 
         adapter = new BaoTangSearchAdapter(listBaoTang);

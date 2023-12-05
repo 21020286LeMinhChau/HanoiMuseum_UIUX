@@ -18,10 +18,12 @@
 
     <TextView
         android:id="@+id/noidungdanhgia"
-        android:layout_width="379dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/starDanhGia1"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+
         android:layout_marginTop="10dp"
         android:text="Đây là giới thiệu chung, giới thiệu chung Đây là giới thiệu chung, giới thiệu chungĐây là giới thiệu chung, giới thiệu chung"
         android:textColor="@color/black"
@@ -44,7 +46,7 @@
         android:layout_width="39dp"
         android:layout_height="39dp"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="12dp"
         android:scaleType="centerCrop"
 
@@ -66,7 +68,7 @@
         android:layout_width="15dp"
         android:layout_height="20dp"
         android:layout_below="@id/hinhanhnguoidanhgia"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="2dp"
         android:src="@drawable/starcolor" />

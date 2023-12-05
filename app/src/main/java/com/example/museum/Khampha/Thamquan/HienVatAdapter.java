@@ -19,12 +19,18 @@ public class HienVatAdapter extends RecyclerView.Adapter<HienVatViewHolder>{
 
     Context context;
     ClickListiner listiner;
+    ThamQuanNew fragmentOne;
     public HienVatAdapter(List<HienVat> list, Context context, ClickListiner listiner) {
         this.list = list;
         this.context = context;
         this.listiner = listiner;
     }
+    public HienVatAdapter(List<HienVat> list, Context context, ThamQuanNew fragmentOne) {
+        this.list = list;
+        this.context = context;
+        this.fragmentOne = fragmentOne;
 
+    }
     @NonNull
     @Override
     public HienVatViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

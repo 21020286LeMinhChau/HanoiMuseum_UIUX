@@ -13,6 +13,8 @@ import android.widget.SearchView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -20,6 +22,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.museum.Khampha.Thamquan.HienVat;
 import com.example.museum.Khampha.Thamquan.ThamQuanNew;
+import com.example.museum.Khampha.ThongTinAll;
 import com.example.museum.Khampha.ThongTinChungNew;
 import com.example.museum.R;
 import com.example.museum.Trangchu.BaoTang;
@@ -74,10 +77,10 @@ public class TimKiemChung extends Fragment {
 
 
         listBaoTang = new ArrayList<>();
-        listBaoTang.add(new BaoTang("Bảo tàng Mỹ thuật",  " Hà Nội","ĐANG MỞ CỬA" ,R.drawable.item1));
-        listBaoTang.add(new BaoTang("Bảo tàng Quân sự",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item2));
-        listBaoTang.add(new BaoTang("Bảo tàng Mỹ thuật",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item3));
-        listBaoTang.add(new BaoTang("Bảo tàng Mỹ thuật",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item4));
+        listBaoTang.add(new BaoTang("Bảo tàng Văn Học",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item7));
+        listBaoTang.add(new BaoTang("Bảo tàng Lịch Sử Quốc Gia",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item8));
+        listBaoTang.add(new BaoTang("Bảo tàng Địa chất Hà Nội",  " Hà Nội","ĐANG MỞ CỬA" ,R.drawable.item9));
+        listBaoTang.add(new BaoTang("Bảo tàng Phụ Nữ Việt Nam",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item10));
 
 
 
@@ -86,6 +89,9 @@ public class TimKiemChung extends Fragment {
         listHienVat.add(new HienVat("Ấn vàng Sắc mệnh chi bảo","Thời Nguyễn", R.drawable.hienvat2 ));
         listHienVat.add(new HienVat("Trống đồng Ngọc Lũ","Trống đồng Đông Sơn", R.drawable.hienvat3 ));
         listHienVat.add(new HienVat("Bình Phong","Nguyễn Gia Trí", R.drawable.hienvat4 ));
+        listHienVat.add(new HienVat("Gióng","Nguyễn Tư Nghiêm", R.drawable.hienvat5 ));
+        listHienVat.add(new HienVat("Gà thư hùng","Tranh dân gian Đông Hồ", R.drawable.hienvat6 ));
+
 
         baoTangSearchAdapter = new BaoTangSearchAdapter(listBaoTang);
         LinearLayoutManager linearLayoutManager_baotang = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL,false);
@@ -101,15 +107,11 @@ public class TimKiemChung extends Fragment {
 //                .commit();
 
         baotangButton.setOnClickListener(view -> {
-            getChildFragmentManager().beginTransaction()
-                    .replace(R.id.searchChung1, timKiemBaoTang)
-                    .commit();
+            replaceFragment(timKiemBaoTang);
         });
 
         hienvatButton.setOnClickListener(view -> {
-            getChildFragmentManager().beginTransaction()
-                    .replace(R.id.searchChung1, timKiemHienVat)
-                    .commit();
+            replaceFragment(timKiemHienVat);
         });
 
         return rootView;
@@ -147,5 +149,11 @@ public class TimKiemChung extends Fragment {
         baoTangSearchAdapter.setFilteredList(filteredBaoTangList);
 
 
+    }
+    private void replaceFragment(Fragment fragment) {
+        FragmentManager fragmentManager = ((FragmentActivity) this.getContext()).getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, fragment);
+        fragmentTransaction.commit();
     }
 }
