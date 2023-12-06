@@ -63,7 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/robotoslabbold"
-            android:text="Đăng nhập vào HaNoiMuseum"
+            android:text="Đăng nhập vào Bảo tàng Hà Nội"
             android:textColor="@color/black"
             android:textSize="24dp"
             app:layout_constraintBottom_toBottomOf="parent"
