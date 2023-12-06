@@ -21,7 +21,7 @@ import com.example.museum.Trangchu.BaoTang;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import com.example.museum.database.query.MuseumQuery;
 public class TimKiemBaoTang extends Fragment {
     private RecyclerView rcvBaoTang;
     private SearchView searchView;
@@ -52,14 +52,7 @@ public class TimKiemBaoTang extends Fragment {
         rcvBaoTang.setLayoutManager(gridLayoutManager);
         listBaoTang = new ArrayList<>();
 
-        listBaoTang.add(new BaoTang("Bảo tàng Quân sự",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item6));
-        listBaoTang.add(new BaoTang("Bảo tàng Mỹ thuật",  " Hà Nội","ĐANG MỞ CỬA" ,R.drawable.item1));
-        listBaoTang.add(new BaoTang("Bảo tàng Quân sự",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item4));
-        listBaoTang.add(new BaoTang("Bảo tàng Hà Nội",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item5));
-        listBaoTang.add(new BaoTang("Bảo tàng Văn Học Việt Nam",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item7));
-        listBaoTang.add(new BaoTang("Bảo tàng Lịch Sử Quốc Gia",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item8));
-        listBaoTang.add(new BaoTang("Bảo tàng Địa chất Hà Nội",  " Hà Nội","ĐANG MỞ CỬA" ,R.drawable.item9));
-        listBaoTang.add(new BaoTang("Bảo tàng Phụ Nữ Việt Nam",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item10));
+        listBaoTang = MuseumQuery.getAllMuseums();
 
 
 

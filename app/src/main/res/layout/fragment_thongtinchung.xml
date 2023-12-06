@@ -65,15 +65,14 @@
 
         <TextView
             android:id="@+id/thongtinchungreal"
-            android:layout_width="match_parent"
+            android:layout_width="375dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
+            android:layout_marginStart="36dp"
             android:layout_marginTop="20dp"
-            android:layout_marginEnd="16dp"
             android:maxLines="2"
+
             android:textColor="@color/black"
             android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView8" />
 
@@ -151,17 +150,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/xemthem1" />
 
-<!--        <ImageView-->
-<!--            android:id="@+id/imageView10"-->
-<!--            android:layout_width="218dp"-->
-<!--            android:layout_height="200dp"-->
-<!--            android:layout_marginTop="20dp"-->
-<!--            android:scaleType="fitXY"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintHorizontal_bias="0.497"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/thongtinchung9"-->
-<!--            app:srcCompat="@drawable/image_11" />-->
+        <!--        <ImageView-->
+        <!--            android:id="@+id/imageView10"-->
+        <!--            android:layout_width="218dp"-->
+        <!--            android:layout_height="200dp"-->
+        <!--            android:layout_marginTop="20dp"-->
+        <!--            android:scaleType="fitXY"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintHorizontal_bias="0.497"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/thongtinchung9"-->
+        <!--            app:srcCompat="@drawable/image_11" />-->
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/map_thongtinchung"
@@ -193,7 +192,6 @@
             android:layout_marginStart="36dp"
             android:layout_marginTop="12dp"
             android:maxLines="10"
-            android:textColor="@color/grayText"
             android:text="Thú 2: 8:00-12:00"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/thongtinchung3" />
@@ -205,7 +203,6 @@
             android:layout_marginStart="36dp"
             android:layout_marginTop="12dp"
             android:text="TextView"
-            android:textColor="@color/grayText"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/giaveto" />
 

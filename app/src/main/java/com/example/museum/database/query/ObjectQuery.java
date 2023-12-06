@@ -2,6 +2,7 @@ package com.example.museum.database.query;
 
 import com.example.museum.Khampha.Thamquan.HienVat;
 import com.example.museum.Trangchu.BaoTang;
+import com.example.museum.Trangchu.ChuDe;
 
 import org.bson.Document;
 
@@ -9,6 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ObjectQuery {
+
+
+
+
     public static HienVat FindByName(String name) {
         Document docs = new Document(MongoDBQuery.queryOne("hanoi-museum", "objects", new Document("name", name)));
         HienVat hienvat = new HienVat(docs.getString("name"), docs.getString("timing"), docs.getString("info"), docs.getString("topic"), docs.getString("audioSource"), docs.getInteger("pic"));

@@ -26,6 +26,7 @@ import com.example.museum.Khampha.ThongTinAll;
 import com.example.museum.Khampha.ThongTinChungNew;
 import com.example.museum.R;
 import com.example.museum.Trangchu.BaoTang;
+import com.example.museum.database.query.MuseumQuery;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -76,11 +77,11 @@ public class TimKiemChung extends Fragment {
         rcvHienVat= rootView.findViewById(R.id.chung_hien_vat);
 
 
-        listBaoTang = new ArrayList<>();
-        listBaoTang.add(new BaoTang("Bảo tàng Văn Học",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item7));
-        listBaoTang.add(new BaoTang("Bảo tàng Lịch Sử Quốc Gia",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item8));
-        listBaoTang.add(new BaoTang("Bảo tàng Địa chất Hà Nội",  " Hà Nội","ĐANG MỞ CỬA" ,R.drawable.item9));
-        listBaoTang.add(new BaoTang("Bảo tàng Phụ Nữ Việt Nam",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item10));
+        listBaoTang = MuseumQuery.getMaxCommentMuseum(4);
+//        listBaoTang.add(new BaoTang("Bảo tàng Văn Học",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item7));
+//        listBaoTang.add(new BaoTang("Bảo tàng Lịch Sử Quốc Gia",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item8));
+//        listBaoTang.add(new BaoTang("Bảo tàng Địa chất Hà Nội",  " Hà Nội","ĐANG MỞ CỬA" ,R.drawable.item9));
+//        listBaoTang.add(new BaoTang("Bảo tàng Phụ Nữ Việt Nam",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item10));
 
 
 
@@ -97,6 +98,8 @@ public class TimKiemChung extends Fragment {
         LinearLayoutManager linearLayoutManager_baotang = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL,false);
         rcvBaoTang.setLayoutManager(linearLayoutManager_baotang);
         rcvBaoTang.setAdapter(baoTangSearchAdapter);
+
+
         hienVatSearchAdapter = new HienVatSearchAdapter(listHienVat);
         LinearLayoutManager linearLayoutManager_hienvat = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL,false);
         rcvHienVat.setLayoutManager(linearLayoutManager_hienvat);

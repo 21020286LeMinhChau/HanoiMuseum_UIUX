@@ -5,6 +5,7 @@ import static java.security.AccessController.getContext;
 import static io.realm.Realm.getApplicationContext;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 
@@ -12,6 +13,8 @@ import com.example.museum.Gioithieu.SplashSecond;
 import com.example.museum.account.Account;
 import com.example.museum.account.LoginAccount;
 import com.example.museum.database.MongoDBConnection;
+import com.example.museum.database.query.MuseumQuery;
+import com.example.museum.database.query.TopicQuery;
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.net.PlacesClient;
 
@@ -34,12 +37,13 @@ public class MainActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        Realm.init(this);
-//        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-//        StrictMode.setThreadPolicy(policy);
-//        MongoDBConnection.connect();
+        Realm.init(this);
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+        MongoDBConnection.connect();
 
-
+        ExecuteGetData executeGetData = new ExecuteGetData();
+        executeGetData.execute();
 
         //first time using?
         SharedPreferences sharedPreferences = getSharedPreferences("firstTime", Context.MODE_PRIVATE);
@@ -75,6 +79,22 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+    public class ExecuteGetData extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            MuseumQuery.getAllMuseums_StartProgram();
+            System.out.println("Museum");
+            TopicQuery.getAllTopics_StartProgram();
+            System.out.println("Topic");
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+
+        }
     }
 
 }
