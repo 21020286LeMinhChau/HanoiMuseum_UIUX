@@ -44,4 +44,16 @@ public class ObjectQuery {
         }
         return null;
     }
+
+
+    public static List<HienVat> getHienVatFromMuseum(String museum) {
+        List<HienVat> hienVats = new ArrayList<>();
+        for (int i = 0; i < allHienvat.length; i++) {
+//            convert to lower
+            if (allHienvat[i].getMuseum().toLowerCase().equals(museum.toLowerCase()) || allHienvat[i].getMuseum().toLowerCase().equals("all")) {
+                hienVats.add(allHienvat[i]);
+            }
+        }
+        return hienVats;
+    }
 }

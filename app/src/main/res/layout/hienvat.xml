@@ -30,15 +30,19 @@
 
     <TextView
         android:id="@+id/thongtin"
-        android:layout_width="wrap_content"
+        android:layout_width="700px"
         android:layout_height="wrap_content"
         android:layout_above="@+id/thoiluong"
         android:layout_below="@+id/tenhienvat"
         android:layout_marginStart="25dp"
         android:layout_marginTop="12dp"
         android:layout_toEndOf="@+id/hinhanh"
-        android:text="Thời Lý"
-        android:textColor="@color/black"
+        android:maxLines="2"
+        android:minLines="2"
+        android:ellipsize="end"
+        android:scrollHorizontally="true"
+
+        android:textColor="@color/grayText"
         android:textSize="12sp"
         android:textStyle="bold" />
 

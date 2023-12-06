@@ -90,6 +90,9 @@ public class HienVat {
     }
 
     public String getThoiLuong() {
+        if (thoiLuong == null) {
+            return "";
+        }
         return thoiLuong;
     }
 

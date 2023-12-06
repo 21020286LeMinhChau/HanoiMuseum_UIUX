@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.museum.R;
 
 import java.util.Collections;
@@ -44,10 +45,7 @@ public class HienVatAdapter extends RecyclerView.Adapter<HienVatViewHolder> {
 
         // Inflate the layout
 
-        View photoView
-                = inflater
-                .inflate(R.layout.hienvat,
-                        parent, false);
+        View photoView = inflater.inflate(R.layout.hienvat, parent, false);
 
         HienVatViewHolder viewHolder
                 = new HienVatViewHolder(photoView);
@@ -63,8 +61,12 @@ public class HienVatAdapter extends RecyclerView.Adapter<HienVatViewHolder> {
                 .setText(list.get(position).getThoiLuong());
         holder.ThongTin
                 .setText(list.get(position).getThongTin());
-        holder.HinhAnh
-                .setImageResource(list.get(position).getHinhAnh());
+//        holder.HinhAnh
+//                .setImageResource(list.get(position).getFirstHinhAnh());
+        Glide.with(holder.itemView.getContext())
+                .load("file:///android_asset/DbI/objects/" + list.get(position).getFirstHinhAnh())
+                .into(holder.HinhAnh);
+
         holder.view.setOnClickListener(view -> listiner.click(index));
     }
 
