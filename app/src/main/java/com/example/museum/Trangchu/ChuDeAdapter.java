@@ -1,5 +1,6 @@
 package com.example.museum.Trangchu;
 
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,9 +8,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.museum.Khampha.Search.TimKiemBaoTang;
+import com.example.museum.Khampha.ThongTinAll;
 import com.example.museum.R;
 
 import java.util.List;
@@ -46,7 +52,23 @@ public class ChuDeAdapter extends  RecyclerView.Adapter<ChuDeAdapter.ChuDeViewHo
                 .load("file:///android_asset/DbI/museums_chude/" + chuDe.getPicture())
                 .into(holder.pic);
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle bundle = new Bundle();
+                bundle.putString("theme", chuDe.getTheme());
 
+
+                TimKiemBaoTang timKiemBaoTang = new TimKiemBaoTang();
+                timKiemBaoTang.setArguments(bundle);
+
+
+                FragmentManager fragmentManager = ((FragmentActivity) v.getContext()).getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, timKiemBaoTang);
+                fragmentTransaction.commit();
+            }
+        });
 
     }
 

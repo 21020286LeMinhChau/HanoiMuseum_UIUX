@@ -1,13 +1,12 @@
 package com.example.museum.Khampha.Thamquan;
 
-import java.io.Serializable;
 import java.util.List;
 
 public class HienVat {
     private String tenHienVat;
     private String thoiLuong;
     private String thongTin;
-    private String chude;
+    private String museum;
     private String audioSource;
     private int hinhAnh;
     private String firstHinhAnh;
@@ -24,7 +23,7 @@ public class HienVat {
         this.listImage = listImage;
         this.thongTin = information;
         this.audioSource = audioSource;
-        this.chude = museum;
+        this.museum = museum;
         this.author = author;
         this.firstHinhAnh = listImage.get(0);
     }
@@ -33,11 +32,11 @@ public class HienVat {
 
 
 
-    public HienVat(String tenHienVat, String thoiLuong, String thongTin,String chude, String audioSource, int hinhAnh) {
+    public HienVat(String tenHienVat, String thoiLuong, String thongTin, String museum, String audioSource, int hinhAnh) {
         this.tenHienVat = tenHienVat;
         this.thoiLuong = thoiLuong;
         this.thongTin = thongTin;
-        this.chude = chude;
+        this.museum = museum;
         this.audioSource = audioSource;
         this.hinhAnh = hinhAnh;
     }
@@ -115,5 +114,10 @@ public class HienVat {
 
     public List<String> getListImage() {
         return listImage;
+    }
+
+
+    public String getMuseum() {
+        return museum;
     }
 }

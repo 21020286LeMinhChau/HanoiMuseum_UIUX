@@ -32,9 +32,9 @@ public class HienVatSearchAdapter extends  RecyclerView.Adapter<HienVatSearchAda
     private ClickListiner listiner;
 
 private Context context;
-    public HienVatSearchAdapter(List<HienVat> hienVatList) {
-        this.hienVatItemList = hienVatList;
-    }
+//    public HienVatSearchAdapter(List<HienVat> hienVatList) {
+//        this.hienVatItemList = hienVatList;
+//    }
 
     public HienVatSearchAdapter(List<HienVat> listHienVat, Context context, ClickListiner listiner) {
         this.hienVatItemList = listHienVat;

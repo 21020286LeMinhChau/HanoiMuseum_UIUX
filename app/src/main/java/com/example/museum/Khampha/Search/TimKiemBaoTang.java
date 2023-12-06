@@ -30,15 +30,32 @@ public class TimKiemBaoTang extends Fragment {
     private SearchView searchView;
     private List<BaoTang> listBaoTang;
     private BaoTangSearchAdapter adapter;
-
+    private String textCreate;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.baotang_search);
+
+//        check if the Bundle != null
+        System.out.println("TimKiemBaoTang");
+        if (getArguments() != null) {
+            System.out.println("TimKiemBaoTang1");
+            textCreate = getArguments().getString("theme");
+            System.out.println(textCreate);
+        }
+        else {
+            System.out.println("TimKiemBaoTang2");
+            textCreate = "";
+        }
+
+
+
+
+
         View rootView = inflater.inflate(R.layout.baotang_search, container, false);
 
         searchView = rootView.findViewById(R.id.searchView);
         searchView.clearFocus();
+
+        searchView.setQuery(textCreate, false);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -61,6 +78,9 @@ public class TimKiemBaoTang extends Fragment {
 
         adapter = new BaoTangSearchAdapter(listBaoTang);
         rcvBaoTang.setAdapter(adapter);
+
+        filterList(textCreate);
+
         return rootView;
 
     }
@@ -91,12 +111,7 @@ public class TimKiemBaoTang extends Fragment {
 
         }
         adapter.setFilteredList(filteredList);
-//        if(filteredList.isEmpty()){
-//            Toast.makeText(this,"Không có bảo tàng", Toast.LENGTH_SHORT).show();
-//        }
-//        else {
-//
-//        }
+
     }
 
 //    private List<BaoTang> getListBaoTang() {

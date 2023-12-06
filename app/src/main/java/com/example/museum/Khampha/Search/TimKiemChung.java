@@ -1,33 +1,24 @@
 package com.example.museum.Khampha.Search;
 
-import static com.example.museum.database.query.ObjectQuery.getRandom_n_HienVat;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.SearchView;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.museum.Audio.Audio;
 import com.example.museum.Khampha.Thamquan.ClickListiner;
 import com.example.museum.Khampha.Thamquan.HienVat;
-import com.example.museum.Khampha.Thamquan.ThamQuanNew;
-import com.example.museum.Khampha.ThongTinAll;
-import com.example.museum.Khampha.ThongTinChungNew;
 import com.example.museum.R;
 import com.example.museum.Trangchu.BaoTang;
 import com.example.museum.database.query.MuseumQuery;
@@ -35,9 +26,10 @@ import com.example.museum.database.query.ObjectQuery;
 
 import java.util.ArrayList;
 import java.util.List;
+
 public class TimKiemChung extends Fragment {
     private TimKiemBaoTang timKiemBaoTang;
-    private  TimKiemHienVat timKiemHienVat;
+    private TimKiemHienVat timKiemHienVat;
     private TimKiemChung timKiemChung;
     private RecyclerView rcvBaoTang;
     private List<BaoTang> listBaoTang;
@@ -50,6 +42,7 @@ public class TimKiemChung extends Fragment {
     private ImageButton hienvatButton;
 
     ClickListiner listiner;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.activity_tim_kiem_chung, container, false);
@@ -78,8 +71,8 @@ public class TimKiemChung extends Fragment {
             }
         });
 
-        rcvBaoTang= rootView.findViewById(R.id.chung_pho_bien);
-        rcvHienVat= rootView.findViewById(R.id.chung_hien_vat);
+        rcvBaoTang = rootView.findViewById(R.id.chung_pho_bien);
+        rcvHienVat = rootView.findViewById(R.id.chung_hien_vat);
 
 
         listBaoTang = MuseumQuery.getMaxCommentMuseum(4);
@@ -87,7 +80,6 @@ public class TimKiemChung extends Fragment {
 //        listBaoTang.add(new BaoTang("Bảo tàng Lịch Sử Quốc Gia",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item8));
 //        listBaoTang.add(new BaoTang("Bảo tàng Địa chất Hà Nội",  " Hà Nội","ĐANG MỞ CỬA" ,R.drawable.item9));
 //        listBaoTang.add(new BaoTang("Bảo tàng Phụ Nữ Việt Nam",  " Hà Nội","ĐANG MỞ CỬA",R.drawable.item10));
-
 
 
         listHienVat = ObjectQuery.getRandom_n_HienVat(6);
@@ -108,16 +100,14 @@ public class TimKiemChung extends Fragment {
         };
 
 
-
-
         baoTangSearchAdapter = new BaoTangSearchAdapter(listBaoTang);
-        LinearLayoutManager linearLayoutManager_baotang = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL,false);
+        LinearLayoutManager linearLayoutManager_baotang = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
         rcvBaoTang.setLayoutManager(linearLayoutManager_baotang);
         rcvBaoTang.setAdapter(baoTangSearchAdapter);
 
 
         hienVatSearchAdapter = new HienVatSearchAdapter(listHienVat, getActivity(), listiner);
-        LinearLayoutManager linearLayoutManager_hienvat = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL,false);
+        LinearLayoutManager linearLayoutManager_hienvat = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
         rcvHienVat.setLayoutManager(linearLayoutManager_hienvat);
         rcvHienVat.setAdapter(hienVatSearchAdapter);
 
@@ -152,23 +142,25 @@ public class TimKiemChung extends Fragment {
         List<BaoTang> filteredBaoTangList = new ArrayList<>();
         List<HienVat> filteredHienVatList = new ArrayList<>();
 
-        for(BaoTang item : listBaoTang) {
-            if(item.getNameOfMuseum().toLowerCase().contains(text.toLowerCase())){
+        for (BaoTang item : listBaoTang) {
+            if (item.getNameOfMuseum().toLowerCase().contains(text.toLowerCase())) {
                 filteredBaoTangList.add(item);
             }
 
         }
-        for(HienVat item : listHienVat) {
-            if(item.getTenHienVat().toLowerCase().contains(text.toLowerCase())){
+        for (HienVat item : listHienVat) {
+            if (item.getTenHienVat().toLowerCase().contains(text.toLowerCase())) {
                 filteredHienVatList.add(item);
             }
-
         }
+
+
         hienVatSearchAdapter.setFilteredList(filteredHienVatList);
         baoTangSearchAdapter.setFilteredList(filteredBaoTangList);
 
 
     }
+
     private void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = ((FragmentActivity) this.getContext()).getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

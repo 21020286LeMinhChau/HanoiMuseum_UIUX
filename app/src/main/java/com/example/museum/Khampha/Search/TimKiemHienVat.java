@@ -2,6 +2,7 @@ package com.example.museum.Khampha.Search;
 
 import static com.example.museum.R.id.rcv_hienvat;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,14 +11,18 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.widget.SearchView;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.museum.Audio.Audio;
+import com.example.museum.Khampha.Thamquan.ClickListiner;
 import com.example.museum.Khampha.Thamquan.HienVat;
 import com.example.museum.R;
+import com.example.museum.database.query.ObjectQuery;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,10 +32,25 @@ public class TimKiemHienVat extends Fragment {
     private SearchView searchView;
     private List<HienVat> listHienVat;
     private HienVatSearchAdapter adapter;
+    ClickListiner listiner;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.hienvat_search, container, false);
+        listiner = new ClickListiner() {
+            @Override
+            public void click(int index) {
+                Bundle bundle = new Bundle();
+                bundle.putString("id", listHienVat.get(index).getID());
 
+                Intent intent = new Intent(getActivity(), Audio.class);
+                intent.putExtra("bundle", bundle);
+
+                startActivity(intent);
+
+
+            }
+        };
 //        super.onCreate(savedInstanceState);
 //        setContentView(R.layout.hienvat_search);
 
@@ -49,23 +69,12 @@ public class TimKiemHienVat extends Fragment {
             }
         });
         rcvHienVat = rootView.findViewById(rcv_hienvat);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(),2);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 2);
         rcvHienVat.setLayoutManager(gridLayoutManager);
-        listHienVat = new ArrayList<>();
-        listHienVat.add(new HienVat("Sách Đường Kách mệnh","Nguyễn Ái Quốc", R.drawable.hienvat1 ));
-        listHienVat.add(new HienVat("Ấn vàng Sắc mệnh chi bảo","Thời Nguyễn", R.drawable.hienvat2 ));
-        listHienVat.add(new HienVat("Trống đồng Ngọc Lũ","Trống đồng Đông Sơn", R.drawable.hienvat3 ));
-        listHienVat.add(new HienVat("Bình Phong","Nguyễn Gia Trí", R.drawable.hienvat4 ));
-        listHienVat.add(new HienVat("Gióng","Nguyễn Tư Nghiêm", R.drawable.hienvat5 ));
-        listHienVat.add(new HienVat("Gà thư hùng","Tranh dân gian Đông Hồ", R.drawable.hienvat6 ));
-        listHienVat.add(new HienVat("Thạp","Gốm", R.drawable.hienvat7 ));
-        listHienVat.add(new HienVat("Chậu cảnh hình con lân","Gốm", R.drawable.hienvat8 ));
 
+        listHienVat = ObjectQuery.getRandom_n_HienVat(8);
 
-
-
-
-        adapter = new HienVatSearchAdapter(listHienVat);
+        adapter = new HienVatSearchAdapter(listHienVat, getActivity(), listiner);
         rcvHienVat.setAdapter(adapter);
         return rootView;
 
@@ -73,14 +82,18 @@ public class TimKiemHienVat extends Fragment {
 
     private void filterList(String text) {
         List<HienVat> filteredList = new ArrayList<>();
-        for(HienVat item : listHienVat) {
-            if(item.getTenHienVat().toLowerCase().contains(text.toLowerCase())){
+        for (HienVat item : listHienVat) {
+            if (item.getTenHienVat().toLowerCase().contains(text.toLowerCase())
+                    || item.getAuthor().toLowerCase().contains(text.toLowerCase())
+                    || item.getThongTin().toLowerCase().contains(text.toLowerCase())
+                    || item.getMuseum().toLowerCase().contains(text.toLowerCase())
+            ) {
                 filteredList.add(item);
             }
 
         }
 
-            adapter.setFilteredList(filteredList);
+        adapter.setFilteredList(filteredList);
 
 //        if(filteredList.isEmpty()){
 //            Toast.makeText(this,"Không có hiện vật", Toast.LENGTH_SHORT).show();
