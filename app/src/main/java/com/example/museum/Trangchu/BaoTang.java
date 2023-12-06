@@ -53,16 +53,21 @@ public class BaoTang {
     }
 
     public BaoTang(String nameOfMuseum, String address, String priceOfTicket, List<String> openings, List<String> topic,
-            String pic, boolean fromDatabase) {
+            String pic,String gioi_thieu,  boolean fromDatabase) {
         this.nameOfMuseum = nameOfMuseum;
         this.address = address;
         this.priceOfTicket = priceOfTicket;
         this.openings = openings;
         this.topic = topic;
         this.pic = pic;
+        this.gioi_thieu = gioi_thieu;
         if (openings != null) {
             preprocessingDay();
         }
+    }
+
+    public List<String> getTopic() {
+        return topic;
     }
 
     public BaoTang(String nameOfMuseum, String diadiem, String status, int anh) {

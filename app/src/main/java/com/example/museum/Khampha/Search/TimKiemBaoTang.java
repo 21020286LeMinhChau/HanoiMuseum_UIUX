@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.widget.SearchView;
 
 import androidx.fragment.app.Fragment;
@@ -21,12 +22,15 @@ import com.example.museum.Trangchu.BaoTang;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import com.example.museum.database.query.MuseumQuery;
+
 public class TimKiemBaoTang extends Fragment {
     private RecyclerView rcvBaoTang;
     private SearchView searchView;
     private List<BaoTang> listBaoTang;
     private BaoTangSearchAdapter adapter;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
@@ -48,12 +52,11 @@ public class TimKiemBaoTang extends Fragment {
             }
         });
         rcvBaoTang = rootView.findViewById(rcv_baotang);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(),2);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity(), 2);
         rcvBaoTang.setLayoutManager(gridLayoutManager);
         listBaoTang = new ArrayList<>();
 
         listBaoTang = MuseumQuery.getAllMuseums();
-
 
 
         adapter = new BaoTangSearchAdapter(listBaoTang);
@@ -64,10 +67,27 @@ public class TimKiemBaoTang extends Fragment {
 
     private void filterList(String text) {
         List<BaoTang> filteredList = new ArrayList<>();
-        for(BaoTang item : listBaoTang) {
-            if(item.getNameOfMuseum().toLowerCase().contains(text.toLowerCase())){
+        for (BaoTang item : listBaoTang) {
+            System.out.println(item.getNameOfMuseum());
+            System.out.println(item.getAddress());
+            System.out.println(item.getGioiThieu());
+            System.out.println(item.getTopic());
+            if (item.getNameOfMuseum().toLowerCase().contains(text.toLowerCase())
+                    || item.getAddress().toLowerCase().contains(text.toLowerCase())
+                    || item.getGioiThieu().toLowerCase().contains(text.toLowerCase())
+            ) {
                 filteredList.add(item);
+            } else {
+                List<String> topic = item.getTopic();
+                for (String s : topic) {
+                    if (s.toLowerCase().contains(text.toLowerCase())) {
+                        filteredList.add(item);
+                        break;
+                    }
+                }
+
             }
+
 
         }
         adapter.setFilteredList(filteredList);
