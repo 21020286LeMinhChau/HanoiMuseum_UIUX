@@ -13,24 +13,27 @@ import com.example.museum.R;
 import java.util.Collections;
 import java.util.List;
 
-public class HienVatAdapter extends RecyclerView.Adapter<HienVatViewHolder>{
+public class HienVatAdapter extends RecyclerView.Adapter<HienVatViewHolder> {
     List<HienVat> list
             = Collections.emptyList();
 
     Context context;
     ClickListiner listiner;
     ThamQuanNew fragmentOne;
+
     public HienVatAdapter(List<HienVat> list, Context context, ClickListiner listiner) {
         this.list = list;
         this.context = context;
         this.listiner = listiner;
     }
+
     public HienVatAdapter(List<HienVat> list, Context context, ThamQuanNew fragmentOne) {
         this.list = list;
         this.context = context;
         this.fragmentOne = fragmentOne;
 
     }
+
     @NonNull
     @Override
     public HienVatViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -69,9 +72,9 @@ public class HienVatAdapter extends RecyclerView.Adapter<HienVatViewHolder>{
     public int getItemCount() {
         return list.size();
     }
+
     public void onAttachedToRecyclerView(
-            RecyclerView recyclerView)
-    {
+            RecyclerView recyclerView) {
         super.onAttachedToRecyclerView(recyclerView);
     }
 }

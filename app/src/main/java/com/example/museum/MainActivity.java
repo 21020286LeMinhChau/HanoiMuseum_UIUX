@@ -14,6 +14,7 @@ import com.example.museum.account.Account;
 import com.example.museum.account.LoginAccount;
 import com.example.museum.database.MongoDBConnection;
 import com.example.museum.database.query.MuseumQuery;
+import com.example.museum.database.query.ObjectQuery;
 import com.example.museum.database.query.TopicQuery;
 import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.net.PlacesClient;
@@ -85,9 +86,8 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... voids) {
             MuseumQuery.getAllMuseums_StartProgram();
-            System.out.println("Museum");
             TopicQuery.getAllTopics_StartProgram();
-            System.out.println("Topic");
+            ObjectQuery.getAllHienvat_StartProgram();
             return null;
         }
 

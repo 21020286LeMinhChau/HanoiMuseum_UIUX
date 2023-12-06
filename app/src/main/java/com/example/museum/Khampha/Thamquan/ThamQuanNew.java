@@ -29,13 +29,14 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class ThamQuanNew extends Fragment  implements AdapterView.OnItemSelectedListener{
+public class ThamQuanNew extends Fragment implements AdapterView.OnItemSelectedListener {
     HienVatAdapter adapter;
     RecyclerView recyclerView;
     View mapThongTin;
     ClickListiner listiner;
     String[] floor = {"Tầng 1", "Tầng 2", "Tầng 3", "Tầng 4", "Tầng 5"};
     LinkedList<HienVat> hienVats = new LinkedList<>();
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -83,11 +84,11 @@ public class ThamQuanNew extends Fragment  implements AdapterView.OnItemSelected
         list = getData();
 
         recyclerView
-                = (RecyclerView)view.findViewById(
+                = (RecyclerView) view.findViewById(
                 R.id.recyclerView);
         listiner = new ClickListiner() {
             @Override
-            public void click(int index){
+            public void click(int index) {
                 Intent intent = new Intent(getActivity(), Audio.class);
                 startActivity(intent);
 
@@ -95,20 +96,17 @@ public class ThamQuanNew extends Fragment  implements AdapterView.OnItemSelected
         };
         adapter
                 = new HienVatAdapter(
-                list, requireActivity(),listiner);
+                list, requireActivity(), listiner);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(
                 new LinearLayoutManager(requireContext()));
         TextView thongTinTomTat = view.findViewById(R.id.thongtintomtat);
         TextView xemthem = view.findViewById(R.id.xemthem);
         xemthem.setOnClickListener(view1 -> {
-            if(thongTinTomTat.getMaxLines() == 2)
-            {
+            if (thongTinTomTat.getMaxLines() == 2) {
                 thongTinTomTat.setMaxLines(Integer.MAX_VALUE);
                 xemthem.setText("Thu gọn");
-            }
-            else
-            {
+            } else {
                 thongTinTomTat.setMaxLines(2);
                 xemthem.setText("Xem thêm");
             }
@@ -117,22 +115,17 @@ public class ThamQuanNew extends Fragment  implements AdapterView.OnItemSelected
     }
 
 
-
-
-
-
-    public List<HienVat> getData()
-    {
+    public List<HienVat> getData() {
         List<HienVat> list = new ArrayList<>();
         list.add(new HienVat("Bình Phong",
                 "0:35",
                 "Nguyễn Gia Trí", R.drawable.hienvat4, "https://webaudioapi.com/samples/audio-tag/chrono.mp3"));
         list.add(new HienVat("Kết nạp Đảng ở Điện Biên Phủ",
                 "0:57",
-                "Nguyễn Sáng",R.drawable.hienvat9,"https://webaudioapi.com/samples/audio-tag/chrono.mp3"));
+                "Nguyễn Sáng", R.drawable.hienvat9, "https://webaudioapi.com/samples/audio-tag/chrono.mp3"));
         list.add(new HienVat("Hai thiếu nữ và em bé",
                 "0:35",
-                "Tô Ngọc Vân",R.drawable.hienvat10,"https://webaudioapi.com/samples/audio-tag/chrono.mp3"));
+                "Tô Ngọc Vân", R.drawable.hienvat10, "https://webaudioapi.com/samples/audio-tag/chrono.mp3"));
 
         return list;
     }

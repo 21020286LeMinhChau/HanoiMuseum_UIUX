@@ -1,8 +1,6 @@
 package com.example.museum.database.query;
 
 import com.example.museum.Khampha.Thamquan.HienVat;
-import com.example.museum.Trangchu.BaoTang;
-import com.example.museum.Trangchu.ChuDe;
 
 import org.bson.Document;
 
@@ -10,28 +8,40 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ObjectQuery {
+    public static HienVat[] allHienvat;
 
-
-
-
-    public static HienVat FindByName(String name) {
-        Document docs = new Document(MongoDBQuery.queryOne("hanoi-museum", "objects", new Document("name", name)));
-        HienVat hienvat = new HienVat(docs.getString("name"), docs.getString("timing"), docs.getString("info"), docs.getString("topic"), docs.getString("audioSource"), docs.getInteger("pic"));
-        return hienvat;
+    public static void getAllHienvat_StartProgram() {
+        List<Document> Docs = new ArrayList<>(MongoDBQuery.findAll("hanoi-museum", "objects"));
+        allHienvat = new HienVat[Docs.size()];
+        for (int i = 0; i < Docs.size(); i++) {
+//            public HienVat(String id, String tenHienVat, List<String> listImage, String information, String audioSource, String museum, String author) {
+            allHienvat[i] = new HienVat(Docs.get(i).getString("id"), Docs.get(i).getString("name"), Docs.get(i).getList("picture", String.class), Docs.get(i).getString("information"), Docs.get(i).getString("audioSource"), Docs.get(i).getString("museum"));
+        }
     }
 
-    public static HienVat FindByID(String id) {
-        Document docs = new Document(MongoDBQuery.queryOne("hanoi-museum", "objects", new Document("_id", id)));
-        HienVat hienvat = new HienVat(docs.getString("name"), docs.getString("timing"), docs.getString("info"), docs.getString("topic"), docs.getString("audioSource"), docs.getInteger("pic"));
-        return hienvat;
-    }
 
-    public static List<HienVat> FindByTopic(String topic) {
-        List<Document> docs = new ArrayList<>(MongoDBQuery.find("hanoi-museum", "objects", new Document("topic", topic)));
+    public static List<HienVat> getRandom_n_HienVat(int n) {
+//        get random n hien vat in allHienvat
         List<HienVat> hienVats = new ArrayList<>();
-        for (int i = 0; i < docs.size(); i++) {
-            hienVats.add(new HienVat(docs.get(i).getString("name"), docs.get(i).getString("timing"), docs.get(i).getString("info"), docs.get(i).getString("topic"), docs.get(i).getString("audioSource"), docs.get(i).getInteger("pic")));
+        int i = 0;
+        while (hienVats.size() < n && i < allHienvat.length) {
+            HienVat hienVat = allHienvat[(int) (Math.random() * allHienvat.length)];
+            if (!hienVats.contains(hienVat)) {
+                hienVats.add(hienVat);
+                i++;
+            }
+
         }
         return hienVats;
+
+    }
+
+    public static HienVat getObjectFromId(String id) {
+        for (int i = 0; i < allHienvat.length; i++) {
+            if (allHienvat[i].getID().equals(id)) {
+                return allHienvat[i];
+            }
+        }
+        return null;
     }
 }

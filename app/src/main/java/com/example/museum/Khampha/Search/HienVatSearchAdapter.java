@@ -1,5 +1,10 @@
 package com.example.museum.Khampha.Search;
 
+import static android.app.PendingIntent.getActivity;
+
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,21 +12,36 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.museum.Audio.Audio;
+import com.example.museum.Khampha.Thamquan.ClickListiner;
 import com.example.museum.Khampha.Thamquan.HienVat;
 import com.example.museum.Khampha.Thamquan.HienVatViewHolder;
+import com.example.museum.Khampha.ThongTinAll;
 import com.example.museum.R;
 
 import java.util.List;
 
 public class HienVatSearchAdapter extends  RecyclerView.Adapter<HienVatSearchAdapter.HienVatViewHolder> {
     private List<HienVat> hienVatItemList;
+    private ClickListiner listiner;
 
+private Context context;
     public HienVatSearchAdapter(List<HienVat> hienVatList) {
         this.hienVatItemList = hienVatList;
     }
+
+    public HienVatSearchAdapter(List<HienVat> listHienVat, Context context, ClickListiner listiner) {
+        this.hienVatItemList = listHienVat;
+        this.context = context;
+        this.listiner = listiner;
+    }
+
     public void setFilteredList(List<HienVat> filteredList){
         this.hienVatItemList = filteredList;
         notifyDataSetChanged();
@@ -45,8 +65,19 @@ public class HienVatSearchAdapter extends  RecyclerView.Adapter<HienVatSearchAda
         holder.author.setText(hienVat.getAuthor());
 
         Glide.with(holder.itemView.getContext())
-                .load(hienVat.getHinhAnh())
+                .load("file:///android_asset/DbI/objects/" + hienVat.getFirstHinhAnh())
                 .into(holder.hinhAnh);
+
+
+        //                            @Override
+//            public void click(int index) {
+//                Intent intent = new Intent(getActivity(), Audio.class);
+//                startActivity(intent);
+//
+//            }
+//         change to Audio activity when click
+        int index = holder.getAdapterPosition();
+        holder.itemView.setOnClickListener(view -> listiner.click(index));
 
 
 

@@ -1,5 +1,7 @@
 package com.example.museum.Khampha.Search;
 
+import static com.example.museum.database.query.ObjectQuery.getRandom_n_HienVat;
+
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -20,6 +22,8 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.museum.Audio.Audio;
+import com.example.museum.Khampha.Thamquan.ClickListiner;
 import com.example.museum.Khampha.Thamquan.HienVat;
 import com.example.museum.Khampha.Thamquan.ThamQuanNew;
 import com.example.museum.Khampha.ThongTinAll;
@@ -27,6 +31,7 @@ import com.example.museum.Khampha.ThongTinChungNew;
 import com.example.museum.R;
 import com.example.museum.Trangchu.BaoTang;
 import com.example.museum.database.query.MuseumQuery;
+import com.example.museum.database.query.ObjectQuery;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +49,7 @@ public class TimKiemChung extends Fragment {
     private ImageButton baotangButton;
     private ImageButton hienvatButton;
 
-
+    ClickListiner listiner;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.activity_tim_kiem_chung, container, false);
@@ -85,13 +90,24 @@ public class TimKiemChung extends Fragment {
 
 
 
-        listHienVat = new ArrayList<>();
-        listHienVat.add(new HienVat("Sách Đường Kách mệnh","Nguyễn Ái Quốc", R.drawable.hienvat1 ));
-        listHienVat.add(new HienVat("Ấn vàng Sắc mệnh chi bảo","Thời Nguyễn", R.drawable.hienvat2 ));
-        listHienVat.add(new HienVat("Trống đồng Ngọc Lũ","Trống đồng Đông Sơn", R.drawable.hienvat3 ));
-        listHienVat.add(new HienVat("Bình Phong","Nguyễn Gia Trí", R.drawable.hienvat4 ));
-        listHienVat.add(new HienVat("Gióng","Nguyễn Tư Nghiêm", R.drawable.hienvat5 ));
-        listHienVat.add(new HienVat("Gà thư hùng","Tranh dân gian Đông Hồ", R.drawable.hienvat6 ));
+        listHienVat = ObjectQuery.getRandom_n_HienVat(6);
+
+        listiner = new ClickListiner() {
+            @Override
+            public void click(int index) {
+                Bundle bundle = new Bundle();
+                bundle.putString("id", listHienVat.get(index).getID());
+
+                Intent intent = new Intent(getActivity(), Audio.class);
+                intent.putExtra("bundle", bundle);
+
+                startActivity(intent);
+
+
+            }
+        };
+
+
 
 
         baoTangSearchAdapter = new BaoTangSearchAdapter(listBaoTang);
@@ -100,7 +116,7 @@ public class TimKiemChung extends Fragment {
         rcvBaoTang.setAdapter(baoTangSearchAdapter);
 
 
-        hienVatSearchAdapter = new HienVatSearchAdapter(listHienVat);
+        hienVatSearchAdapter = new HienVatSearchAdapter(listHienVat, getActivity(), listiner);
         LinearLayoutManager linearLayoutManager_hienvat = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL,false);
         rcvHienVat.setLayoutManager(linearLayoutManager_hienvat);
         rcvHienVat.setAdapter(hienVatSearchAdapter);

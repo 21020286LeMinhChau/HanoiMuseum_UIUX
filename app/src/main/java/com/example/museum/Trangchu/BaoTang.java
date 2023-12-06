@@ -53,7 +53,7 @@ public class BaoTang {
     }
 
     public BaoTang(String nameOfMuseum, String address, String priceOfTicket, List<String> openings, List<String> topic,
-                   String pic, String gioi_thieu, double x_toado, double y_toado, boolean fromDatabase) {
+                   String pic, String gioi_thieu, double x_toado, double y_toado, int comment, boolean fromDatabase) {
         this.nameOfMuseum = nameOfMuseum;
         this.address = address;
         this.priceOfTicket = priceOfTicket;
@@ -63,6 +63,7 @@ public class BaoTang {
         this.gioi_thieu = gioi_thieu;
         this.x_toado = x_toado;
         this.y_toado = y_toado;
+        this.comment = comment;
         if (openings != null) {
             preprocessingDay();
         }
@@ -72,44 +73,9 @@ public class BaoTang {
         return topic;
     }
 
-    public BaoTang(String nameOfMuseum, String diadiem, String status, int anh) {
-        this.nameOfMuseum = nameOfMuseum;
-        this.diadiem = diadiem;
-        this.status = status;
-        this.anh = anh;
 
-    }
 
-    /**
-     * Constructor for BaoTang for ThongTinAll
-     *
-     * @param nameOfMuseum
-     * @param picture
-     * @param vote
-     * @param cmt
-     */
-    public BaoTang(String nameOfMuseum, String picture, Double vote, Integer cmt) {
-        this.nameOfMuseum = nameOfMuseum;
-        this.pic = picture;
-        this.vote = vote;
-        this.comment = cmt;
 
-    }
-
-    public BaoTang(String nameOfMuseum, List<String> openings, List<String> priceOfTicket,
-                   List<String> priceOfTicketFree, String gioiThieu, Double x_toado, Double y_toado) {
-        this.nameOfMuseum = nameOfMuseum;
-        this.openings = openings;
-        this.priceOfTicketNotFree = priceOfTicket;
-        this.priceOfTicketFree = priceOfTicketFree;
-        this.gioi_thieu = gioiThieu;
-        this.x_toado = x_toado;
-        this.y_toado = y_toado;
-
-        if (openings != null) {
-            preprocessingDay();
-        }
-    }
 
     public String getNameOfMuseum() {
         return nameOfMuseum;

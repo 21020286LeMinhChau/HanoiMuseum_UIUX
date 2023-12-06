@@ -72,7 +72,6 @@ public class BaoTangAdapter extends RecyclerView.Adapter<BaoTangAdapter.BaoTangV
         if (baoTangList != null) {
             return baoTangList.size();
         }
-        ;
         return 0;
     }
 

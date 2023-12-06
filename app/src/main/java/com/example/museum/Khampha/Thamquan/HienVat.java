@@ -1,5 +1,8 @@
 package com.example.museum.Khampha.Thamquan;
 
+import java.io.Serializable;
+import java.util.List;
+
 public class HienVat {
     private String tenHienVat;
     private String thoiLuong;
@@ -7,7 +10,28 @@ public class HienVat {
     private String chude;
     private String audioSource;
     private int hinhAnh;
+    private String firstHinhAnh;
     private String author;
+    private List<String> listImage;
+    private String id;
+    public HienVat(String id, String tenHienVat, List<String> listImage, String information, String audioSource, String museum) {
+        this(id, tenHienVat, listImage, information, audioSource, museum, "");
+    }
+
+    public HienVat(String id, String tenHienVat, List<String> listImage, String information, String audioSource, String museum, String author) {
+        this.id = id;
+        this.tenHienVat = tenHienVat;
+        this.listImage = listImage;
+        this.thongTin = information;
+        this.audioSource = audioSource;
+        this.chude = museum;
+        this.author = author;
+        this.firstHinhAnh = listImage.get(0);
+    }
+
+
+
+
 
     public HienVat(String tenHienVat, String thoiLuong, String thongTin,String chude, String audioSource, int hinhAnh) {
         this.tenHienVat = tenHienVat;
@@ -79,5 +103,17 @@ public class HienVat {
     }
     public String getAudioSource() {
         return audioSource;
+    }
+
+    public String getFirstHinhAnh() {
+        return firstHinhAnh;
+    }
+
+    public String getID() {
+        return id;
+    }
+
+    public List<String> getListImage() {
+        return listImage;
     }
 }
