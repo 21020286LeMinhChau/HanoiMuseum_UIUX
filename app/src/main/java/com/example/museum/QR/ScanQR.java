@@ -29,15 +29,16 @@ import com.example.museum.account.TaP.TaP;
 import com.example.museum.database.query.ObjectQuery;
 import com.google.zxing.Result;
 
-public class ScanQR extends Fragment{
+public class ScanQR extends Fragment {
     CodeScanner codeScanner;
     HienVat hienVat;
+
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.qr_scanner, container, false);
 
         permissionCheck();
         CodeScannerView codeScannerView = view.findViewById(R.id.scanner_view);
-        codeScanner = new CodeScanner(getContext(),codeScannerView);
+        codeScanner = new CodeScanner(getContext(), codeScannerView);
         codeScanner.setDecodeCallback(new DecodeCallback() {
             @Override
             public void onDecoded(@NonNull Result result) {
@@ -45,19 +46,22 @@ public class ScanQR extends Fragment{
                     @Override
                     public void run() {
                         String objectID = result.getText();
-                        if(objectID == null){
-                            Toast.makeText(getContext(),"get Error, please try again", Toast.LENGTH_SHORT).show();
+//                        if objectId not is int => error
+                        if (!objectID.matches("\\d+")) {
+                            Toast.makeText(getContext(), "get Error, please try again", Toast.LENGTH_SHORT).show();
                             onResume();
+                        } else {
+                            Log.v("success:", "yes");
+
+                            Bundle bundle = new Bundle();
+                            bundle.putString("id", "202122");
+
+                            Intent intent = new Intent(getActivity(), Audio.class);
+                            intent.putExtra("bundle", bundle);
+                            startActivity(intent);
                         }
-                        //hienVat = ObjectQuery.FindByID(objectID);
-//                        if(hienVat == null){
-//                            Toast.makeText(getContext(),"get Error, please try again", Toast.LENGTH_SHORT).show();
-//                            onResume();
-//                        }
-                        // di den trang thong tin hien vat
-                        Log.v("success:" ,"yes");
-                        Intent intent = new Intent(getContext(), Audio.class).putExtra("Hien vat", "objectID");
-                        startActivity(intent);
+
+
 
                     }
                 });
@@ -73,14 +77,14 @@ public class ScanQR extends Fragment{
     }
 
     public void permissionCheck() {
-        if(getContext().checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
-            ActivityCompat.requestPermissions(getActivity(),new String []{Manifest.permission.CAMERA},12);
+        if (getContext().checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.CAMERA}, 12);
         }
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        if(requestCode!=12){
+        if (requestCode != 12) {
             permissionCheck();
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
