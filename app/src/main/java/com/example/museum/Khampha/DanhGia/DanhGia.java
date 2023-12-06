@@ -1,6 +1,7 @@
 package com.example.museum.Khampha.DanhGia;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,17 +18,20 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.museum.Gioithieu.SplashThird;
 import com.example.museum.Khampha.DanhGia.ClickListiner2;
 import com.example.museum.Khampha.Thamquan.ClickListiner;
 import com.example.museum.Khampha.Thamquan.HienVat;
 import com.example.museum.Khampha.Thamquan.HienVatAdapter;
 import com.example.museum.R;
+import com.example.museum.account.LoginAccount;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.ArrayList;
@@ -38,6 +42,12 @@ public class DanhGia extends Fragment {
     ListDanhGiaAdapter adapter2;
     RecyclerView recyclerView2;
     ClickListiner2 listiner2;
+
+    Button closeBtn;
+    ConstraintLayout editScreen;
+    Button confirmBtn;
+
+    List<ListDanhGia> list;
 
     @Nullable
     @Override
@@ -50,6 +60,9 @@ public class DanhGia extends Fragment {
         Button button = view.findViewById(R.id.button);
         EditText editText = textInputLayout.findViewById(R.id.editText);
         TextView numRate = view.findViewById(R.id.num_rate);
+        closeBtn = view.findViewById(R.id.Close_Button_1);
+        editScreen = view.findViewById(R.id.show_screen_1);
+        confirmBtn = view.findViewById(R.id.confirm_btn_1);
         CharSequence h = numRate.getText();
         h = h.subSequence(1, h.length()-1);
 
@@ -82,15 +95,43 @@ public class DanhGia extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(LoginAccount.account == null){
+                        editScreen.setVisibility(View.VISIBLE);
+                }else {
+                    list.add(0,new ListDanhGia(LoginAccount.account.getEmail(),
+                            editText.getText().toString(),
+                            5,
+                            "vừa xong"
+                            , R.drawable.user, R.drawable.star, R.drawable.star, R.drawable.star, R.drawable.star, R.drawable.star));
+                    setStarAll(list);
+                    adapter2 = new ListDanhGiaAdapter(list, requireActivity(),listiner2);
+
+                    recyclerView2.setAdapter(adapter2);
+
+                    recyclerView2.setLayoutManager(new LinearLayoutManager(requireContext()));
+                }
                 Log.d("DanhGia", editText.getText().toString());
             }
         });
-        List<ListDanhGia> list;
+
+        closeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editScreen.setVisibility(View.GONE);
+            }
+        });
+
+        confirmBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(getContext(), SplashThird.class);
+                startActivity(intent);
+            }
+        });
         list = getData();
         setStarAll(list);
-        recyclerView2
-                = (RecyclerView)view.findViewById(
-                R.id.recyclerView2);
+        recyclerView2 = (RecyclerView)view.findViewById(R.id.recyclerView2);
         listiner2 = new ClickListiner2() {
             @Override
             public void click(int index){
@@ -101,8 +142,7 @@ public class DanhGia extends Fragment {
 
         recyclerView2.setAdapter(adapter2);
 
-        recyclerView2.setLayoutManager(
-                new LinearLayoutManager(requireContext()));
+        recyclerView2.setLayoutManager(new LinearLayoutManager(requireContext()));
         return view;
     }
     public List<ListDanhGia> getData() {
