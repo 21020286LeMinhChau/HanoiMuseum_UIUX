@@ -11,7 +11,7 @@ public class BaoTang {
     List<String> priceOfTicketNotFree;
     private List<String> openings;
     private String opening_now;
-    private String topic;
+    private List<String> topic;
     private String pic;
     private double x_toado;
     private double y_toado;
@@ -52,7 +52,7 @@ public class BaoTang {
         }
     }
 
-    public BaoTang(String nameOfMuseum, String address, String priceOfTicket, List<String> openings, String topic,
+    public BaoTang(String nameOfMuseum, String address, String priceOfTicket, List<String> openings, List<String> topic,
             String pic, boolean fromDatabase) {
         this.nameOfMuseum = nameOfMuseum;
         this.address = address;
@@ -61,7 +61,7 @@ public class BaoTang {
         this.topic = topic;
         this.pic = pic;
         if (openings != null) {
-            //preprocessingDay();
+            preprocessingDay();
         }
     }
 
@@ -100,7 +100,7 @@ public class BaoTang {
         this.y_toado = y_toado;
 
         if (openings != null) {
-            //preprocessingDay();
+            preprocessingDay();
         }
     }
 

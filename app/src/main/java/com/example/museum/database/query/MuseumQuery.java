@@ -63,7 +63,7 @@ public class MuseumQuery {
         for (int i = 0; i < randomList.size(); i++) {
             museums.add(new BaoTang(Docs.get(randomList.get(i)).getString("name"), Docs.get(randomList.get(i)).getString("address"),
                     Docs.get(randomList.get(i)).getString("price_min_max"),Docs.get(randomList.get(i)).getList("opening_times", String.class),
-                    Docs.get(randomList.get(i)).getString("chude"), Docs.get(randomList.get(i)).getString("picture"), true));
+                    Docs.get(randomList.get(i)).getList("chude", String.class), Docs.get(randomList.get(i)).getString("picture"), true));
         }
         return museums;
     }
