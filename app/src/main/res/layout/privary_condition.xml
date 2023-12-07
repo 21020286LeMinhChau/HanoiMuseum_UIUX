@@ -20,6 +20,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Điều Khoản và Điều Kiện Sử Dụng"
+                    android:textColor="@color/grayText"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="8dp"/>
@@ -28,6 +29,8 @@
                     android:id="@+id/termsTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/grayText"
+
                     android:text="@string/terms_and_conditions_content"
                     android:textSize="16sp"
                     android:layout_marginBottom="16dp"/>
@@ -36,6 +39,8 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/grayText"
+
                     android:text="Chính Sách Bảo Mật"
                     android:textSize="20sp"
                     android:textStyle="bold"
@@ -44,6 +49,8 @@
                 <TextView
                     android:id="@+id/privacyTextView"
                     android:layout_width="match_parent"
+                    android:textColor="@color/grayText"
+
                     android:layout_height="wrap_content"
                     android:text="@string/privacy_policy_content"
                     android:textSize="16sp"/>
