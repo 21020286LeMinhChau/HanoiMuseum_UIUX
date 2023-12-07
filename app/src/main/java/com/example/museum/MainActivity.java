@@ -1,7 +1,8 @@
 package com.example.museum;
 
 import android.content.Context;
-
+import static java.security.AccessController.getContext;
+import static io.realm.Realm.getApplicationContext;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -9,7 +10,6 @@ import android.os.Bundle;
 
 
 import com.example.museum.Gioithieu.SplashSecond;
-import com.example.museum.Khampha.DanhGia.CommentsMuseum;
 import com.example.museum.account.Account;
 import com.example.museum.account.LoginAccount;
 import com.example.museum.database.MongoDBConnection;
@@ -17,6 +17,8 @@ import com.example.museum.database.query.CommentQuery;
 import com.example.museum.database.query.MuseumQuery;
 import com.example.museum.database.query.ObjectQuery;
 import com.example.museum.database.query.TopicQuery;
+import com.google.android.libraries.places.api.Places;
+import com.google.android.libraries.places.api.net.PlacesClient;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -34,6 +36,7 @@ import io.realm.Realm;
 public class MainActivity extends AppCompatActivity {
 
 
+
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,30 +46,30 @@ public class MainActivity extends AppCompatActivity {
         StrictMode.setThreadPolicy(policy);
         MongoDBConnection.connect();
 
-        ExecuteGetDataMuseum excecuteGetDataMuseum = new ExecuteGetDataMuseum();
-        excecuteGetDataMuseum.execute();
+        ExecuteGetDataMuseum executeGetDataMuseum = new ExecuteGetDataMuseum();
+        executeGetDataMuseum.execute();
 
-        ExecuteGetDataTopic excecuteGetDataTopic = new ExecuteGetDataTopic();
-        excecuteGetDataTopic.execute();
+        ExecuteGetDataTopic executeGetDataTopic = new ExecuteGetDataTopic();
+        executeGetDataTopic.execute();
 
-        ExecuteGetDataObject excecuteGetDataObject = new ExecuteGetDataObject();
-        excecuteGetDataObject.execute();
+        ExecuteGetDataObject executeGetDataObject = new ExecuteGetDataObject();
+        executeGetDataObject.execute();
 
-        ExecuteGetDataComment excecuteGetDataComment = new ExecuteGetDataComment();
-        excecuteGetDataComment.execute();
+        ExecuteGetDataComment executeGetDataComment = new ExecuteGetDataComment();
+        executeGetDataComment.execute();
 
         //first time using?
         SharedPreferences sharedPreferences = getSharedPreferences("firstTime", Context.MODE_PRIVATE);
         boolean firstTimeUsing = sharedPreferences.getBoolean("firstTimeUsing", true);
-        if (!firstTimeUsing) {
+        if(!firstTimeUsing){
             SharedPreferences sharedPreferences1 = getSharedPreferences("login", Context.MODE_PRIVATE);
             boolean isLoggedIn = sharedPreferences1.getBoolean("isLoggedIn", false);
             String result = String.valueOf(isLoggedIn);
             Log.v("check:", result);
-            if (isLoggedIn) {
+            if(isLoggedIn){
                 String email = sharedPreferences1.getString("email", "");
                 String password = sharedPreferences1.getString("password", "");
-                LoginAccount.account = new Account(email, password);
+                LoginAccount.account = new Account(email,password);
             }
             Intent intent = new Intent();
             intent.setClass(MainActivity.this, MainRun.class);
@@ -90,7 +93,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
     public class ExecuteGetDataMuseum extends AsyncTask<Void, Void, Void> {
 
         @Override
