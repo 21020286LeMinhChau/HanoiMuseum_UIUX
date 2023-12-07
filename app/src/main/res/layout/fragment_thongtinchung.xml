@@ -103,7 +103,7 @@
             android:textColor="@android:color/black"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/giave"
+            app:layout_constraintTop_toBottomOf="@+id/giave_include"
             tools:ignore="MissingConstraints" />
 
         <TextView
@@ -202,15 +202,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/thongtinchung3" />
 
-        <TextView
-            android:id="@+id/giave"
+        <include
+            android:id="@+id/giave_include"
+            layout="@layout/giave"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="36dp"
-            android:layout_marginTop="12dp"
-            android:text="TextView"
-            android:textColor="@color/grayText"
-
+            android:layout_marginTop="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/giaveto" />
 

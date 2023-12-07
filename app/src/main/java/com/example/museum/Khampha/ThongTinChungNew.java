@@ -1,6 +1,7 @@
 package com.example.museum.Khampha;
 
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.AsyncTask;
@@ -9,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
@@ -42,8 +44,10 @@ public class ThongTinChungNew extends Fragment  {
     private List<String> priceFree;
     private List<String> priceNotFree;
     private String gioiThieu;
+    private String price;
     private double x_toado;
     private double y_toado;
+    @SuppressLint("SetTextI18n")
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -74,16 +78,32 @@ public class ThongTinChungNew extends Fragment  {
 
         });
 
-        TextView giaVe = view.findViewById(R.id.giave);
-        giaVe.setVisibility(TextView.GONE);
+        LinearLayout giaVe = view.findViewById(R.id.giave_include);
+        TextView p_free_ticket = giaVe.findViewById(R.id.free_ticket);
+        TextView free_ticket = giaVe.findViewById(R.id.free_ticket_text);
+        TextView fee = giaVe.findViewById(R.id.fee_text);
+        TextView p_fee = giaVe.findViewById(R.id.fee);
+        TextView range = giaVe.findViewById(R.id.range_text);
+        p_fee.setVisibility(View.GONE);
+        fee.setVisibility(View.GONE);
+        free_ticket.setVisibility(View.GONE);
+        p_free_ticket.setVisibility(View.GONE);
         TextView xemThem2 = view.findViewById(R.id.xemthem2);
         xemThem2.setPaintFlags(xemThem2.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
         xemThem2.setOnClickListener(v -> {
-            if (giaVe.getVisibility() == TextView.VISIBLE) {
-                giaVe.setVisibility(TextView.GONE);
+            if (range.getVisibility() == TextView.VISIBLE) {
+                p_fee.setVisibility(View.VISIBLE);
+                fee.setVisibility(View.VISIBLE);
+                free_ticket.setVisibility(View.VISIBLE);
+                p_free_ticket.setVisibility(View.VISIBLE);
+                range.setVisibility(TextView.GONE);
                 xemThem2.setText("Xem thêm");
-            } else if (giaVe.getVisibility() == TextView.GONE) {
-                giaVe.setVisibility(TextView.VISIBLE);
+            } else if (range.getVisibility() == TextView.GONE) {
+                range.setVisibility(TextView.VISIBLE);
+                p_fee.setVisibility(View.GONE);
+                fee.setVisibility(View.GONE);
+                free_ticket.setVisibility(View.GONE);
+                p_free_ticket.setVisibility(View.GONE);
                 xemThem2.setText("Thu gọn");
             }
         });
@@ -126,6 +146,7 @@ public class ThongTinChungNew extends Fragment  {
             gioiThieu = museum.getGioiThieu();
             priceFree = museum.getPriceFree();
             priceNotFree = museum.getPriceNotFree();
+            price = museum.getPriceOfTicket();
             openingTime = museum.getOpeningTime();
             x_toado = museum.getX_toado();
             y_toado = museum.getY_toado();
@@ -140,7 +161,8 @@ public class ThongTinChungNew extends Fragment  {
             thongTinChung.setText(gioiThieu);
 
             StringBuilder openingTimeStr = new StringBuilder();
-
+            StringBuilder free_fee = new StringBuilder();
+            StringBuilder not_free_fee = new StringBuilder();
             ArrayList<String> dayOfWeek = new ArrayList<>();
             dayOfWeek.add("Thứ Hai: ");
             dayOfWeek.add("Thứ Ba:  ");
@@ -150,14 +172,28 @@ public class ThongTinChungNew extends Fragment  {
             dayOfWeek.add("Thứ Bảy: ");
             dayOfWeek.add("Chủ Nhật:");
             for(int i = 0; i < openingTime.size(); i++) {
-                openingTimeStr.append(dayOfWeek.get(i) + openingTime.get(i) + "\n");
+                openingTimeStr.append(dayOfWeek.get(i)).append(openingTime.get(i)).append("\n");
             }
-
+            for(int i = 0; i < priceFree.size(); i++) {
+                free_fee.append(priceFree.get(i)).append("\n");
+            }
+            for(int i = 0; i < priceNotFree.size(); i++) {
+                not_free_fee.append(priceNotFree.get(i)).append("\n");
+            }
             TextView thoiGian = getView().findViewById(R.id.thoigian);
             System.out.println("openintTimeStr: " + openingTimeStr.toString());
             thoiGian.setText(openingTimeStr.toString());
 
+            LinearLayout giaVe = getView().findViewById(R.id.giave_include);
+            TextView p_free_ticket = giaVe.findViewById(R.id.free_ticket);
+            TextView free_ticket = giaVe.findViewById(R.id.free_ticket_text);
+            TextView fee = giaVe.findViewById(R.id.fee_text);
+            TextView p_fee = giaVe.findViewById(R.id.fee);
+            TextView range = giaVe.findViewById(R.id.range_text);
 
+            free_ticket.setText(free_fee.toString());
+            fee.setText(not_free_fee.toString());
+            range.setText(price);
             Bundle bundleMap = new Bundle();
             bundleMap.putDouble("x_toado", x_toado);
             bundleMap.putDouble("y_toado", y_toado);

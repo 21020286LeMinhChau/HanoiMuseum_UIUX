@@ -15,7 +15,9 @@ public class MuseumQuery {
         allMuseums = new BaoTang[Docs.size()];
         for (int i = 0; i < Docs.size(); i++) {
             allMuseums[i] = new BaoTang(Docs.get(i).getString("name"), Docs.get(i).getString("address"),
-                    Docs.get(i).getString("price_min_max"), Docs.get(i).getList("opening_times", String.class),
+                    Docs.get(i).getString("price_min_max"),
+                    Docs.get(i).getList("price_free", String.class), Docs.get(i).getList("price", String.class),
+                    Docs.get(i).getList("opening_times", String.class),
                     Docs.get(i).getList("chude", String.class), Docs.get(i).getString("picture"), Docs.get(i).getString("gioi_thieu"),
                     Docs.get(i).getDouble("x_toado"), Docs.get(i).getDouble("y_toado"),
                     Docs.get(i).getInteger("comment"),
