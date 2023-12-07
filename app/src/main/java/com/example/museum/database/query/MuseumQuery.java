@@ -19,6 +19,7 @@ public class MuseumQuery {
                     Docs.get(i).getList("price_free", String.class), Docs.get(i).getList("price", String.class),
                     Docs.get(i).getList("opening_times", String.class),
                     Docs.get(i).getList("chude", String.class), Docs.get(i).getString("picture"), Docs.get(i).getString("gioi_thieu"),
+                    Docs.get(i).getDouble("vote"),
                     Docs.get(i).getDouble("x_toado"), Docs.get(i).getDouble("y_toado"),
                     Docs.get(i).getInteger("comment"),
 

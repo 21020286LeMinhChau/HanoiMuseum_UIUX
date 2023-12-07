@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +26,7 @@ import com.example.museum.database.query.MuseumQuery;
  * Yêu cầu đầu vào có nameOfMuseum (có thể truyền qua bundle)
  */
 public class ThongTinAll extends Fragment {
-    public int count = 3;
+    private double count;
     private ThongTinChungNew thongtinchungNew;
     private ThamQuanNew thamquanNew;
     private DanhGia danhGia;
@@ -35,8 +36,14 @@ public class ThongTinAll extends Fragment {
     private String nameOfMuseum;
     private String picture;
     private int comment;
-    private double vote;
+    private double vote_;
 
+    private void setCount(double vote) {
+        count = vote;
+    }
+    private double getCount() {
+        return count;
+    }
 
     @SuppressLint("CutPasteId")
     @Nullable
@@ -55,18 +62,10 @@ public class ThongTinAll extends Fragment {
         ExecuteGetThongTinAll executeGetThongTinAll = new ExecuteGetThongTinAll();
         executeGetThongTinAll.execute();
 
+        double count_ = getCount();
+        Log.d("count", count_ + " " + getCount());
 
-        ImageView star;
-        for (int i = 0; i < 5; i++) {
-            String IDName = "star" + (i + 1);
-            int resID = getResources().getIdentifier(IDName, "id", getActivity().getPackageName());
-            star = rootView.findViewById(resID);
-            if (i < count) {
-                star.setImageDrawable(getResources().getDrawable(R.drawable.starcolor));
-            } else {
-                star.setImageDrawable(getResources().getDrawable(R.drawable.star));
-            }
-        }
+
 
 
         thongtinchungNew = new ThongTinChungNew();
@@ -125,15 +124,17 @@ public class ThongTinAll extends Fragment {
             BaoTang museum = MuseumQuery.getMuseumByName_ThongTinAll(nameOfMuseum);
             picture = museum.getPic();
             comment = museum.getComment();
-            vote = museum.getVote();
+            vote_ = museum.getVote();
             return null;
         }
 
+        @SuppressLint("SetTextI18n")
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
             ImageView pic = getView().findViewById(R.id.imageView5);
             TextView commentTxt = getView().findViewById(R.id.textView11);
+            TextView countTxt = getView().findViewById(R.id.textView10);
 //            TextView voteTxt = getView().findViewById(R.id.voteTxt);
 //            Glide.with(getContext())
 //                    .load(picture)
@@ -144,8 +145,19 @@ public class ThongTinAll extends Fragment {
                     .into(pic);
             commentTxt.setText(comment + " đánh giá");
 //            voteTxt.setText(vote + "");
-
-
+            setCount(vote_);
+            countTxt.setText(vote_ + "");
+            ImageView star;
+            for (int i = 0; i < 5; i++) {
+                String IDName = "star" + (i + 1);
+                int resID = getResources().getIdentifier(IDName, "id", getActivity().getPackageName());
+                star = getView().findViewById(resID);
+                if (i < count) {
+                    star.setImageDrawable(getResources().getDrawable(R.drawable.starcolor));
+                } else {
+                    star.setImageDrawable(getResources().getDrawable(R.drawable.star));
+                }
+            }
 
         }
     }

@@ -116,7 +116,7 @@
             app:layout_constraintTop_toBottomOf="@+id/progressBar2" />
 
         <ImageView
-            android:id="@+id/star1"
+            android:id="@+id/star6"
             android:layout_width="15dp"
             android:layout_height="20dp"
             android:layout_marginStart="15dp"
@@ -125,41 +125,41 @@
             app:srcCompat="@drawable/star_display" />
 
         <ImageView
-            android:id="@+id/star2"
+            android:id="@+id/star7"
             android:layout_width="15dp"
             android:layout_height="20dp"
             android:layout_marginStart="2dp"
-            app:layout_constraintLeft_toRightOf="@id/star1"
+            app:layout_constraintLeft_toRightOf="@id/star6"
             app:layout_constraintTop_toBottomOf="@+id/textView24"
             app:srcCompat="@drawable/star_display" />
 
         <ImageView
-            android:id="@+id/star3"
+            android:id="@+id/star8"
             android:layout_width="15dp"
             android:layout_height="20dp"
             android:layout_marginStart="2dp"
-            app:layout_constraintLeft_toRightOf="@id/star2"
+            app:layout_constraintLeft_toRightOf="@id/star7"
             app:layout_constraintTop_toBottomOf="@+id/textView24"
             app:srcCompat="@drawable/star_display" />
 
         <ImageView
-            android:id="@+id/star4"
+            android:id="@+id/star9"
             android:layout_width="15dp"
             android:layout_height="20dp"
 
             android:layout_marginStart="2dp"
-            app:layout_constraintLeft_toRightOf="@id/star3"
+            app:layout_constraintLeft_toRightOf="@id/star8"
             app:layout_constraintTop_toBottomOf="@+id/textView24"
             app:srcCompat="@drawable/star_display" />
 
         <ImageView
-            android:id="@+id/star5"
+            android:id="@+id/star10"
             android:layout_width="15dp"
             android:layout_height="20dp"
 
             android:layout_marginStart="2dp"
 
-            app:layout_constraintLeft_toRightOf="@id/star4"
+            app:layout_constraintLeft_toRightOf="@id/star9"
             app:layout_constraintTop_toBottomOf="@+id/textView24"
             app:srcCompat="@drawable/star_display" />
 
@@ -172,9 +172,9 @@
 
             android:textSize="15sp"
             app:layout_constraintBottom_toTopOf="@+id/ratingBar"
-            app:layout_constraintEnd_toEndOf="@+id/star5"
-            app:layout_constraintStart_toStartOf="@+id/star1"
-            app:layout_constraintTop_toBottomOf="@+id/star3"
+            app:layout_constraintEnd_toEndOf="@+id/star10"
+            app:layout_constraintStart_toStartOf="@+id/star6"
+            app:layout_constraintTop_toBottomOf="@+id/star8"
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
