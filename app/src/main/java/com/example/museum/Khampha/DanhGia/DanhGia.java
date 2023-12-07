@@ -53,7 +53,7 @@ public class DanhGia extends Fragment {
     private int percentage_vote_3;
     private int percentage_vote_2;
     private int percentage_vote_1;
-
+    private String nameOfMuseum;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -62,7 +62,11 @@ public class DanhGia extends Fragment {
         View view = inflater
                 .inflate(R.layout.fragment_danhgia, container, false);
 
-        listComments = getDataFromMuseum("Bảo tàng Hồ Chí Minh");
+        Bundle bundle = getArguments();
+        if (bundle != null) {
+            nameOfMuseum = bundle.getString("name");
+        }
+        listComments = getDataFromMuseum(nameOfMuseum);
 
 
         TextInputLayout textInputLayout = view.findViewById(R.id.textInputLayout);
@@ -71,7 +75,7 @@ public class DanhGia extends Fragment {
 
         TextView numRate = view.findViewById(R.id.textView24);
         numRate.setText(String.format("%.1f", avg_vote));
-        
+
         TextView numVote = view.findViewById(R.id.num_rate);
         numVote.setText(String.valueOf(count_vote));
 

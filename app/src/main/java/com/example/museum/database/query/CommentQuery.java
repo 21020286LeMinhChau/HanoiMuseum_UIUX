@@ -40,7 +40,6 @@ public class CommentQuery {
 
     public static CommentsMuseum getCommentsMuseumFromMuseum(String museum) {
         for (int i = 0; i < allCommentsMuseum.length; i++) {
-
             if (allCommentsMuseum[i].getMuseum().equals(museum)) {
                 return allCommentsMuseum[i];
             }
