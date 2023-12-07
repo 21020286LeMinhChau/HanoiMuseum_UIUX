@@ -9,8 +9,8 @@
     android:background="#ececec"
 
     >
-    <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -24,6 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:layout_marginTop="5dp"
+
             android:src="@drawable/line"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/button" />
@@ -34,6 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:text="5.0"
+            android:textColor="@color/grayText"
             android:textSize="30sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -165,11 +167,13 @@
             android:id="@+id/num_rate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
             android:text="(200)"
+            android:textColor="@color/grayText"
+
             android:textSize="15sp"
             app:layout_constraintBottom_toTopOf="@+id/ratingBar"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/star5"
+            app:layout_constraintStart_toStartOf="@+id/star1"
             app:layout_constraintTop_toBottomOf="@+id/star3"
             app:layout_constraintVertical_bias="0.0" />
 
