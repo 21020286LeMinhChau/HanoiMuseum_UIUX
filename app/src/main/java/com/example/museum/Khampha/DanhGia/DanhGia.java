@@ -32,6 +32,7 @@ import com.example.museum.Khampha.Thamquan.HienVat;
 import com.example.museum.Khampha.Thamquan.HienVatAdapter;
 import com.example.museum.R;
 import com.example.museum.account.LoginAccount;
+import com.example.museum.database.query.CommentQuery;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.ArrayList;
@@ -64,7 +65,7 @@ public class DanhGia extends Fragment {
         editScreen = view.findViewById(R.id.show_screen_1);
         confirmBtn = view.findViewById(R.id.confirm_btn_1);
         CharSequence h = numRate.getText();
-        h = h.subSequence(1, h.length()-1);
+        h = h.subSequence(1, h.length() - 1);
 
         int g = Integer.parseInt((String) h);
         ProgressBar progressBar = view.findViewById(R.id.progressBar);
@@ -74,7 +75,7 @@ public class DanhGia extends Fragment {
         ProgressBar progressBar5 = view.findViewById(R.id.progressBar5);
         List<Integer> numberOfStar = new ArrayList<>();
         progressBar.setMax(g);
-        int k = g-20-30-40-50;
+        int k = g - 20 - 30 - 40 - 50;
         Log.d("DanhGia", String.valueOf(g));
         numberOfStar = getNumberOfStar(k, 20, 30, 40, 20);
 
@@ -95,16 +96,16 @@ public class DanhGia extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(LoginAccount.account == null){
-                        editScreen.setVisibility(View.VISIBLE);
-                }else {
-                    list.add(0,new ListDanhGia(LoginAccount.account.getEmail(),
+                if (LoginAccount.account == null) {
+                    editScreen.setVisibility(View.VISIBLE);
+                } else {
+                    list.add(0, new ListDanhGia(LoginAccount.account.getEmail(),
                             editText.getText().toString(),
                             5,
                             "vừa xong"
                             , R.drawable.user, R.drawable.star, R.drawable.star, R.drawable.star, R.drawable.star, R.drawable.star));
                     setStarAll(list);
-                    adapter2 = new ListDanhGiaAdapter(list, requireActivity(),listiner2);
+                    adapter2 = new ListDanhGiaAdapter(list, requireActivity(), listiner2);
 
                     recyclerView2.setAdapter(adapter2);
 
@@ -129,30 +130,48 @@ public class DanhGia extends Fragment {
                 startActivity(intent);
             }
         });
-        list = getData();
+        list = getData("Nhà tù Hoả Lò");
         setStarAll(list);
-        recyclerView2 = (RecyclerView)view.findViewById(R.id.recyclerView2);
+        recyclerView2 = (RecyclerView) view.findViewById(R.id.recyclerView2);
         listiner2 = new ClickListiner2() {
             @Override
-            public void click(int index){
+            public void click(int index) {
                 Toast.makeText(requireContext(), "Clicked on : " + index, Toast.LENGTH_SHORT).show();
             }
         };
-        adapter2 = new ListDanhGiaAdapter(list, requireActivity(),listiner2);
+        adapter2 = new ListDanhGiaAdapter(list, requireActivity(), listiner2);
 
         recyclerView2.setAdapter(adapter2);
 
         recyclerView2.setLayoutManager(new LinearLayoutManager(requireContext()));
         return view;
     }
-    public List<ListDanhGia> getData() {
+
+    public List<ListDanhGia> getData(String nameMuseum) {
         List<ListDanhGia> list = new ArrayList<>();
-        list.add(new ListDanhGia("Nguyễn Văn A", "Đây là giới thiệu chung, giới thiệu chung Đây là giới thiệu chung, giới thiệu chungĐây là giới thiệu chung, giới thiệu chung",2,"1 giờ trước", R.drawable.user, R.drawable.star, R.drawable.star, R.drawable.star, R.drawable.star, R.drawable.star));
-        list.add(new ListDanhGia("Nguyễn Văn B", "Đây là giới thiệu chung, giới thiệu chung Đây là giới thiệu chung, giới thiệu chungĐây là giới thiệu chung, giới thiệu chung",3,"1 giờ trước", R.drawable.user, R.drawable.star, R.drawable.star, R.drawable.star, R.drawable.star, R.drawable.star));
-        list.add(new ListDanhGia("Nguyễn Văn C", "Đây là giới thiệu chung, giới thiệu chung Đây là giới thiệu chung, giới thiệu chungĐây là giới thiệu chung, giới thiệu chung",4,"1 giờ trước", R.drawable.user, R.drawable.star, R.drawable.star, R.drawable.star, R.drawable.star, R.drawable.star));
+        List<Comment> comments = CommentQuery.getCommentsMuseumFromMuseum(nameMuseum).getComments();
+
+        for (int i = 0; i < comments.size(); i++) {
+            for (int j = i + 1; j < comments.size(); j++) {
+                if (comments.get(i).getTimeInt() > comments.get(j).getTimeInt()) {
+                    Comment temp = comments.get(i);
+                    comments.set(i, comments.get(j));
+                    comments.set(j, temp);
+                }
+            }
+        }
+
+
+        for (int i = 0; i < comments.size(); i++) {
+            list.add(new ListDanhGia(comments.get(i)));
+        }
+
+
+
         return list;
     }
-    public void setStarAll(List<ListDanhGia> listDanhGia){
+
+    public void setStarAll(List<ListDanhGia> listDanhGia) {
         for (int i = 0; i < listDanhGia.size(); i++) {
 
             int count = listDanhGia.get(i).getSoSao();
@@ -162,7 +181,8 @@ public class DanhGia extends Fragment {
             }
         }
     }
-    public List<Integer> getNumberOfStar(int star1, int star2, int star3, int star4, int star5){
+
+    public List<Integer> getNumberOfStar(int star1, int star2, int star3, int star4, int star5) {
         List<Integer> numberOfStar = new ArrayList<>();
         numberOfStar.add(star1);
         numberOfStar.add(star2);

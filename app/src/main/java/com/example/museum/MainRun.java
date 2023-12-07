@@ -54,8 +54,6 @@ public class MainRun extends AppCompatActivity {
 //        MongoDBConnection.connect();
 
 
-
-
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment_activity_main, containerHome).commit();
         }
@@ -94,7 +92,6 @@ public class MainRun extends AppCompatActivity {
         fragmentTransaction.replace(R.id.nav_host_fragment_activity_main, fragment);
         fragmentTransaction.commit();
     }
-
 
 
 }
