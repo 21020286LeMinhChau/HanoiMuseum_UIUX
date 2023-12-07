@@ -1,5 +1,6 @@
 package com.example.museum.Khampha.DanhGia;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -82,6 +83,9 @@ public class DanhGia extends Fragment {
         closeBtn = view.findViewById(R.id.Close_Button_1);
         editScreen = view.findViewById(R.id.show_screen_1);
         confirmBtn = view.findViewById(R.id.confirm_btn_1);
+//
+//        CharSequence h = numRate.getText();
+//        h = h.subSequence(1, h.length() - 1);
 
         ProgressBar progressBar = view.findViewById(R.id.progressBar);
         progressBar.setProgress(percentage_vote_5);
@@ -114,6 +118,7 @@ public class DanhGia extends Fragment {
             public void onClick(View v) {
                 if (LoginAccount.account == null) {
                     editScreen.setVisibility(View.VISIBLE);
+//                    showDialog();
                 } else {
                     listComments.add(0, new ListDanhGia(LoginAccount.account.getEmail(),
                             editText.getText().toString(),
@@ -163,6 +168,7 @@ public class DanhGia extends Fragment {
     }
 
     public List<ListDanhGia> getDataFromMuseum(String nameMuseum) {
+
         List<ListDanhGia> list = new ArrayList<>();
         CommentsMuseum commentsMuseum = CommentQuery.getCommentsMuseumFromMuseum(nameMuseum);
         List<Comment> comments = commentsMuseum.getComments();
