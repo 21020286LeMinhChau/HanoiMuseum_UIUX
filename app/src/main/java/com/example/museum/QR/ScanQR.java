@@ -60,9 +60,6 @@ public class ScanQR extends Fragment {
                             intent.putExtra("bundle", bundle);
                             startActivity(intent);
                         }
-
-
-
                     }
                 });
             }

@@ -2,9 +2,6 @@ package com.example.museum;
 
 import android.content.Context;
 
-import static java.security.AccessController.getContext;
-import static io.realm.Realm.getApplicationContext;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -12,14 +9,14 @@ import android.os.Bundle;
 
 
 import com.example.museum.Gioithieu.SplashSecond;
+import com.example.museum.Khampha.DanhGia.CommentsMuseum;
 import com.example.museum.account.Account;
 import com.example.museum.account.LoginAccount;
 import com.example.museum.database.MongoDBConnection;
+import com.example.museum.database.query.CommentQuery;
 import com.example.museum.database.query.MuseumQuery;
 import com.example.museum.database.query.ObjectQuery;
 import com.example.museum.database.query.TopicQuery;
-import com.google.android.libraries.places.api.Places;
-import com.google.android.libraries.places.api.net.PlacesClient;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -29,6 +26,8 @@ import android.view.View;
 
 import android.widget.Button;
 
+
+import org.json.JSONException;
 
 import io.realm.Realm;
 
@@ -44,8 +43,17 @@ public class MainActivity extends AppCompatActivity {
         StrictMode.setThreadPolicy(policy);
         MongoDBConnection.connect();
 
-        ExecuteGetData executeGetData = new ExecuteGetData();
-        executeGetData.execute();
+        ExecuteGetDataMuseum excecuteGetDataMuseum = new ExecuteGetDataMuseum();
+        excecuteGetDataMuseum.execute();
+
+        ExecuteGetDataTopic excecuteGetDataTopic = new ExecuteGetDataTopic();
+        excecuteGetDataTopic.execute();
+
+        ExecuteGetDataObject excecuteGetDataObject = new ExecuteGetDataObject();
+        excecuteGetDataObject.execute();
+
+        ExecuteGetDataComment excecuteGetDataComment = new ExecuteGetDataComment();
+        excecuteGetDataComment.execute();
 
         //first time using?
         SharedPreferences sharedPreferences = getSharedPreferences("firstTime", Context.MODE_PRIVATE);
@@ -83,13 +91,58 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public class ExecuteGetData extends AsyncTask<Void, Void, Void> {
+    public class ExecuteGetDataMuseum extends AsyncTask<Void, Void, Void> {
 
         @Override
         protected Void doInBackground(Void... voids) {
             MuseumQuery.getAllMuseums_StartProgram();
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+
+        }
+    }
+
+    public class ExecuteGetDataTopic extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected Void doInBackground(Void... voids) {
             TopicQuery.getAllTopics_StartProgram();
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+
+        }
+    }
+
+    public class ExecuteGetDataObject extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected Void doInBackground(Void... voids) {
             ObjectQuery.getAllHienvat_StartProgram();
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+
+        }
+    }
+
+    public class ExecuteGetDataComment extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            try {
+                CommentQuery.getAllCommentsMuseum_StartProgram();
+            } catch (JSONException e) {
+                throw new RuntimeException(e);
+            }
+
             return null;
         }
 

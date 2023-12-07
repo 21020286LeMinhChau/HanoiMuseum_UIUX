@@ -11,11 +11,11 @@ public class MuseumQuery {
     public static BaoTang[] allMuseums;
 
     public static void getAllMuseums_StartProgram() {
-        List<Document> Docs = new ArrayList<>(MongoDBQuery.findAll("hanoi-museum","museums"));
+        List<Document> Docs = new ArrayList<>(MongoDBQuery.findAll("hanoi-museum", "museums"));
         allMuseums = new BaoTang[Docs.size()];
         for (int i = 0; i < Docs.size(); i++) {
             allMuseums[i] = new BaoTang(Docs.get(i).getString("name"), Docs.get(i).getString("address"),
-                    Docs.get(i).getString("price_min_max"),Docs.get(i).getList("opening_times", String.class),
+                    Docs.get(i).getString("price_min_max"), Docs.get(i).getList("opening_times", String.class),
                     Docs.get(i).getList("chude", String.class), Docs.get(i).getString("picture"), Docs.get(i).getString("gioi_thieu"),
                     Docs.get(i).getDouble("x_toado"), Docs.get(i).getDouble("y_toado"),
                     Docs.get(i).getInteger("comment"),
@@ -23,7 +23,6 @@ public class MuseumQuery {
                     true);
         }
     }
-
 
 
     public static List<BaoTang> getRandomMuseum(int number_random) {
@@ -45,22 +44,17 @@ public class MuseumQuery {
         List<BaoTang> museums = new ArrayList<>();
 
         List<Integer> randomList = new ArrayList<>();
-        while (randomList.size() < number_random && randomList.size() < allMuseums.length){
+        while (randomList.size() < number_random && randomList.size() < allMuseums.length) {
             int randomInt = (int) (Math.random() * allMuseums.length);
-            if(!randomList.contains(randomInt)){
+            if (!randomList.contains(randomInt)) {
                 randomList.add(randomInt);
             }
         }
 
 
-
-
-
-
         for (int i = 0; i < randomList.size(); i++) {
             museums.add(allMuseums[randomList.get(i)]);
         }
-
 
 
         return museums;
